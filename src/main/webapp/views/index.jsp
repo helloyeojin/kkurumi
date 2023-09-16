@@ -15,8 +15,8 @@
 
   <!-- Favicon and Touch Icons-->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="/image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="/image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="stylesheet" href="/css/theme.css">
   <link rel="manifest" href="site.webmanifest">
   <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
@@ -119,12 +119,12 @@
   </main>
   <jsp:include page="footer.jsp"/>
   <!-- Vendor scrits: js libraries and plugins-->
-  <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/simplebar/dist/simplebar.min.js"></script>
-  <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-  <script src="vendor/nouislider/dist/nouislider.min.js"></script>
-  <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+  <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/simplebar/dist/simplebar.min.js"></script>
+  <script src="/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="/vendor/nouislider/dist/nouislider.min.js"></script>
+  <script src="/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
   <!-- Main theme script-->
-  <script src="js/theme.min.js"></script>
+  <script src="/js/theme.min.js"></script>
 </body>
 </html>
