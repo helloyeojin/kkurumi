@@ -67,62 +67,12 @@
     </div>
 </div>
 <!-- Hero-->
-<section class="container pt-5 my-5 pb-lg-4">
+<section class="container pt-5 mt-5 pb-lg-4">
     <div class="row pt-0 pt-md-2 pt-lg-0">
-        <div class="col-xl-7 col-lg-6 col-md-5 order-md-2 mb-4 mb-lg-3"><img src="img/real-estate/hero-image.jpg" alt="Hero image"></div>
+        <div class="col-xl-7 col-lg-6 col-md-5 order-md-2 mb-4 mb-lg-3"><img src="img/real-estate/starfriends.png" alt="Hero image"></div>
         <div class="col-xl-5 col-lg-6 col-md-7 order-md-1 pt-xl-5 pe-lg-0 mb-3 text-md-start text-center">
-            <h1 class="display-4 mt-lg-5 mb-md-4 mb-3 pt-md-4 pb-lg-2">Easy way to find <br> a perfect property</h1>
-            <p class="position-relative lead me-lg-n5">We provide a complete service for the sale, purchase or rental of real estate. We have been operating more than 10 years. Search millions of apartments and houses on Finder.</p>
-        </div>
-        <!-- Search property form group-->
-        <div class="col-xl-8 col-lg-10 order-3 mt-lg-n5">
-            <form class="form-group d-block">
-                <div class="row g-0 ms-sm-n2">
-                    <div class="col-md-8 d-sm-flex align-items-center">
-                        <div class="dropdown w-sm-50 border-end-sm" data-bs-toggle="select">
-                            <button class="btn btn-link dropdown-toggle ps-2 ps-sm-3" type="button" data-bs-toggle="dropdown"><i class="fi-home me-2"></i><span class="dropdown-toggle-label">For rent</span></button>
-                            <input type="hidden">
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">For rent</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">For sale</span></a></li>
-                            </ul>
-                        </div>
-                        <hr class="d-sm-none my-2">
-                        <div class="dropdown w-sm-50 border-end-sm" data-bs-toggle="select">
-                            <button class="btn btn-link dropdown-toggle ps-2 ps-sm-3" type="button" data-bs-toggle="dropdown"><i class="fi-map-pin me-2"></i><span class="dropdown-toggle-label">Location</span></button>
-                            <input type="hidden">
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">New York</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">Chicago</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">Los Angeles</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">San Diego</span></a></li>
-                            </ul>
-                        </div>
-                        <hr class="d-sm-none my-2">
-                        <div class="dropdown w-sm-50 border-end-md" data-bs-toggle="select">
-                            <button class="btn btn-link dropdown-toggle ps-2 ps-sm-3" type="button" data-bs-toggle="dropdown"><i class="fi-list me-2"></i><span class="dropdown-toggle-label">Property type</span></button>
-                            <input type="hidden">
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">Houses</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">Apartments</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">Commercial</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">Daily rental</span></a></li>
-                                <li><a class="dropdown-item" href="#"><span class="dropdown-item-label">New buildings</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <hr class="d-md-none mt-2">
-                    <div class="col-md-4 d-sm-flex align-items-center pt-4 pt-md-0">
-                        <div class="d-flex align-items-center w-100 pt-2 pb-4 py-sm-0 ps-2 ps-sm-3"><i class="fi-cash fs-lg text-muted me-2"></i><span class="text-muted">Price</span>
-                            <div class="range-slider pe-0 pe-sm-3" data-start-min="450" data-min="0" data-max="1000" data-step="1">
-                                <div class="range-slider-ui"></div>
-                                <input class="form-control range-slider-value-min" type="hidden">
-                            </div>
-                        </div>
-                        <button class="btn btn-icon btn-primary px-3 w-100 w-sm-auto flex-shrink-0" type="button"><i class="fi-search"></i><span class="d-sm-none d-inline-block ms-2">Search</span></button>
-                    </div>
-                </div>
-            </form>
+            <h1 class="display-4 mt-lg-5 mb-md-4 mb-3 pt-md-4 pb-lg-2">KB 고객님이 선택한 <br> BEST 인기상품</h1>
+            <p class="position-relative lead me-lg-n5">가장 많이 사랑받은 인기상품만 모아모아 보여드려요</p>
         </div>
     </div>
 </section>
@@ -130,24 +80,24 @@
 <section class="container mb-5">
     <div class="row row-cols-lg-6 row-cols-sm-3 row-cols-2 g-3 g-xl-4">
         <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
-            <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-real-estate-house"></i></div>
-            <h3 class="icon-box-title fs-base mb-0">Houses</h3></a></div>
+            <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto pt-1"><img src="img/real-estate/coli.png" style="width:1.5em"></div>
+            <h3 class="icon-box-title fs-base mb-0">요구불</h3></a></div>
         <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-sale.html">
-            <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-apartment"></i></div>
-            <h3 class="icon-box-title fs-base mb-0">Apartments</h3></a></div>
+            <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="img/real-estate/bibi.png" style="width:1.4em"></div>
+            <h3 class="icon-box-title fs-base mb-0">정기예금</h3></a></div>
         <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
-            <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-shop"></i></div>
-            <h3 class="icon-box-title fs-base mb-0">Commercial</h3></a></div>
+            <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="img/real-estate/ageo.png" style="width:1.8em"></div>
+            <h3 class="icon-box-title fs-base mb-0">적금</h3></a></div>
         <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-sale.html">
-            <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-rent"></i></div>
-            <h3 class="icon-box-title fs-base mb-0">Daily rental</h3></a></div>
+            <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="img/real-estate/kiki.png" style="width:1.9em"></div>
+            <h3 class="icon-box-title fs-base mb-0">개인대출</h3></a></div>
         <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
-            <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-house-chosen"></i></div>
-            <h3 class="icon-box-title fs-base mb-0">New buildings</h3></a></div>
+            <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="img/real-estate/lamu.png" style="width:2em"></div>
+            <h3 class="icon-box-title fs-base mb-0">사업자대출</h3></a></div>
         <div class="col">
             <div class="dropdown h-100"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover text-center" href="#" data-bs-toggle="dropdown">
-                <div class="icon-box-media bg-faded-primary text-primary rounded-circle mb-3 mx-auto"><i class="fi-dots-horisontal"></i></div>
-                <h3 class="icon-box-title fs-base mb-0">More</h3></a>
+                <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto pt-2"><img src="img/real-estate/heart.png" style="width:1.4em"></div>
+                <h3 class="icon-box-title fs-base mb-0">KB카드</h3></a>
                 <div class="dropdown-menu dropdown-menu-end my-1"><a class="dropdown-item fw-bold" href="real-estate-catalog-sale.html"><i class="fi-single-bed fs-base opacity-60 me-2"></i>Room</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-computer fs-base opacity-60 me-2"></i>Office</a><a class="dropdown-item fw-bold" href="real-estate-catalog-sale.html"><i class="fi-real-estate-buy fs-base opacity-60 me-2"></i>Land</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-parking fs-base opacity-60 me-2"></i>Parking lot</a></div>
             </div>
         </div>
