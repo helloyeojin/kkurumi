@@ -79,26 +79,26 @@
 <!-- Property categories-->
 <section class="container mb-5">
     <div class="row row-cols-lg-6 row-cols-sm-3 row-cols-2 g-3 g-xl-4">
-        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
+        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K10100">
             <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto pt-1"><img src="img/real-estate/coli.png" style="width:1.5em"></div>
             <h3 class="icon-box-title fs-base mb-0">요구불</h3></a></div>
-        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-sale.html">
+        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K10200">
             <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="img/real-estate/bibi.png" style="width:1.4em"></div>
             <h3 class="icon-box-title fs-base mb-0">정기예금</h3></a></div>
-        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
+        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K10300">
             <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="img/real-estate/ageo.png" style="width:1.8em"></div>
             <h3 class="icon-box-title fs-base mb-0">적금</h3></a></div>
-        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-sale.html">
+        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K20100">
             <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="img/real-estate/kiki.png" style="width:1.9em"></div>
             <h3 class="icon-box-title fs-base mb-0">개인대출</h3></a></div>
-        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="real-estate-catalog-rent.html">
+        <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K20200">
             <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="img/real-estate/lamu.png" style="width:2em"></div>
             <h3 class="icon-box-title fs-base mb-0">사업자대출</h3></a></div>
         <div class="col">
             <div class="dropdown h-100"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover text-center" href="#" data-bs-toggle="dropdown">
                 <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto pt-2"><img src="img/real-estate/heart.png" style="width:1.4em"></div>
                 <h3 class="icon-box-title fs-base mb-0">KB카드</h3></a>
-                <div class="dropdown-menu dropdown-menu-end my-1"><a class="dropdown-item fw-bold" href="real-estate-catalog-sale.html"><i class="fi-single-bed fs-base opacity-60 me-2"></i>Room</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-computer fs-base opacity-60 me-2"></i>Office</a><a class="dropdown-item fw-bold" href="real-estate-catalog-sale.html"><i class="fi-real-estate-buy fs-base opacity-60 me-2"></i>Land</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-parking fs-base opacity-60 me-2"></i>Parking lot</a></div>
+                <div class="dropdown-menu dropdown-menu-end my-1"><a class="dropdown-item fw-bold" href="/K30100"><i class="fi-single-bed fs-base opacity-60 me-2"></i>Room</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-computer fs-base opacity-60 me-2"></i>Office</a><a class="dropdown-item fw-bold" href="real-estate-catalog-sale.html"><i class="fi-real-estate-buy fs-base opacity-60 me-2"></i>Land</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-parking fs-base opacity-60 me-2"></i>Parking lot</a></div>
             </div>
         </div>
     </div>
