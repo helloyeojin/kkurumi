@@ -6,7 +6,7 @@
 
 
     <insert id="insert" parameterType="History_item">
-        INSERT INTO history_item VALUES (#{item_id},#{user_pin})
+        INSERT INTO history_item VALUES (#{item_id},#{user_pin}, TO_CHAR(sysdate, 'YYYY-MM-DD HH24MISS'))
     </insert>
 
 
