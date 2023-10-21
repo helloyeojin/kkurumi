@@ -47,11 +47,6 @@ public class Depth1Controller {
     }
 
 
-    @RequestMapping("/E00001")
-    public String e00001(Model model) throws Exception {
-        model.addAttribute("center",dir+"E00001");
-        return "index";
-    }
 
 
 
