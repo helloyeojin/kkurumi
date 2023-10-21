@@ -187,24 +187,30 @@
 
            </i></a>
 
-
+             <form class="form-validate" id="loginForm">
           <div class="mb-4">
             <label class="form-label mb-2" for="signin-email">이름</label>
-            <input class="form-control" type="email" id="signin-email" placeholder="이름을 입력해주세요" required>
+            <input class="form-control"  id="signin-email" placeholder="이름을 입력해주세요" required>
           </div>
           <div class="mb-4">
             <div class="d-flex align-items-center justify-content-between mb-2">
-              <label class="form-label mb-0" for="signin-password">휴대폰번호</label><a class="fs-sm" href="#">Forgot password?</a>
+              <label class="form-label mb-0" for="signin-password">비밀번호</label><a class="fs-sm" href="#">비밀번호를 잊어버리셨나요?</a>
             </div>
             <div class="password-toggle">
-              <input class="form-control" type="password" id="signin-password" placeholder="휴대폰 번호를 입력해주세요" required>
+              <input class="form-control" type="password" id="signin-password" placeholder="비밀번호를 입력해주세요" required>
               <label class="password-toggle-btn" aria-label="Show/hide password">
                 <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
               </label>
             </div>
+
+              <div class="mb-4">
+                  <label class="form-label mb-2" for="signin-email">휴대폰번호</label>
+                  <input class="form-control"  id="signin-phonenumber" placeholder="휴대폰번호를 입력해주세요" required>
+              </div>
+
           </div>
           <button class="btn btn-warning btn-lg w-100" type="submit" style="color: black;">KB모바일인증서 로그인</button>
-
+             </form>
 
 
 
@@ -258,8 +264,29 @@
     });
   });
 </script>
-
-
+<script>
+let loginForm = {
+init:function(){
+$("#loginBtn").click(function(){
+loginForm.send();
+});
+},
+send:function(){
+$("#loginForm").attr({
+'action':'/loginImpl',
+'method':'post'
+});
+$("#loginForm").submit();
+}
+};
+$(function(){
+loginForm.init();
+let msg = "${msg}";
+if(msg != ""){
+alert(msg);
+}
+});
+</script>
 <!-- Main theme script-->
 <script src="js/theme.min.js"></script>
 
