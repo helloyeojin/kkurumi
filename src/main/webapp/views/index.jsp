@@ -132,10 +132,13 @@
   <jsp:include page="footer.jsp"/>
   <!-- Vendor scrits: js libraries and plugins-->
   <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/vendor/bootstrap/js/src/carousel.js"></script>
   <script src="/vendor/simplebar/dist/simplebar.min.js"></script>
   <script src="/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
   <script src="/vendor/nouislider/dist/nouislider.min.js"></script>
   <script src="/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+  <script src="/js/components/carousel.js"></script>
   <!-- Main theme script-->
   <script src="/js/theme.min.js"></script>
 </body>
