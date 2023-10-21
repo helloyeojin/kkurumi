@@ -114,22 +114,10 @@
       <div class="page-spinner"></div><span>Loading...</span>
     </div>
   </div>
-  <jsp:include page="header.jsp"/>
-  <!-- center start  -->
   <main class="page-wrapper">
-
-    <c:choose>
-      <c:when test="${center == null}">
-        <jsp:include page="/views/center.jsp"/>
-      </c:when>
-      <c:otherwise>
-        <jsp:include page="${center}.jsp"/>
-      </c:otherwise>
-    </c:choose>
-
+    <jsp:include page="header.jsp"/>
+    <jsp:include page="center.jsp"/>
   </main>
-  <!--  Main Center End -->
-  <!-- --------------------------------------------------------------------------------- -->
   <jsp:include page="footer.jsp"/>
   <!-- Vendor scrits: js libraries and plugins-->
   <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
