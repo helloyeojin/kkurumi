@@ -17,21 +17,34 @@ public class K10100Controller {
     History_itemService historyItemService;
 
     @RequestMapping("/K10101")
-    public String k10101(Model model, History_item history_item) throws Exception {
-        History_item historyItem = new History_item(10101, 0000000000);
-       historyItemService.register(historyItem);
+    public String k10101(Model model) throws Exception {
+
+        //history_item 테이블 적재
+        History_item history_item1 = new History_item(10101, 0);
+        historyItemService.register(history_item1);
+
         model.addAttribute("center",dir+"K10101");
         return "index";
     }
 
     @RequestMapping("/K10102")
     public String k10102(Model model) throws Exception {
+
+        //history_item 테이블 적재
+        History_item history_item1 = new History_item(10102, 0);
+        historyItemService.register(history_item1);
+
         model.addAttribute("center",dir+"K10102");
         return "index";
     }
 
     @RequestMapping("/K10103")
     public String k10103(Model model) throws Exception {
+
+        //history_item 테이블 적재
+        History_item history_item1 = new History_item(10103, 0);
+        historyItemService.register(history_item1);
+
         model.addAttribute("center",dir+"K10103");
         return "index";
     }
