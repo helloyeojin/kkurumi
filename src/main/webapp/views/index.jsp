@@ -18,6 +18,9 @@
   <link rel="icon" type="/image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="/image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="stylesheet" href="/css/theme.css">
+
+
+
   <link rel="manifest" href="site.webmanifest">
   <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
   <meta name="msapplication-TileColor" content="#766df4">
@@ -25,70 +28,70 @@
 
   <!-- Page loading styles-->
   <style>
-   .page-loading {
-     position: fixed;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     -webkit-transition: all .4s .2s ease-in-out;
-     transition: all .4s .2s ease-in-out;
-     background-color: #fff;
-     opacity: 0;
-     visibility: hidden;
-     z-index: 9999;
-   }
-  .page-loading.active {
-    opacity: 1;
-    visibility: visible;
-  }
-  .page-loading-inner {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    -webkit-transition: opacity .2s ease-in-out;
-    transition: opacity .2s ease-in-out;
-    opacity: 0;
-  }
-  .page-loading.active > .page-loading-inner {
-    opacity: 1;
-  }
-  .page-loading-inner > span {
-    display: block;
-    font-size: 1rem;
-    font-weight: normal;
-    color: #666276;;
-  }
-  .page-spinner {
-    display: inline-block;
-    width: 2.75rem;
-    height: 2.75rem;
-    margin-bottom: .75rem;
-    vertical-align: text-bottom;
-    border: .15em solid #bbb7c5;
-    border-right-color: transparent;
-    border-radius: 50%;
-    -webkit-animation: spinner .75s linear infinite;
-    animation: spinner .75s linear infinite;
-  }
-  @-webkit-keyframes spinner {
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
     }
-  }
-  @keyframes spinner {
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
     }
-  }
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+    .page-loading.active > .page-loading-inner {
+      opacity: 1;
+    }
+    .page-loading-inner > span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #666276;;
+    }
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #bbb7c5;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
   </style>
 
   <!-- Page loading scripts-->
@@ -107,24 +110,24 @@
 
 <!-- Body-->
 <body>
-  <!-- Page loading spinner-->
-  <div class="page-loading active">
-    <div class="page-loading-inner">
-      <div class="page-spinner"></div><span>Loading...</span>
-    </div>
+<!-- Page loading spinner-->
+<div class="page-loading active">
+  <div class="page-loading-inner">
+    <div class="page-spinner"></div><span>Loading...</span>
   </div>
-  <main class="page-wrapper">
-    <jsp:include page="header.jsp"/>
-    <jsp:include page="center.jsp"/>
-  </main>
-  <jsp:include page="footer.jsp"/>
-  <!-- Vendor scrits: js libraries and plugins-->
-  <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/vendor/simplebar/dist/simplebar.min.js"></script>
-  <script src="/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-  <script src="/vendor/nouislider/dist/nouislider.min.js"></script>
-  <script src="/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
-  <!-- Main theme script-->
-  <script src="/js/theme.min.js"></script>
+</div>
+<main class="page-wrapper">
+  <jsp:include page="header.jsp"/>
+  <jsp:include page="center.jsp"/>
+</main>
+<jsp:include page="footer.jsp"/>
+<!-- Vendor scrits: js libraries and plugins-->
+<script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/vendor/simplebar/dist/simplebar.min.js"></script>
+<script src="/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="/vendor/nouislider/dist/nouislider.min.js"></script>
+<script src="/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+<!-- Main theme script-->
+<script src="/js/theme.min.js"></script>
 </body>
 </html>
