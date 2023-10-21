@@ -118,7 +118,6 @@
                     <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
                         <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success mb-1">예금BEST</span></div>
                         <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                            <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
                         </div><img src="img/real-estate/catalog/01.png  " alt="Image">
                     </div>
                     <div class="card-body position-relative pb-3">
@@ -136,7 +135,6 @@
                     <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
                         <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-success mb-1">예금BEST</span></div>
                         <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                            <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
                         </div><img src="img/real-estate/catalog/02.png" alt="Image">
                     </div>
                     <div class="card-body position-relative pb-3">
@@ -155,7 +153,6 @@
                     <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
                         <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-info">대출BEST</span></div>
                         <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                            <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
                         </div><img src="img/real-estate/catalog/03.png" alt="Image">
                     </div>
                     <div class="card-body position-relative pb-3">
@@ -173,7 +170,6 @@
                     <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
                         <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-info">대출BEST</span></div>
                         <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                            <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
                         </div><img src="img/real-estate/catalog/04.png" alt="Image">
                     </div>
                     <div class="card-body position-relative pb-3">
@@ -192,7 +188,6 @@
                     <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
                         <div class="position-absolute start-0 top-0 pt-3 ps-3"><span class="d-table badge bg-warning mb-1">카드BEST</span><span class="d-table badge bg-danger mb-1">NEW</span></div>
                         <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                            <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
                         </div><img src="img/real-estate/catalog/05.png" alt="Image">
                     </div>
                     <div class="card-body position-relative pb-3">
@@ -211,33 +206,26 @@
 <section class="container pb-4 pt-1 mb-5">
     <div class="d-flex align-items-end align-items-lg-center justify-content-between mb-4 pb-md-2">
         <div class="d-flex w-100 align-items-center justify-content-between justify-content-lg-start">
-            <h2 class="h3 mb-0 me-md-4">Added today</h2>
+            <h2 class="h3 mb-0 me-md-4">이벤트</h2>
             <div class="dropdown d-md-none" data-bs-toggle="select">
                 <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"><span class="dropdown-toggle-label">Houses</span></button>
                 <input type="hidden">
                 <div class="dropdown-menu"><a class="dropdown-item" href="#"><span class="dropdown-item-label">Apartments</span></a><a class="dropdown-item" href="#"><span class="dropdown-item-label">Houses</span></a><a class="dropdown-item" href="#"><span class="dropdown-item-label">Rooms</span></a><a class="dropdown-item" href="#"><span class="dropdown-item-label">Commercial</span></a></div>
             </div>
-            <ul class="nav nav-tabs d-none d-md-flex ps-lg-2 mb-0">
-                <li class="nav-item"><a class="nav-link fs-sm mb-2 mb-md-0" href="#">Apartments</a></li>
-                <li class="nav-item"><a class="nav-link fs-sm active mb-2 mb-md-0" href="#">Houses</a></li>
-                <li class="nav-item"><a class="nav-link fs-sm mb-2 mb-md-0" href="#">Rooms</a></li>
-                <li class="nav-item"><a class="nav-link fs-sm mb-2 mb-md-0" href="#">Commercial</a></li>
-            </ul>
-        </div><a class="btn btn-link fw-normal d-none d-lg-block p-0" href="real-estate-catalog-rent.html">View all<i class="fi-arrow-long-right ms-2"></i></a>
+        </div><a class="btn btn-link fw-normal d-none d-lg-block p-0" href="/E00001">전체보기<i class="fi-arrow-long-right ms-2"></i></a>
     </div>
     <div class="row g-4">
         <div class="col-md-6">
-            <div class="card bg-size-cover bg-position-center border-0 overflow-hidden h-100" style="background-image: url(img/real-estate/recent/01.jpg);"><span class="img-gradient-overlay"></span>
+            <div class="card bg-size-cover bg-position-center border-0 overflow-hidden h-100" style="background-image: url(img/real-estate/recent/01.png);"><span class="img-gradient-overlay"></span>
                 <div class="card-body content-overlay pb-0">
-                    <div class="d-flex"><span class="badge bg-success fs-sm me-2">Verified</span><span class="badge bg-info fs-sm">New</span></div>
+                    <div class="d-flex"></div>
                 </div>
                 <div class="card-footer content-overlay border-0 pt-0 pb-4">
                     <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
-                        <div class="fs-sm text-uppercase pt-2 mb-1">For rental</div>
-                        <h3 class="h5 text-light mb-1">Luxury Rental Villa</h3>
-                        <div class="fs-sm opacity-70"><i class="fi-map-pin me-1"></i>118-11 Sutphin Blvd Jamaica, NY 11434</div></a>
-                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">From $3,850</a>
-                            <button class="btn btn-primary btn-icon border-end-0 border-top-0 border-bottom-0 border-light fs-sm" type="button"><i class="fi-heart"></i></button>
+                        <div class="fs-sm text-uppercase pt-2 mb-1">카드</div>
+                        <h3 class="h5 text-light mb-1">개인사업자 카드 결제대금 정산 이벤트</h3>
+                        <div class="fs-sm opacity-70"><i class="fi-calendar me-1"></i>2023년 12월 15일까지</div></a>
+                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">참여하기</a>
                         </div>
                     </div>
                 </div>
@@ -245,12 +233,12 @@
         </div>
         <div class="col-md-6">
             <div class="card bg-size-cover bg-position-center border-0 overflow-hidden mb-4" style="background-image: url(img/real-estate/recent/02.jpg);"><span class="img-gradient-overlay"></span>
-                <div class="card-body content-overlay pb-0"><span class="badge bg-info fs-sm">New</span></div>
+                <div class="card-body content-overlay pb-0"></div>
                 <div class="card-footer content-overlay border-0 pt-0 pb-4">
                     <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
-                        <div class="fs-sm text-uppercase pt-2 mb-1">For sale</div>
-                        <h3 class="h5 text-light mb-1">Duplex with Garage</h3>
-                        <div class="fs-sm opacity-70"><i class="fi-map-pin me-1"></i>21 Pulaski Road Kings Park, NY 11754</div></a>
+                        <div class="fs-sm text-uppercase pt-2 mb-1">퇴직연금</div>
+                        <h3 class="h5 text-light mb-1">연말정산 시즌이 돌아왔다! 절세끝판왕, KB IRP로 무빙!</h3>
+                        <div class="fs-sm opacity-70"><i class="fi-map-pin me-1"></i>2023년 12월 29일까지</div></a>
                         <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">$200,410</a>
                             <button class="btn btn-primary btn-icon border-end-0 border-top-0 border-bottom-0 border-light fs-sm" type="button"><i class="fi-heart"></i></button>
                         </div>
