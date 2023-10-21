@@ -18,6 +18,7 @@
   <link rel="icon" type="/image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="/image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/vendor/tiny-slider/dist/tiny-slider.css">
   <link rel="manifest" href="site.webmanifest">
   <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
   <meta name="msapplication-TileColor" content="#766df4">
@@ -115,15 +116,31 @@
   </div>
   <main class="page-wrapper">
     <jsp:include page="header.jsp"/>
-    <jsp:include page="center.jsp"/>
-  </main>
+      <!-- center start  -->
+      <main class="page-wrapper">
+
+        <c:choose>
+          <c:when test="${center == null}">
+            <jsp:include page="/views/center.jsp"/>
+          </c:when>
+          <c:otherwise>
+            <jsp:include page="${center}.jsp"/>
+          </c:otherwise>
+        </c:choose>
+
+      </main>
+      <!--  Main Center End -->
+      <!-- --------------------------------------------------------------------------------- -->
   <jsp:include page="footer.jsp"/>
   <!-- Vendor scrits: js libraries and plugins-->
   <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/vendor/bootstrap/js/src/carousel.js"></script>
   <script src="/vendor/simplebar/dist/simplebar.min.js"></script>
   <script src="/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
   <script src="/vendor/nouislider/dist/nouislider.min.js"></script>
   <script src="/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+  <script src="/js/components/carousel.js"></script>
   <!-- Main theme script-->
   <script src="/js/theme.min.js"></script>
 </body>
