@@ -19,6 +19,8 @@
   <link rel="icon" type="/image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="stylesheet" href="/css/theme.css">
   <link rel="stylesheet" href="/vendor/tiny-slider/dist/tiny-slider.css">
+  <link rel="stylesheet" href="/vendor/nouislider/dist/nouislider.css">
+  <link rel="stylesheet" href="/vendor/simplebar/dist/simplebar.css">
   <link rel="manifest" href="site.webmanifest">
   <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
   <meta name="msapplication-TileColor" content="#766df4">
@@ -143,5 +145,10 @@
   <script src="/js/components/carousel.js"></script>
   <!-- Main theme script-->
   <script src="/js/theme.min.js"></script>
+  <!-- Highchart script-->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </body>
 </html>
