@@ -3,7 +3,7 @@
 
 <script>
     $(document).ready(function() {
-
+        fn_mainCharts();
         fn_chartStart();
         fn_productChartsStart();
 
@@ -108,6 +108,7 @@
             tags();
             $('#yogubul').hide();
             $('#termDeposit').hide();
+            $('#mainCharts').hide();
             $('#Charts').show();
 
             upcount('.total', getRandomNum(1000,3000,0));
@@ -254,13 +255,105 @@
                 }]
             });
 
+            Highcharts.chart('container3', {
+                chart: {
+                height: 250 // 높이 조정
+                },
+                title: {
+                    text: '시간대 별 방문자수 추이',
+                    align: 'left'
+                },
+
+                subtitle: {
+                    text: '전영업일 기준',
+                    align: 'left'
+                },
+
+                yAxis: {
+                    title: {
+                        text: '방문자 수'
+                    }
+                },
+
+                xAxis: {
+                    accessibility: {
+                        rangeDescription: 'Range: 6:00 to 23:00'
+                    }
+                },
+
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle'
+                },
+
+                plotOptions: {
+                    series: {
+                        label: {
+                            connectorAllowed: false
+                        },
+                        pointStart: 6
+                    }
+                },
+
+                series: [{
+                    name: '요구불',
+                    data: [4, 4, 65, 81, 112, 142,
+                        171, 165, 155, 161, 154, 154,
+                        154, 15, 15, 1, 5, 6]
+                }, {
+                    name: '적금',
+                    data: [2, 3, 2, 29, 65, 180,
+                        250, 368, 337, 342, 310, 280,
+                        154, 70, 30, 10, 25, 16]
+                }, {
+                    name: '정기예금',
+                    data: [null, null, 2, 29, 35, 150,
+                        223, 353, 312, 256, 374, 223,
+                        143, 43, 12, 2, 2, 1]
+                }, {
+                    name: '개인대출',
+                    data: [1, null, 2, 2, 6, 10,
+                        25, 36, 37, 34, 31, 28,
+                        15, 7, 3, 1, 2, 1]
+                }, {
+                    name: 'KB카드',
+                    data: [null, null, null, null, 5, 1,
+                        5, 3, 7, 12, 10, 18,
+                        15, 7, 3, null, null, 1]
+                }],
+
+                responsive: {
+                    rules: [{
+                        condition: {
+                            maxWidth: 500
+                        },
+                        chartOptions: {
+                            legend: {
+                                layout: 'horizontal',
+                                align: 'center',
+                                verticalAlign: 'bottom'
+                            }
+                        }
+                    }]
+                }
+
+            });
+
+
+        })
+        //선택리셋 버튼 클릭시 작동함수
+        $('#resetBtn').click(() => {
+            untags();
         })
     };
+
     function fn_productChartsStart() {
         //요구불 클릭시
         $('#yogubulBtn').click(() => {
             $('#Charts').hide();
             $('#termDeposit').hide();
+            $('#mainCharts').hide();
             $('#yogubul').show();
 
             Highcharts.chart('container_yo1', {
@@ -1112,6 +1205,7 @@
         $('#termDepositBtn').click(() => {
             $('#Charts').hide();
             $('#yogubul').hide();
+            $('#mainCharts').hide();
             $('#termDeposit').show();
 
             Highcharts.chart('container_up1', {
@@ -1681,6 +1775,135 @@
         })
     };
 
+    function fn_mainCharts() {
+        const onChartLoad = function () {
+            const chart = this,
+                series = chart.series[0];
+
+            setInterval(function () {
+                const x = (new Date()).getTime(), // current time
+                    y = Math.floor(Math.random() * (1000 - 500 + 1)) + 500; // Generate random number between 500 and 1000
+
+                series.addPoint([x, y], true, true);
+            }, 1000);
+        };
+
+// Create the initial data
+        const data = (function () {
+            const data = [];
+            const time = new Date().getTime();
+
+            for (let i = -19; i <= 0; i += 1) {
+                data.push({
+                    x: time + i * 1000,
+                    y: Math.floor(Math.random() * (1000 - 500 + 1)) + 500 // Generate random number between 500 and 1000
+                });
+            }
+            return data;
+        }());
+
+// Plugin to add a pulsating marker on add point
+        Highcharts.addEvent(Highcharts.Series, 'addPoint', e => {
+            const point = e.point,
+                series = e.target;
+
+            if (!series.pulse) {
+                series.pulse = series.chart.renderer.circle()
+                    .add(series.markerGroup);
+            }
+
+            setTimeout(() => {
+                series.pulse
+                    .attr({
+                        x: series.xAxis.toPixels(point.x, true),
+                        y: series.yAxis.toPixels(point.y, true),
+                        r: series.options.marker.radius,
+                        opacity: 1,
+                        fill: series.color
+                    })
+                    .animate({
+                        r: 20,
+                        opacity: 0
+                    }, {
+                        duration: 1000
+                    });
+            }, 1);
+        });
+
+        Highcharts.chart('mainContainer', {
+            chart: {
+                type: 'spline',
+                events: {
+                    load: onChartLoad
+                },
+                height:200
+            },
+
+            time: {
+                useUTC: false
+            },
+
+            title: {
+                text: '실시간 방문자 통계'
+            },
+
+            accessibility: {
+                announceNewData: {
+                    enabled: true,
+                    minAnnounceInterval: 15000,
+                    announcementFormatter: function (allSeries, newSeries, newPoint) {
+                        if (newPoint) {
+                            return 'New point added. Value: ' + newPoint.y;
+                        }
+                        return false;
+                    }
+                }
+            },
+
+            xAxis: {
+                type: 'datetime',
+                tickPixelInterval: 150,
+                maxPadding: 0.1
+            },
+
+            yAxis: {
+                title: {
+                    text: 'Value'
+                },
+                plotLines: [
+                    {
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }
+                ]
+            },
+
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br/>',
+                pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+            },
+
+            legend: {
+                enabled: false
+            },
+
+            exporting: {
+                enabled: false
+            },
+
+            series: [
+                {
+                    name: '방문자수',
+                    lineWidth: 2,
+                    color: Highcharts.getOptions().colors[2],
+                    data
+                }
+            ]
+        });
+
+    };
+
     //숫자세기 함수
     function upcount(location, max) {
         let $counter1 = document.querySelector(location);
@@ -1723,7 +1946,7 @@
                 now += step;
             }, 10);
         }
-    }
+    };
     //체크박스 태그들
     function tags() {
         $("#account-nav ul").empty();
@@ -1870,12 +2093,21 @@
                 $("#account-nav ul").append(newLi);
             }
         }
-    }
+    };
+    //체크박스 해제 함수
+    function untags() {
+        $("input[type='checkbox']").each(function() {
+            // 체크 상태 확인 후 unchecked로 변경
+            if ($(this).is(":checked")) {
+                $(this).prop("checked", false);
+            }
+        });
+    };
     //랜덤숫자 만들기 함수
     function getRandomNum(min, max, decimalPlaces) {
         const randomNumber = Math.random() * (max - min) + min;
         return randomNumber.toFixed(decimalPlaces);
-    }
+    };
 
 
 </script>
@@ -1939,8 +2171,9 @@
                         </div>
                         <!-- Filters-->
                         <div class="tab-pane fade" id="filters" role="tabpanel">
-                            <div class="py-4" style="margin-left: 25%; margin-top: -5%;">
+                            <div class="py-4" style="margin-top: -5%;">
                                 <button class="btn btn-outline-primary rounded-pill" type="button" id="chartsBtn"><i class="fi-rotate-right me-2"></i>분석 시작하기</button>
+                                <button class="btn btn-outline-success rounded-pill" type="button" id="resetBtn" style="margin-left: 2%;"><i class="fi-refresh me-2"></i>리셋</button>
                             </div>
                             <div class="pb-4 mb-2">
                                 <h3 class="h6">연령</h3>
@@ -2101,7 +2334,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -2109,6 +2341,17 @@
         </aside>
 
         <div id="mainArticle" class="col-lg-8 col-xl-9 position-relative overflow-hidden pb-5 pt-4 px-3 px-xl-4 px-xxl-5">
+        <%--분석 메인화면--%>
+            <div id="mainCharts">
+                <h3 class="h2 mb-2"> KB 꾸러미 통계센터</h3>
+                <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
+                    <div class="card-body">
+                        <figure class="highcharts-figure" style="">
+                            <div id="mainContainer"></div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
         <%--고객PIN입력 통계--%>
             <div id="customerPIN" style="display:none;">
 
@@ -2393,6 +2636,9 @@
 
                 </div>
                 <%--                차트--%>
+                <figure class="highcharts-figure" style="margin-top: 5%;">
+                    <div id="container3"></div>
+                </figure>
                 <figure class="highcharts-figure" style="margin-top: 5%;">
                     <div id="container1"></div>
                 </figure>
