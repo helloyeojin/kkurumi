@@ -5,8 +5,8 @@
     <!-- Breadcrumb-->
     <nav class="mb-3 pt-md-3" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="real-estate-home-v1.html">금융상품</a></li>
-            <li class="breadcrumb-item"><a href="real-estate-catalog-rent.html">요구불</a></li>
+            <li class="breadcrumb-item"><a href="/">금융상품</a></li>
+            <li class="breadcrumb-item"><a href="/K10100">요구불</a></li>
             <li class="breadcrumb-item active" aria-current="page">KB국민ONE통장</li>
         </ol>
     </nav>
@@ -15,8 +15,8 @@
             <div class="d-flex flex-column">
                 <!-- Carousel with slides count-->
                 <div class="order-lg-1 order-2">
-                    <div class="tns-carousel-wrapper">
-                        <div class="tns-carousel-inner" >
+                    <div>
+                        <div>
                             <div><img class="rounded-3" src="img/real-estate/sf1.png" alt="Image"></div>
                         </div>
                     </div>
@@ -24,11 +24,15 @@
                 <!-- Page title + Features-->
                 <div class="order-lg-2 order-1">
                     <h1 class="h2 mb-2">KB국민ONE통장</h1>
-                    <p class="mb-2 pb-1 fs-lg">모두가 ONE하는 다양한 수수료 혜택</p>
-                    <ul class="d-flex mb-4 pb-lg-2 list-unstyled">
+                    <p class="mb-4 pb-1 fs-lg">모두가 ONE하는 다양한 수수료 혜택</p>
+                    <ul class="d-flex pb-lg-2 list-unstyled" style="margin-bottom: 0">
                         <li class="me-3 pe-3 border-end"><b class="me-1">연 0.1%</b></li>
-                        <li class="me-3 pe-3 border-end"><b class="me-1">※ 이자는 매년 6월, 12월의 둘째 금요일에 결산하여 다음날 원금에 더한다.</b></li>
-                   </ul>
+                        <li class="me-3 pe-3 border-end">※ 이자는 매년 6월, 12월의 둘째 금요일에 결산하여 다음날 원금에 더한다.</li>
+                    </ul>
+                    <ul class="d-flex mb-4 pb-lg-2 list-unstyled">
+                        <li class="me-3 pe-3 border-end"><b class="me-1">비과세종합저축으로 가입 가능</b></li>
+                        <li class="me-3 pe-3 border-end">※ 관련 세법이 개정될 경우 세율이 변경되거나 세금이 부과될 수 있음</li>
+                    </ul>
                 </div>
             </div>
             <!-- Overview-->
@@ -52,20 +56,22 @@
                 <div class="card-img-top bg-position-center-x" style="background-image: url(img/real-estate/agents/coli2.png);"></div>
                 <blockquote class="blockquote card-body p-4">
                     <ul class="list-unstyled mt-n2 mb-0" style="font-size: 0.8rem">
-                        <li class="mt-2 mb-0">이 금융상품을 가입하시기 전에 상품설명서 및 약관을 읽어보시기 바랍니다.</li>
-                        <li class="mt-2 mb-0">금융소비자는 해당 상품 또는 서비스에 대하여 설명받을 권리가 있습니다.</li>
-                        <li class="mt-2 mb-0">계좌에 압류, 가압류 등이 등록 될 경우 원금 및 이자지급이 제한 될 수 있습니다.</li>
-                        <li class="mt-2 mb-0">이 통장은 1인 1계좌만 가입이 가능하며, 공동명의로 가입할 수 없습니다.</li>
-                        <li class="mt-2 mb-0">이 상품은 KB국민은행 수신상품부(P)에서 관리하는 상품입니다. 기타 자세한 내용은 창구직원 또는 고객센터(1588-9999)로 문의하시거나, KB국민은행 홈페이지(www.kbstar.com) 를 참조하시기 바랍니다.</li>
+                        <li>⊙ 이 금융상품을 가입하시기 전에 상품설명서 및 약관을 읽어보시기 바랍니다.</li>
+                        <li>⊙ 금융소비자는 해당 상품 또는 서비스에 대하여 설명받을 권리가 있습니다.</li>
+                        <li>⊙ 계좌에 압류, 가압류 등이 등록 될 경우 원금 및 이자지급이 제한 될 수 있습니다.</li>
+                        <li>⊙ 이 통장은 1인 1계좌만 가입이 가능하며, 공동명의로 가입할 수 없습니다.</li>
+                        <li>⊙ 이 상품은 KB국민은행 수신상품부(P)에서 관리하는 상품입니다. 기타 자세한 내용은 창구직원 또는 고객센터(1588-9999)로 문의하시거나, KB국민은행 홈페이지(www.kbstar.com) 를 참조하시기 바랍니다.</li>
                     </ul>
                     <footer class="d-flex justify-content-between">
-                        <div class="pe-3">
-                            <h6 class="mb-0">Kristin Watson</h6>
-                            <div class="text-muted fw-normal fs-sm mb-3">Imperial Property Group Agent</div><a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#"><i class="fi-facebook"></i></a><a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#"><i class="fi-twitter"></i></a><a class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#"><i class="fi-instagram"></i></a>
+                        <div class="pe-3" style="margin-top: 1.0rem">
+                            <h6 class="mb-0">예금자보호여부</h6>
+                            <div class="text-muted fw-normal fs-sm mb-3">이 예금은 예금자보호법에 따라 예금보험공사가 보호하되, 보호 한도는 본 은행에 있는 귀하의 모든 예금보호 대상 금융상품의 원금과 소정의 이자를 합하여 1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다</div>
+                            <ul class="list-unstyled mt-n2 mb-0" style="font-size: 0.8rem">
+                                <li>● 준법감시인 심의필 제2023-0880-12호(2023.03.27)</li>
+                                <li>● 본 공시내용의 유효기간 : 2023.03.27~2025.01.25까지</li>
+                            </ul>
                         </div>
-                        <div><span class="star-rating"><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i></span>
-                            <div class="text-muted fs-sm mt-1">24 reviews</div>
-                        </div>
+
                     </footer>
                 </blockquote>
             </div>
@@ -74,7 +80,7 @@
         <aside class="col-lg-5">
             <div class="ps-lg-5">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <div><span class="badge bg-success me-2 mb-2">Verified</span><span class="badge bg-info me-2 mb-2">New</span></div>
+                    <div><span class="badge bg-success me-2 mb-2">요구불 BEST</span></div>
                     <div class="text-nowrap">
                         <button class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2" type="button" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="fi-heart"></i></button>
                         <div class="dropdown d-inline-block" data-bs-toggle="tooltip" title="Share">
@@ -90,62 +96,45 @@
                 <h3 class="h5 mb-2">금리</h3>
                 <h2 class="h3 mb-4 pb-2">0.1%<span class="d-inline-block ms-1 fs-base fw-normal text-body">/ 연</span></h2>
                 <!-- Property details-->
+                <a class="btn btn-lg btn-primary w-100 mb-3" href="https://obank.kbstar.com/quics?page=C016613&cc=b061496:b061645&%EB%B8%8C%EB%9E%9C%EB%93%9C%EC%83%81%ED%92%88%EC%BD%94%EB%93%9C=DP01000802&QSL=F&prcode=DP01000802">가입하기</a>
                 <div class="card border-0 bg-secondary mb-4">
                     <div class="card-body">
-                        <h5 class="mb-0 pb-3">Property Details</h5>
+                        <h5 class="mb-0 pb-3"><i class="fi-star mt-n1 me-2 fs-lg align-middle"></i>수수료 면제의 넘버 ONE</h5>
                         <ul class="list-unstyled mt-n2 mb-0">
-                            <li class="mt-2 mb-0"><b>Type: </b>apartment</li>
-                            <li class="mt-2 mb-0"><b>Apartment area: </b>56 sq.m</li>
-                            <li class="mt-2 mb-0"><b>Built: </b>2015</li>
-                            <li class="mt-2 mb-0"><b>Bedrooms: </b>4</li>
-                            <li class="mt-2 mb-0"><b>Bathrooms: </b>2</li>
-                            <li class="mt-2 mb-0"><b>Parking places: </b>2</li>
-                            <li class="mt-2 mb-0"><b>Pets allowed: </b>cats only</li>
+                            <li class="mt-2 mb-0"><b>기본실적만 있어도 수수료 면제</b></li>
+                            <li class="mt-2 mb-0">거기에 추가실적이 있다면 더욱더 다양한</li>
+                            <li class="mt-2 mb-0">수수료 면제 혜택을 받을 수 있어요.</li>
                         </ul>
-                    </div>
-                </div><a class="btn btn-lg btn-primary w-100 mb-3" href="#">Book a viewing</a><a class="d-inline-block mb-4 pb-2 text-decoration-none" href="#"><i class="fi-help me-2 mt-n1 align-middle"></i>Frequently asked questions</a>
-                <!-- Amenities-->
-                <div class="card border-0 bg-secondary mb-4">
-                    <div class="card-body">
-                        <h5>Amenities</h5>
-                        <ul class="list-unstyled row row-cols-md-2 row-cols-1 gy-2 mb-0 text-nowrap">
-                            <li class="col"><i class="fi-wifi mt-n1 me-2 fs-lg align-middle"></i>WiFi</li>
-                            <li class="col"><i class="fi-thermometer mt-n1 me-2 fs-lg align-middle"></i>Heating</li>
-                            <li class="col"><i class="fi-dish mt-n1 me-2 fs-lg align-middle"></i>Dishwasher</li>
-                            <li class="col"><i class="fi-parking mt-n1 me-2 fs-lg align-middle"></i>Parking place</li>
-                            <li class="col"><i class="fi-snowflake mt-n1 me-2 fs-lg align-middle"></i>Air conditioning</li>
-                            <li class="col"><i class="fi-iron mt-n1 me-2 fs-lg align-middle"></i>Iron</li>
-                            <li class="col"><i class="fi-tv mt-n1 me-2 fs-lg align-middle"></i>TV</li>
-                            <li class="col"><i class="fi-laundry mt-n1 me-2 fs-lg align-middle"></i>Laundry</li>
-                            <li class="col"><i class="fi-cctv mt-n1 me-2 fs-lg align-middle"></i>Security cameras</li>
-                            <li class="col"><i class="fi-no-smoke mt-n1 me-2 fs-lg align-middle"></i>No smocking</li>
-                        </ul>
-                        <div class="collapse" id="seeMoreAmenities">
-                            <ul class="list-unstyled row row-cols-md-2 row-cols-1 gy-2 pt-2 mb-0 text-nowrap">
-                                <li class="col"><i class="fi-double-bed mt-n1 me-2 fs-lg align-middle"></i>Double bed</li>
-                                <li class="col"><i class="fi-bed mt-n1 me-2 fs-lg align-middle"></i>Single bed</li>
-                            </ul>
-                        </div><a class="collapse-label collapsed d-inline-block mt-3" href="#seeMoreAmenities" data-bs-toggle="collapse" data-bs-label-collapsed="Show more" data-bs-label-expanded="Show less" role="button" aria-expanded="false" aria-controls="seeMoreAmenities"></a>
                     </div>
                 </div>
-                <!-- Not included in rent-->
                 <div class="card border-0 bg-secondary mb-4">
                     <div class="card-body">
-                        <h5>Not included in rent</h5>
-                        <ul class="list-unstyled row row-cols-md-2 row-cols-1 gy-2 mb-0 text-nowrap">
-                            <li class="col"><i class="fi-swimming-pool mt-n1 me-2 fs-lg align-middle"></i>Swimming pool</li>
-                            <li class="col"><i class="fi-cafe mt-n1 me-2 fs-lg align-middle"></i>Restaurant</li>
-                            <li class="col"><i class="fi-spa mt-n1 me-2 fs-lg align-middle"></i>Spa lounge</li>
-                            <li class="col"><i class="fi-cocktail mt-n1 me-2 fs-lg align-middle"></i>Bar</li>
+                        <h5 class="mb-0 pb-3"><i class="fi-star mt-n1 me-2 fs-lg align-middle"></i>제한 없는 ATM 출금</h5>
+                        <ul class="list-unstyled mt-n2 mb-0">
+                            <li class="mt-2 mb-0">KB생활서비스Ⅱ라면 KB국민은행 뿐만 아니라</li>
+                            <li class="mt-2 mb-0">다른 은행 ATM도 출금 수수료를 면제해드려요.</li>
+                            <li class="mt-2 mb-0">더 이상 KB국민은행 ATM를 찾아 헤맬 필요가 없어요.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card border-0 bg-secondary mb-4">
+                    <div class="card-body">
+                        <h5 class="mb-0 pb-3"><i class="fi-star mt-n1 me-2 fs-lg align-middle"></i>누구나 쉽게 가입 완료</h5>
+                        <ul class="list-unstyled mt-n2 mb-0">
+                            <li class="mt-2 mb-0">대한민국 국민이라면</li>
+                            <li class="mt-2 mb-0">누구나 제한없이 가입이 가능해요.</li>
                         </ul>
                     </div>
                 </div>
                 <!-- Post meta-->
-                <ul class="d-flex mb-4 list-unstyled fs-sm">
-                    <li class="me-3 pe-3 border-end">Published: <b>Dec 9, 2020</b></li>
-                    <li class="me-3 pe-3 border-end">Ad number: <b>681013232</b></li>
-                    <li class="me-3 pe-3">Views: <b>48</b></li>
+                <div class="d-flex">
+                <img src="img/real-estate/coli3.png" style="width: 132px; height: 121px; margin-right: 10px;">
+                <ul class="list-unstyled fs-sm" style="align-content: center">
+                    <li style="font-size: larger; color: #FD5631;"><b>상담이 어렵게 느껴지시나요?</b></li>
+                    <li class="mb-3">전문 상담직원이 도와드릴게요</li>
+                    <li class="me-3"><b>전화 상담 가능 시간 </b>09:00~18:00(은행휴무일 제외)</li>
                 </ul>
+                </div>
             </div>
         </aside>
     </div>
