@@ -1,12 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<style>
+    .datepicker {
+        width:auto;
+    }
+
+</style>
+<link rel="stylesheet" href="/css/datepick.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <script>
     $(document).ready(function() {
         fn_mainCharts();
         fn_chartStart();
         fn_productChartsStart();
-
     });
 
     function fn_chartStart() {
@@ -1776,6 +1784,32 @@
     };
 
     function fn_mainCharts() {
+
+        $('.datepicker').datepicker({
+            dateFormat: 'yy-mm-dd',
+            prevText: '<',
+            nextText: '>',
+            monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            showMonthAfterYear: true,
+            yearSuffix: '년'
+        });
+
+        $('.datepicker').val(getTodayDate());
+
+        $('#inquryBtn').click( () => {
+            upcount('.totalClk', getRandomNum(1000,3000,0));
+            upcount('.Clk101', getRandomNum(500,1000,0));
+            upcount('.Clk102', getRandomNum(300,500,0));
+            upcount('.Clk103', getRandomNum(600,900,0));
+            upcount('.Clk201', getRandomNum(100,300,0));
+            upcount('.Clk202', getRandomNum(50,80,0));
+            upcount('.Clk301', getRandomNum(50,90,0));
+        })
+
         const onChartLoad = function () {
             const chart = this,
                 series = chart.series[0];
@@ -1901,6 +1935,8 @@
                 }
             ]
         });
+
+
 
     };
 
@@ -2108,6 +2144,16 @@
         const randomNumber = Math.random() * (max - min) + min;
         return randomNumber.toFixed(decimalPlaces);
     };
+    //오늘날짜 가져오는 함수
+    function getTodayDate() {
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = ('0' + (today.getMonth() + 1)).slice(-2);
+        var day = ('0' + today.getDate()).slice(-2);
+        var dateString = year + '-' + month  + '-' + day;
+
+        return dateString;
+    }
 
 
 </script>
@@ -2349,6 +2395,106 @@
                         <figure class="highcharts-figure" style="">
                             <div id="mainContainer"></div>
                         </figure>
+                    </div>
+                </div>
+                <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start mb-3 pb-2 border-bottom">
+                            <div class="ps-2 ms-1">
+                                <h3 class="h4 mb-2">일자별 클릭수</h3>
+                                <div class="col-md-4 d-flex align-items-center">
+                                    <form class="form-group" style="margin-bottom:1%;">
+                                        <label for="datepicker" class="me-1">
+                                            <i class="fi-calendar mt-n1 text-warning align-middle opacity-70" style="font-size:2em;"></i>
+                                        </label>
+                                        <input class="datepicker form-control" autocomplete='off' id="datepicker" type="text" name="date1">
+                                        <button type="button" class="btn btn-translucent-primary" id="inquryBtn">조회</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!--사이트맵 표출-->
+                        <div class="col-sm-6 col-md-4 offset-md-4">
+                            <div class="card shadow-sm" style="background-color: #EFF8FB">
+                                <div class="card-body">
+                                    <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>메인화면</strong></h2>
+                                    <div class="pb-1 ps-1 text-center border-bottom">(K00000)</div>
+                                    <div class="d-flex align-items-end justify-content-center">
+                                        <div class="h1 mb-0 totalClk">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                    <div class="card-body">
+                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>요구불</strong></h2>
+                                        <div class="pb-1 ps-1 text-center border-bottom">(K10100)</div>
+                                        <div class="d-flex align-items-end justify-content-center">
+                                            <div class="h1 mb-0 Clk101">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                    <div class="card-body">
+                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>정기예금</strong></h2>
+                                        <div class="pb-1 ps-1 text-center border-bottom">(K10200)</div>
+                                        <div class="d-flex align-items-end justify-content-center">
+                                            <div class="h1 mb-0 Clk102">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                    <div class="card-body">
+                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>적금</strong></h2>
+                                        <div class="pb-1 ps-1 text-center border-bottom">(K10300)</div>
+                                        <div class="d-flex align-items-end justify-content-center">
+                                            <div class="h1 mb-0 Clk103">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                    <div class="card-body">
+                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>개인대출</strong></h2>
+                                        <div class="pb-1 ps-1 text-center border-bottom">(K20100)</div>
+                                        <div class="d-flex align-items-end justify-content-center">
+                                            <div class="h1 mb-0 Clk201">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                    <div class="card-body">
+                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>사업자대출</strong></h2>
+                                        <div class="pb-1 ps-1 text-center border-bottom">(K20200)</div>
+                                        <div class="d-flex align-items-end justify-content-center">
+                                            <div class="h1 mb-0 Clk202">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2" >
+                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                    <div class="card-body">
+                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>KB카드</strong></h2>
+                                        <div class="pb-1 ps-1 text-center border-bottom">(K30100)</div>
+                                        <div class="d-flex align-items-end justify-content-center">
+                                            <div class="h1 mb-0 Clk301">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
