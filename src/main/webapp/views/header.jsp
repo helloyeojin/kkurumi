@@ -124,6 +124,10 @@
         </li>
         <li class="nav-item dropdown"><a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">고객정보</a>
         </li>
+        <c:if test="${logincust.custid == 'admin'}">
+        <li class="nav-item dropdown"><a class="nav-link" href="/B00002" role="button" data-bs-toggle="dropdown" aria-expanded="false">통계센터</a>
+        </li>
+        </c:if>
         <li class="nav-item d-lg-none"><a class="nav-link" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>로그인</a></li>
       </ul>
     </div>
