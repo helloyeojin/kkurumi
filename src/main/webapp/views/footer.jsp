@@ -10,7 +10,7 @@
         <div class="d-flex flex-sm-row flex-column justify-content-between mx-n2">
           <div class="mb-sm-0 mb-4 px-2"><a class="d-inline-block mb-4" href="real-estate-home-v1.html"><img src="/img/logo/logo_bank_long.png" width="116" alt="logo"></a>
             <ul class="nav flex-column mb-sm-4 mb-2">
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="mailto:example@email.com"><i class="fi-mail mt-n1 me-2 align-middle opacity-70"></i>챗봇/채팅/이메일상담(24시간)</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="mailto:kbkookminbank@email.com"><i class="fi-mail mt-n1 me-2 align-middle opacity-70"></i>챗봇/채팅/이메일상담(24시간)</a></li>
               <li class="nav-item"><a class="nav-link p-0 fw-normal" href="tel:1588-9999"><i class="fi-device-mobile mt-n1 me-2 align-middle opacity-70"></i>대표전화 1588-9999</a></li>
             </ul>
             <div class="pt-2">
@@ -26,21 +26,21 @@
         <div class="d-flex flex-sm-row flex-column justify-content-end mx-n2">
           <div class="mb-sm-0 mb-4 px-2 pe-lg-5">
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal text-primary" href="#">개인정보처리방침</a></li>
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="#">신용정보활용체제</a></li>
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="#">위치기반서비스 이용약관</a></li>
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="#">경영공시</a></li>
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="#">그룹 내 고객정보 제공안내</a></li>
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="#">스튜어드십 코드</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal text-primary" href="https://obank.kbstar.com/quics?page=C108662">개인정보처리방침</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="https://obank.kbstar.com/quics?page=C110585">신용정보활용체제</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="https://obank.kbstar.com/quics?page=C110586">위치기반서비스 이용약관</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="https://omoney.kbstar.com/quics?page=C017681#loading">경영공시</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="https://obank.kbstar.com/quics?page=C040593#loading">그룹 내 고객정보 제공안내</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="https://obank.kbstar.com/quics?page=C057315">스튜어드십 코드</a></li>
             </ul>
           </div>
           <div class="px-lg-5 mx-3">
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="#">이용상담</a></li>
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="#">보안프로그램</a></li>
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="#">사고신고</a></li>
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="#">보호금융상품등록부</a></li>
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="#">전자민원접수</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="https://obank.kbstar.com/quics?page=C019763#loading">이용상담</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="https://omoney.kbstar.com/quics?page=C040531">보안프로그램</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="https://obank.kbstar.com/quics?page=C019933#loading">사고신고</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="https://obank.kbstar.com/quics?page=C023000#loading">보호금융상품등록부</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="https://obank.kbstar.com/quics?page=C044215#loading">전자민원접수</a></li>
             </ul>
           </div>
         </div>
