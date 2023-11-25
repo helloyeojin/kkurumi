@@ -79,7 +79,7 @@
          <div class="col-md-6 px-2 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5">
 
            </i></a>
-
+             <img src="img/signin-modal/tab.png" alt="Slide 2" width="600" height="400">
              <form class="form-validate" id="loginForm">
           <div class="mb-4">
             <label class="form-label mb-2" for="signin-email">이름</label>

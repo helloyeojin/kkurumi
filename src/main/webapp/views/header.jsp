@@ -69,9 +69,18 @@
 
   <div class="modal-dialog modal-lg modal-dialog-centered p-2 my-0 mx-auto" style="max-width: 950px;">
     <div class="modal-content">
+
+
+
+
+
       <div class="container-fluid d-flex h-100 align-items-center justify-content-center py-4 py-sm-5">
+
+
         <div class="card card-body" style="max-width: 940px"><a class="position-absolute top-0 end-0 nav-link fs-sm py-1 px-2 mt-3 me-3" href="#" onclick="window.history.go(-1); return false;"><i class="fi-arrow-long-left fs-base me-2"></i>국민은행이 처음이신가요?</a>
+
           <div class="row mx-0 align-items-center">
+
             <div class="col-md-6 border-end-md p-2 p-sm-5">
               <div id="myCarousel" class="carousel slide" width="600"  data-ride="carousel">
                 <!-- 슬라이더 인디케이터 추가 (선택 사항) -->
@@ -83,13 +92,13 @@
                 <!-- 슬라이더 내용 추가 -->
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="img/signin-modal/signin.png" alt="Slide 2" width="600" height="400">
+                    <img src="img/signin-modal/ssignin.png" alt="Slide 2" class="w-100 h-auto">
                   </div>
                   <div class="carousel-item ">
-                    <img src="img/signin-modal/signin2.png" alt="Slide 1" width="600" height="400">
+                    <img src="img/signin-modal/ssignin2.png" alt="Slide 1" class="w-100 h-auto">
                   </div>
-                  <div class="carousel-item">
-                    <img src="img/signin-modal/signin3.png" alt="Slide 3" width="600" height="400">
+                  <div class="carousel-item" >
+                    <img src="img/signin-modal/ssignin3.png" alt="Slide 3" class="w-100 h-auto">
                   </div>
                 </div>
                 <!-- 이전 및 다음 버튼 추가 (선택 사항) -->
@@ -97,17 +106,21 @@
             </div>
 
 
-            <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
-            </a>
-            <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
-            </a>
             <div class="col-md-6 px-2 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5">
 
-              </i></a>
 
+              <div class="mb-4 btn-group" role="group" aria-label="Date Range Options">
+                <button type="button" class="btn btn-outline-secondary col-6">인증서 로그인</button>
+                <button type="button" class="btn btn-translucent-warning text-dark" > 아이디 로그인</button>
+              </div>
+
+              </i></a>
+              <img src="img/signin-modal/word1.png"  width="800" height="400">
               <form class="form-validate" id="loginForm">
+
+
+
+
                 <div class="mb-4">
                   <label class="form-label mb-2" for="signin-email">이름</label>
                   <input class="form-control"  id="signin-email" placeholder="이름을 입력해주세요" required>
@@ -151,6 +164,8 @@
               <a class="btn btn-outline-info w-100 mb-3" href="#"></i>공동인증서 로그인</a>
               <form class="needs-validation" novalidate>
               </form>
+
+
             </div>
           </div>
         </div>

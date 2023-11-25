@@ -7,6 +7,10 @@
 <!-- Flatpickr CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
+
+
+
+
 <script>
     function searchAndDisplay() {
         var customerPin = $('#customerPin').val();
@@ -23,6 +27,7 @@
 
 
     }
+
 
 
 
@@ -386,6 +391,8 @@
         padding: 8px;
 
         border-radius: 5px;
+
+
         background-color: beige; /* 배경색을 베이지로 변경 */
 
     }
@@ -717,7 +724,43 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="custom-box"><h4>재 가입 확률이 높은 상품</h4>       <ul id="searchRanking2" class="search-ranking2"></ul></div>
+                            <div class="custom-box"><h4>재 가입이 높은 상품</h4>
+                                <!-- Table with contextual rows -->
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>순위</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="table-active">
+                                            <th scope="row">1 <span class="badge bg-primary">hot</span> </th>
+                                            <td>주택청약종합저축</td>
+                                        </tr>
+                                        <tr class="table">
+                                            <th scope="row">2</th>
+                                            <td>직장인우대적금</td>
+                                        </tr>
+                                        <tr class="table">
+                                            <th scope="row">3  <i class=" fi-arrow-up red-arrow "></i> </th>
+                                            <td>마이핏우대적금</td>
+                                        </tr>
+                                        <tr class="table">
+                                            <th scope="row">4 <span class="badge bg-success"> new </span></th>
+                                            <td>소소한여행적금</td>
+                                        </tr>
+                                        <tr class="table">
+                                            <th scope="row">5 <i class=" fi-arrow-down blue-arrow "></th>
+                                            <td>행복언제나적금</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <ul id="searchRanking2" class="search-ranking2"></ul>
+
+                            </div>
 
                         </div>
                         <div class="col-md-4">
