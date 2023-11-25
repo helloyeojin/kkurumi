@@ -222,39 +222,35 @@
                 </div>
                 <div class="card-footer content-overlay border-0 pt-0 pb-4">
                     <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
-                        <div class="fs-sm text-uppercase pt-2 mb-1">카드</div>
-                        <h3 class="h5 text-light mb-1">개인사업자 카드 결제대금 정산 이벤트</h3>
+                        <div class="fs-sm text-uppercase pt-2 mb-1 tns-transparent">기업대출</div>
+                        <h3 class="h5 text-light mb-1">「온라인셀러 전용대출 3종」 신규 이벤트</h3>
                         <div class="fs-sm opacity-70"><i class="fi-calendar me-1"></i>2023년 12월 15일까지</div></a>
-                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">참여하기</a>
+                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-warning px-3 text-dark" href="real-estate-single-v1.html" style="height: 2.5rem;">참여하기</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card bg-size-cover bg-position-center border-0 overflow-hidden mb-4" style="background-image: url(img/real-estate/recent/02.jpg);"><span class="img-gradient-overlay"></span>
+            <div class="card bg-size-cover bg-position-center border-0 overflow-hidden mb-4" style="background-image: url(img/real-estate/recent/02.png);"><span class="img-gradient-overlay"></span>
                 <div class="card-body content-overlay pb-0"></div>
                 <div class="card-footer content-overlay border-0 pt-0 pb-4">
                     <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
-                        <div class="fs-sm text-uppercase pt-2 mb-1">퇴직연금</div>
-                        <h3 class="h5 text-light mb-1">연말정산 시즌이 돌아왔다! 절세끝판왕, KB IRP로 무빙!</h3>
-                        <div class="fs-sm opacity-70"><i class="fi-map-pin me-1"></i>2023년 12월 29일까지</div></a>
-                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">$200,410</a>
-                            <button class="btn btn-primary btn-icon border-end-0 border-top-0 border-bottom-0 border-light fs-sm" type="button"><i class="fi-heart"></i></button>
+                        <div class="fs-sm text-uppercase pt-2 mb-1 tns-transparent">KB PAY</div>
+                        <h3 class="h5 text-light mb-1">KB스타뱅킹 KB PAY 결제 이벤트</h3>
+                        <div class="fs-sm opacity-70"><i class="fi-calendar me-1"></i>2023년 12월 31일까지</div></a>
+                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-warning px-3 text-dark" href="real-estate-single-v1.html" style="height: 2.5rem;">참여하기</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card bg-size-cover bg-position-center border-0 overflow-hidden" style="background-image: url(img/real-estate/recent/03.jpg);"><span class="img-gradient-overlay"></span>
-                <div class="card-body content-overlay pb-0"><span class="badge bg-info fs-sm">New</span></div>
+            <div class="card bg-size-cover bg-position-center border-0 overflow-hidden" style="background-image: url(img/real-estate/recent/03.png);"><span class="img-gradient-overlay"></span>
                 <div class="card-footer content-overlay border-0 pt-0 pb-4">
                     <div class="d-sm-flex justify-content-between align-items-end pt-5 mt-2 mt-sm-5"><a class="text-decoration-none text-light pe-2" href="real-estate-single-v1.html">
-                        <div class="fs-sm text-uppercase pt-2 mb-1">For sale</div>
-                        <h3 class="h5 text-light mb-1">Country House</h3>
-                        <div class="fs-sm opacity-70"><i class="fi-map-pin me-1"></i>6954 Grand AveMaspeth, NY 11378</div></a>
-                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-primary px-3" href="real-estate-single-v1.html" style="height: 2.75rem;">$162,000</a>
-                            <button class="btn btn-primary btn-icon border-end-0 border-top-0 border-bottom-0 border-light fs-sm" type="button"><i class="fi-heart"></i></button>
-                        </div>
+                        <div class="fs-sm text-uppercase pt-2 mb-1 tns-transparent">Liiv M</div>
+                        <h3 class="h5 text-light mb-1">KB Liiv M 신규 고객 대상 포인트 지급</h3>
+                        <div class="fs-sm opacity-70"><i class="fi-calendar me-1"></i>2023년 12월 31일까지</div></a>
+                        <div class="btn-group ms-n2 ms-sm-0 mt-3"><a class="btn btn-warning px-3 text-dark" href="real-estate-single-v1.html" style="height: 2.5rem;">참여하기</a></div>
                     </div>
                 </div>
             </div>
