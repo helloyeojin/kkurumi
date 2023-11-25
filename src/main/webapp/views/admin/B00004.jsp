@@ -1,61 +1,179 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<!-- Flatpickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script>
-    $(document).ready(function() {
-        Highcharts.chart('container1', {
-
-            chart: {
-                type: 'column'
-            },
-
-            title: {
-                text: 'Olympic Games all-time medal table, grouped by continent',
-                align: 'left'
-            },
-
-            xAxis: {
-                categories: ['Gold', 'Silver', 'Bronze']
-            },
-
-            yAxis: {
-                allowDecimals: false,
-                min: 0,
-                title: {
-                    text: 'Count medals'
-                }
-            },
-
-            plotOptions: {
-                column: {
-                    stacking: 'normal'
-                }
-            },
-
-            series: [{
-                name: 'Norway',
-                data: [148, 133, 124],
-                stack: 'Europe'
-            }, {
-                name: 'Germany',
-                data: [102, 98, 65],
-                stack: 'Europe'
-            }, {
-                name: 'United States',
-                data: [113, 122, 95],
-                stack: 'North America'
-            }, {
-                name: 'Canada',
-                data: [77, 72, 80],
-                stack: 'North America'
-            }]
-        });
-    })
-
-
-
 
 </script>
+
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script >
+
+
+
+        const chatBody = document.getElementById('chat-body');
+        const userInput = document.getElementById('user-input');
+
+        function sendMessage() {
+            const userMessage = userInput.value;
+            displayMessage(userMessage, 'user');
+            userInput.value = '';
+
+            // Implement your logic or API call for ChatBot response here
+            const chatBotResponse = "This is a sample response from ChatBot.";
+            displayMessage(chatBotResponse, 'chatbot');
+        }
+
+        function displayMessage(message, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add(sender);
+            messageElement.innerText = message;
+            chatBody.appendChild(messageElement);
+        }
+
+
+
+        function changeTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.style.display = 'none');
+
+            // Show the selected tab content
+            const selectedTabContent = document.getElementById(tabId + '-content');
+            if (selectedTabContent) {
+                selectedTabContent.style.display = 'block';
+
+            }
+        }
+
+
+
+
+
+    </script>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize flatpickr for the sidebar
+        const sidebarDatePicker = flatpickr('#sidebarDatepicker', {
+            mode: 'range',
+            dateFormat: 'Y-m-d',
+            theme: 'airbnb',
+            onClose: function (selectedDates, dateStr, instance) {
+                console.log('Selected Dates (Sidebar):', selectedDates);
+                // Add your logic to update the main content based on the selected date range
+            },
+        });
+
+        // Update the main datepicker when a date range option is selected in the sidebar
+        flatpickr('.date-range-options', {
+            enable: Object.fromEntries(Object.entries(dateRangeOptions).map(([key, value]) => [key, true])),
+            disable: [function (date) {
+                return (date < dateRangeOptions['Last 1 Year'][0] || date > dateRangeOptions.Today[1]);
+            }],
+            onValueUpdate: function (selectedDates, dateStr, instance) {
+                sidebarDatePicker.setDate(dateRangeOptions[dateStr]);
+            },
+        });
+    });
+</script>
+
+<style>
+    .custom-box {
+        background-color: white;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+        border-radius: 8px; /* Add rounded corners */
+    }
+
+
+
+
+    #chat-window {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    #chat-header {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #chat-body {
+        height: 200px;
+        overflow-y: scroll;
+        padding: 10px;
+    }
+
+    #chat-input {
+        display: flex;
+        padding: 10px;
+    }
+
+    #user-input {
+        flex: 1;
+        padding: 5px;
+    }
+
+    button {
+        padding: 5px;
+        margin-left: 5px;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tab-container {
+        max-width: 1200px;
+        margin: 50px auto;
+    }
+
+    .tabs {
+        display: flex;
+        border: 1px solid #3498db;
+    }
+
+    .tab {
+        flex: 1;
+        padding: 10px;
+        text-align: center;
+        background-color: #2c3e50; /* 어두운 색으로 변경 */
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .tab:hover {
+        background-color: #34495e;
+    }
+
+    .tab-content {
+        display: none;
+        padding: 20px;
+        /*border: 1px solid #3498db;*/
+        /*border: 1px solid #2c3e50; !* 어두운 색으로 변경 *!*/
+
+
+        background-color: #fff8ea; /* 내용 배경색을 어두운 색으로 변경 */
+    }
+    .red-arrow {
+        color: red;
+    }
+</style>
 
 <!-- Page container-->
 <div class="container-fluid mt-5 pt-5 p-0">
@@ -68,17 +186,15 @@
                     <button class="btn-close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#filters-sidebar"></button>
                 </div>
                 <!-- Search form-->
-                <div class="offcanvas-header d-block border-bottom pt-0 pt-lg-4 px-lg-0">
-                    <form class="form-group mb-lg-2 rounded-pill">
-                        <div class="input-group"><span class="input-group-text text-muted"><i class="fi-search"></i></span>
-                            <input class="form-control" type="text" placeholder="고객PIN 입력">
-                        </div>
-                        <button class="btn btn-primary rounded-pill d-lg-inline-block d-none" type="button">검색</button>
-                        <button class="btn btn-icon btn-primary rounded-circle flex-shrink-0 d-lg-none d-inline-flex" type="button"><i class="fi-search mt-n2"></i></button>
-                    </form>
-                </div>
-                <!-- Nav tabs-->
-                <div class="offcanvas-header d-block border-bottom py-lg-4 py-3 px-lg-0">
+
+
+
+
+
+
+
+
+                <div class="offcanvas-header d-block border-bottom py-lg-4 py-3 px-lg-0" id="hello" style= "margin-top:30px; ">
                     <ul class="nav nav-pills" role="tablist">
                         <li class="nav-item"><a class="nav-link d-flex align-items-center active" href="#categories" data-bs-toggle="tab" role="tab"><i class="fi-list me-2"></i>상품카테고리</a></li>
                         <li class="nav-item"><a class="nav-link d-flex align-items-center" href="#filters" data-bs-toggle="tab" role="tab"><i class="fi-filter-alt-horizontal me-2"></i>필터</a></li>
@@ -113,6 +229,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                         <!-- Filters-->
                         <div class="tab-pane fade" id="filters" role="tabpanel">
@@ -296,17 +413,48 @@
                     <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#100백만초과</a></li>
                 </ul>
             </div>
-            <figure class="highcharts-figure" style="margin-top: 5%;">
-                <div id="container1">
 
 
 
-
-
+            <div class="tab-container">
+                <div class="tabs">
+                    <div class="tab" onclick="changeTab('tab1')">Tab 1</div>
+                    <div class="tab" onclick="changeTab('tab2')">Tab 2</div>
                 </div>
-            </figure>
+                <div class="tab-content" id="tab1-content">
+                    <!-- Content for Tab 1 goes here -->
+                    <h2>Tab 1 Content  </h2>
+                    <i class=" fi-arrow-up red-arrow "></i>
+
+                    <p>This is the content for Tab 1.</p>
+                </div>
+                <div class="tab-content" id="tab2-content">
+                    <!-- Content for Tab 2 goes here -->
+                    <h2>Tab 2 Content</h2>
+                    <p>This is the content for Tab 2.</p>
+                </div>
+            </div>
+
+
+            <div id="chat-window">
+                <div id="chat-header">ChatBot</div>
+                <div id="chat-body"></div>
+                <div id="chat-input">
+                    <input type="text" id="user-input" placeholder="Type your message...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script src="script.js"></script>
+
+            <div style="background-color: white; margin-bottom: 50px;"></div>
+
+
+
+
         </div>
-
-
+        </div>
+        </div>
     </div>
 </div>
