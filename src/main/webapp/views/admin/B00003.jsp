@@ -1,61 +1,429 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Flatpickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
 <script>
-    $(document).ready(function() {
-        Highcharts.chart('container1', {
+    function searchAndDisplay() {
+        var customerPin = $('#customerPin').val();
 
-            chart: {
-                type: 'column'
-            },
+        if (customerPin === '12345') {
+            $('#customerProfile').show();
+            $('#hello').css('opacity', 0); // 투명도를 조절하여 요소를 숨김
+            setTimeout(function() {
+                $('#hello').hide(); // 숨겨진 후에 display를 변경하여 완전히 사라지게 함
+            }, 500); // 투명도 변경 애니메이션 시간 (0.5초 = 500밀리초)
+        } else {
+            alert('잘못된 핀번호 입니다!');
+        }
 
-            title: {
-                text: 'Olympic Games all-time medal table, grouped by continent',
-                align: 'left'
-            },
 
-            xAxis: {
-                categories: ['Gold', 'Silver', 'Bronze']
-            },
+    }
 
-            yAxis: {
-                allowDecimals: false,
-                min: 0,
+
+
+
+
+
+
+
+        $(document).ready(function() {
+
+            Highcharts.chart('container1', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
                 title: {
-                    text: 'Count medals'
+                    text: 'KB 국민은행 상품 가입 관심도',
+                    align: 'left',
+                    margin: 20 ,
+                    style: {
+                        fontFamily: 'Arial, sans-serif', // Change the font family
+                        fontWeight: 'bold', // Optionally, set the font weight
+                        fontSize: '20px' // Optionally, set the font size
+                    }
+
+                },
+                subtitle: {
+                    text: '해당고객의 주 관심 상품은 --- 입니다.',
+                    align: 'left',
+                    margin: 10,
+                    style: {
+                        fontFamily: 'Arial',
+                        fontSize: '12px' // Optionally, set the font size
+                    }
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                accessibility: {
+                    point: {
+                        valueSuffix: '%'
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [{
+                    name: 'Product',
+                    colorByPoint: true,
+                    data: [{
+                        name: '요구불',
+                        y: 74.77,
+                        sliced: true,
+                        selected: true
+                    },  {
+                        name: '정기예금',
+                        y: 12.82
+                    },  {
+                        name: '적금',
+                        y: 4.63
+                    }, {
+                        name: '개인대출',
+                        y: 2.44
+                    }, {
+                        name: '사업자대출',
+                        y: 2.02
+                    }, {
+                        name: 'KB카드',
+                        y: 3.28
+                    }]
+                }]
+            });
+
+
+
+
+
+
+
+
+
+
+
+            Highcharts.chart('container2', {
+            chart: {
+                type: 'spline',
+                scrollablePlotArea: {
+                    minWidth: 600,
+                    scrollPositionX: 1
                 }
             },
+            title: {
+                text: 'KB국민은행 접속 경로',
+                align: 'left',
+                margin: 20 // Set the margin between subtitle and plot area
+            },
+            subtitle: {
+                text: '해당 고객은 주로 "스타뱅킹"을 사용해요. \n\ 최근 접속빈도는 "30% 줄었어요".',
+                align: 'left',
+                margin: 10 // Set the margin between subtitle and plot area
+            },
+            xAxis: {
+                type: 'datetime',
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            yAxis: {
+                title: {
 
+                },
+                minorGridLineWidth: 0,
+                gridLineWidth: 0,
+                alternateGridColor: null,
+                plotBands: [{ // Light air
+                    from: 0.3,
+                    to: 1.5,
+                    color: 'rgba(68, 170, 213, 0.1)',
+                    label: {
+                        style: {
+                            color: '#606060'
+                        }
+                    }
+                }, { // Light breeze
+                    from: 1.5,
+                    to: 3.3,
+                    color: 'rgba(0, 0, 0, 0)',
+                    label: {
+
+                        style: {
+                            color: '#606060'
+                        }
+                    }
+                }, { // Gentle breeze
+                    from: 3.3,
+                    to: 5.5,
+                    color: 'rgba(68, 170, 213, 0.1)',
+                    label: {
+
+                        style: {
+                            color: '#606060'
+                        }
+                    }
+                }, { // Moderate breeze
+                    from: 5.5,
+                    to: 8,
+                    color: 'rgba(0, 0, 0, 0)',
+                    label: {
+
+                        style: {
+                            color: '#606060'
+                        }
+                    }
+                }, { // Fresh breeze
+                    from: 8,
+                    to: 11,
+                    color: 'rgba(68, 170, 213, 0.1)',
+                    label: {
+                        style: {
+                            color: '#606060'
+                        }
+                    }
+                }, { // Strong breeze
+                    from: 11,
+                    to: 14,
+                    color: 'rgba(0, 0, 0, 0)',
+                    label: {
+                        style: {
+                            color: '#606060'
+                        }
+                    }
+                }, { // Near Gale
+                    from: 14,
+                    to: 17,
+                    color: 'rgba(68, 170, 213, 0.1)',
+                    label: {
+                        style: {
+                            color: '#606060'
+                        }
+                    }
+                }, { // Fresh Gale
+                    from: 17,
+                    to: 20.5,
+                    color: 'rgba(0, 0, 0, 0)',
+                    label: {
+                        style: {
+                            color: '#606060'
+                        }
+                    }
+                }, { // Strong Gale
+                    from: 20.5,
+                    to: 24,
+                    color: 'rgba(68, 170, 213, 0.1)',
+                    label: {
+                        style: {
+                            color: '#606060'
+                        }
+                    }
+                }]
+            },
+            tooltip: {
+                valueSuffix: ' m/s'
+            },
             plotOptions: {
-                column: {
-                    stacking: 'normal'
+                spline: {
+                    lineWidth: 4,
+                    states: {
+                        hover: {
+                            lineWidth: 5
+                        }
+                    },
+                    marker: {
+                        enabled: false
+                    },
+                    pointInterval: 3600000, // one hour
+                    pointStart: Date.UTC(2020, 3, 15, 0, 0, 0)
                 }
             },
-
             series: [{
-                name: 'Norway',
-                data: [148, 133, 124],
-                stack: 'Europe'
+                name: '스타뱅킹',
+                data: [5.4, 5.2, 5.7, 6.3, 5.2, 5.6, 6.1,
+                    5.6, 5.9, 7.1, 8.6, 7.8, 8.6,
+                    8.0, 9.7, 11.2, 12.5, 13.1, 10.6,
+                    10.9, 8.9, 9.5, 7.5, 3.5, 4.2]
+
             }, {
-                name: 'Germany',
-                data: [102, 98, 65],
-                stack: 'Europe'
-            }, {
-                name: 'United States',
-                data: [113, 122, 95],
-                stack: 'North America'
-            }, {
-                name: 'Canada',
-                data: [77, 72, 80],
-                stack: 'North America'
-            }]
+                name: '인터넷뱅킹',
+                data: [0.2, 0.1, 0.1, 0.5, 0.3, 0.2, 0.1,
+                    0.1, 0.1, 0.1, 0.2, 1.1, 1.3,
+                    2.0, 1.5, 1.5, 1.5, 1.4, 1.7,
+                    2.0, 2.9, 2.1, 2.1, 3.5, 2.9]
+            }],
+            navigation: {
+                menuItemStyle: {
+                    fontSize: '10px'
+                }
+            }
+        })
         });
-    })
+
+        $(document).ready(function () {
+            // Initialize datepicker
+            $('#datepicker').datepicker({
+                format: 'yyyy-mm-dd', // Set the desired date format
+                autoclose: true
+            });
+        });
 
 
 
 
+
+    function updateSearchRanking() {
+        var searchKeywords = [
+            "KB국민ONE통장", "직장인우대통장", "주택청약종합저축", "KB수퍼정기예금", "외화수출입통장", "맑은하늘적금", "맑은바다적금", "마이핏통장"
+        ];
+        var searchRanking = document.getElementById('searchRanking');
+        var searchRanking2 = document.getElementById('searchRanking2');
+        var searchRanking3 = document.getElementById('searchRanking3');
+
+        // 랜덤 검색어로 실시간 검색어 순위 갱신
+        searchRanking.innerHTML = ''; // 이전 내용 비우기
+        for (var i = 0; i < 5; i++) {
+            var randomIndex = Math.floor(Math.random() * searchKeywords.length);
+            var newKeyword = searchKeywords[randomIndex];
+
+            var listItem = document.createElement('li');
+            listItem.textContent = (i + 1) + '. ' + newKeyword;
+            searchRanking.appendChild(listItem);
+        }
+
+
+        searchRanking2.innerHTML = ''; // 이전 내용 비우기
+        for (var i = 0; i < 5; i++) {
+            var randomIndex = Math.floor(Math.random() * searchKeywords.length);
+            var newKeyword = searchKeywords[randomIndex];
+
+            var listItem = document.createElement('li');
+            listItem.textContent = (i + 1) + '. ' + newKeyword;
+            searchRanking2.appendChild(listItem);
+        }
+
+
+        searchRanking3.innerHTML = ''; // 이전 내용 비우기
+        for (var i = 0; i < 5; i++) {
+            var randomIndex = Math.floor(Math.random() * searchKeywords.length);
+            var newKeyword = searchKeywords[randomIndex];
+
+            var listItem = document.createElement('li');
+            listItem.textContent = (i + 1) + '. ' + newKeyword;
+            searchRanking3.appendChild(listItem);
+        }
+
+    }
+
+
+    // 1초마다 실시간 검색어 순위 업데이트
+    setInterval(updateSearchRanking, 1500);
+    updateSearchRanking(); // 페이지 로딩시에도 한 번 호출하여 초기 데이터 표시
+
+
+
+    </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize flatpickr for the sidebar
+        const sidebarDatePicker = flatpickr('#sidebarDatepicker', {
+            mode: 'range',
+            dateFormat: 'Y-m-d',
+            theme: 'airbnb',
+            onClose: function (selectedDates, dateStr, instance) {
+                console.log('Selected Dates (Sidebar):', selectedDates);
+                // Add your logic to update the main content based on the selected date range
+            },
+        });
+
+        // Update the main datepicker when a date range option is selected in the sidebar
+        flatpickr('.date-range-options', {
+            enable: Object.fromEntries(Object.entries(dateRangeOptions).map(([key, value]) => [key, true])),
+            disable: [function (date) {
+                return (date < dateRangeOptions['Last 1 Year'][0] || date > dateRangeOptions.Today[1]);
+            }],
+            onValueUpdate: function (selectedDates, dateStr, instance) {
+                sidebarDatePicker.setDate(dateRangeOptions[dateStr]);
+            },
+        });
+    });
 </script>
+<style>
+    .custom-box {
+        background-color: white;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+        border-radius: 8px; /* Add rounded corners */
+    }
+
+    .red-arrow {
+        color: red;
+    }
+
+    .search-ranking ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .search-ranking li {
+        margin-bottom: 5px;
+        padding: 8px;
+
+        border-radius: 5px;
+        background-color: beige; /* 배경색을 베이지로 변경 */
+
+    }
+
+
+    .search-ranking2 ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .search-ranking2 li {
+        margin-bottom: 5px;
+        padding: 8px;
+
+        border-radius: 5px;
+        background-color: beige; /* 배경색을 베이지로 변경 */
+
+    }
+
+
+    .search-ranking3 ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .search-ranking3 li {
+        margin-bottom: 5px;
+        padding: 8px;
+
+        border-radius: 5px;
+        background-color: beige; /* 배경색을 베이지로 변경 */
+
+    }
+    #hello {
+        transition: opacity 0.5s ease; /* 투명도를 변경하는 것에 대한 transition 설정 */
+    }
+
+
+
+</style>
 
 <!-- Page container-->
 <div class="container-fluid mt-5 pt-5 p-0">
@@ -70,20 +438,41 @@
                 <!-- Search form-->
                 <div class="offcanvas-header d-block border-bottom pt-0 pt-lg-4 px-lg-0">
                     <form class="form-group mb-lg-2 rounded-pill">
-                        <div class="input-group"><span class="input-group-text text-muted"><i class="fi-search"></i></span>
-                            <input class="form-control" type="text" placeholder="고객PIN 입력">
+                        <div class="input-group">
+                            <span class="input-group-text text-muted"><i class="fi-search"></i></span>
+                            <input class="form-control" type="text" placeholder="고객PIN 입력" id="customerPin">
                         </div>
-                        <button class="btn btn-primary rounded-pill d-lg-inline-block d-none" type="button">검색</button>
-                        <button class="btn btn-icon btn-primary rounded-circle flex-shrink-0 d-lg-none d-inline-flex" type="button"><i class="fi-search mt-n2"></i></button>
+                        <button class="btn btn-primary rounded-pill d-lg-inline-block d-none" type="button" onclick="searchAndDisplay()">검색</button>
+                        <button class="btn btn-icon btn-primary rounded-circle flex-shrink-0 d-lg-none d-inline-flex" type="button" onclick="searchAndDisplay()"><i class="fi-search mt-n2"></i></button>
                     </form>
                 </div>
-                <!-- Nav tabs-->
-                <div class="offcanvas-header d-block border-bottom py-lg-4 py-3 px-lg-0">
+
+                <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" style="width: 13em; height: 13em; border-radius: 0.5rem; display: none;" id="customerProfile">
+                    <button id="closeButton">닫기</button>
+                    <img src="img/real-estate/profile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+
+
+
+                    <p style="margin-top: 8px; text-align: center; color: black; font-weight: bold;">김국민</p>
+                    <p style="margin-top: 4px; text-align: center; color: black;">28세 , 남자</p>
+
+
+
+                </div>
+
+
+
+
+
+               <div id = hello>
+                <div class="offcanvas-header d-block border-bottom py-lg-4 py-3 px-lg-0"  style= "margin-top:30px; ">
                     <ul class="nav nav-pills" role="tablist">
                         <li class="nav-item"><a class="nav-link d-flex align-items-center active" href="#categories" data-bs-toggle="tab" role="tab"><i class="fi-list me-2"></i>상품카테고리</a></li>
                         <li class="nav-item"><a class="nav-link d-flex align-items-center" href="#filters" data-bs-toggle="tab" role="tab"><i class="fi-filter-alt-horizontal me-2"></i>필터</a></li>
                     </ul>
                 </div>
+
+
                 <div class="offcanvas-body py-lg-4">
                     <!-- Tabs content-->
                     <div class="tab-content">
@@ -113,6 +502,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                         <!-- Filters-->
                         <div class="tab-pane fade" id="filters" role="tabpanel">
@@ -278,7 +668,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -296,17 +686,82 @@
                     <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#100백만초과</a></li>
                 </ul>
             </div>
-            <figure class="highcharts-figure" style="margin-top: 5%;">
-                <div id="container1">
 
 
-
-
-
+            <div class="form-group">
+                <div class="btn-group" role="group" aria-label="Date Range Options">
+                    <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Today">오늘 </button>
+                    <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Last 30 Days">최근 일주일</button>
+                    <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Last 1 Year">최근 한달</button>
                 </div>
-            </figure>
+            </div>
+
+
+            <div class="수치" style="background-color: #f9f9f9; margin-top: 50px;">
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div style="margin-top: 50px;"></div>
+                        <div class="col-md-4">
+                            <div class="custom-box"><h4>최근 가장 많이 본 상품</h4>
+
+<%--                                    <div class>         전월 대비 상승 2.2% <i class=" fi-arrow-up red-arrow "></i>   <div class="triangle" style="border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 8px solid red; position: absolute; top: 50%; right: -10px; transform: translateY(-50%);"></div></div>--%>
+                                    <ul id="searchRanking" class="search-ranking"></ul>
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="custom-box"><h4>재 가입 확률이 높은 상품</h4>       <ul id="searchRanking2" class="search-ranking2"></ul></div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="custom-box"><h4>고객 맞춤형 상품</h4>       <ul id="searchRanking3" class="search-ranking"></ul></div>
+                        </div>
+                        <div style="margin-bottom: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add two additional boxes below the "고객 맞춤형 상품" section -->
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-5 text-center" >
+
+                    </div>
+
+                    <div class="col-md-5 text-left" >
+                        <div class></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div style="background-color: white; margin-bottom: 50px;"></div>
+
+
+
+            <div class="화면 통계" style="background-color: #f9f9f9; padding: 20px;"> 화면통계
+            <div class="row">
+                <div class="col-md-6">
+                    <figure class="highcharts-figure" style="margin-top: 5%; background-color: #f0f0f0;">
+                        <div id="container1"></div>
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <figure class="highcharts-figure" style="margin-top: 5%; background-color: #f0f0f0;">
+                        <div id="container2"></div>
+                    </figure>
+                </div>
+            </div>
         </div>
-
-
+        </div>
+        </div>
     </div>
 </div>
