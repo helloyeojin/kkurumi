@@ -24,6 +24,17 @@ public class AdminController {
     }
 
 
+    @RequestMapping("/B00003")
+    public String b00003(Model model) throws Exception {
+        model.addAttribute("center",dir+"B00003");
+        return "index";
+    }
+
+    @RequestMapping("/B00004")
+    public String b00004(Model model) throws Exception {
+        model.addAttribute("center",dir+"B00004");
+        return "index";
+    }
 
 
 }
