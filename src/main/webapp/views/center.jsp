@@ -76,7 +76,7 @@
         </div>
     </div>
 </section>
-<!-- Property categories-->
+<!-- Property categories-->아
 <section class="container mb-5">
     <div class="row row-cols-lg-6 row-cols-sm-3 row-cols-2 g-3 g-xl-4">
         <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K10100">

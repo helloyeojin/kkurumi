@@ -20,4 +20,10 @@ public class Cust {
     private String address2;
     private int job;
     private int credit;
+
+    public Cust(String user_name) {
+        this.user_name = user_name;
+    }
 }
+
+

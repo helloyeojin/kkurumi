@@ -21,25 +21,35 @@ public class LoginController {
         return "login";
     }
 
-//    @RequestMapping(value = "/loginImpl", method = RequestMethod.POST) // POST 요청으로 변경
-//    public String loginImpl(Model model, String user_id, HttpSession session) {
-//
-//        Cust cust = null;
-//        try {
-//            cust = CustService.get(user_id);
-//            if (cust != null) {
-//                session.setMaxInactiveInterval(1000000);
-//                session.setAttribute("loginCust", cust);
-//                model.addAttribute("center", "center");
-//                return "redirect:/";
-//            } else {
-//                model.addAttribute("msg", "아이디를 확인하세요.");
-//                model.addAttribute("center", "login");
-//                return "index";
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return "index";
-//    }
+    @RequestMapping("/loginImpl")
+    public String loginImpl(Model model, String user_name, HttpSession session) {
+
+        Cust cust = new Cust(user_name);
+        try {
+            if (cust != null) {
+                log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+ cust.getUser_name());
+                session.setMaxInactiveInterval(1000000);
+                session.setAttribute("loginCust", cust);
+                session.setAttribute("user_name", user_name);
+                model.addAttribute("center", "center");
+                return "redirect:/";
+            } else {
+                log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@222"+ cust.getUser_name());
+                model.addAttribute("msg", "아이디를 확인하세요.");
+                model.addAttribute("center", "login");
+                return "index";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "index";
+    }
+
+    @RequestMapping("logoutImpl")
+    public String logoutimpl(Model model, HttpSession session){
+        if(session != null){
+            session.invalidate();
+        }
+        return "redirect:/";
+    }
 }
