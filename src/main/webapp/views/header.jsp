@@ -222,7 +222,7 @@
 <!-- Navbar-->
 <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-scroll-header>
   <div class="container"><a class="navbar-brand me-3 me-xl-4" href="/"><img class="d-block" src="/img/logo/logo_bank.png" width="170" alt="KB국민은행"></a>
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>로그인</a><a class="btn btn-primary btn-sm ms-2 order-lg-3" href="real-estate-add-property.html"><i class="fi-plus me-2"></i>Add<span class='d-none d-sm-inline'> property</span></a>
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>로그인</a><a class="btn btn-primary btn-sm ms-2 order-lg-3" href="https://obank.kbstar.com/quics?page=C018872"><i class="fi-lock me-2"></i>인증<span class='d-none d-sm-inline'>센터</span></a>
     <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
       <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
         <!-- Menu items-->
