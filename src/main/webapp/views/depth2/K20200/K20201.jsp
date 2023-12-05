@@ -6,7 +6,7 @@
     <nav class="mb-3 pt-md-3" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">금융상품</a></li>
-            <li class="breadcrumb-item"><a href="/K20100">사업자대출</a></li>
+            <li class="breadcrumb-item"><a href="/K20200">사업자대출</a></li>
             <li class="breadcrumb-item active" aria-current="page">비대면소상공인대출</li>
         </ol>
     </nav>
@@ -24,7 +24,7 @@
                 <!-- Page title + Features-->
                 <div class="order-lg-2 order-1">
                     <h1 class="h2 mb-2">비대면소상공인대출</h1>
-                    <p class="mb-4 pb-1 fs-lg">직장인이라면</p>
+                    <p class="mb-4 pb-1 fs-lg">소상공인이라면</p>
                     <ul class="d-flex pb-lg-2 list-unstyled" style="margin-bottom: 0">
                         <li class="me-3 pe-3 border-end">기간</li>
                         <li class="me-3 pe-3 border-end"><b class="me-1">최장 10년</b></li>
@@ -84,7 +84,7 @@
         <aside class="col-lg-5">
             <div class="ps-lg-5">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <div><span class="badge bg-success me-2 mb-2">급여이체 고객 추천</span></div>
+                    <div><span class="badge bg-success me-2 mb-2">소상공인 고객 추천</span></div>
                     <div class="text-nowrap">
                         <button class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2" type="button" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="fi-heart"></i></button>
                         <div class="dropdown d-inline-block" data-bs-toggle="tooltip" title="Share">
@@ -122,101 +122,7 @@
                         <li class="me-3"><b>전화 상담 가능 시간 </b>09:00~18:00(은행휴무일 제외)</li>
                     </ul>
                 </div>
+            </div>
         </aside>
-    </div>
-</section>
-<!-- Recently viewed-->
-<section class="container mb-5 pb-2 pb-lg-4">
-    <div class="d-flex align-items-center justify-content-between mb-3">
-        <h2 class="h3 mb-0">Recently viewed</h2><a class="btn btn-link fw-normal p-0" href="real-estate-catalog-rent.html">View all<i class="fi-arrow-long-right ms-2"></i></a>
-    </div>
-    <div class="tns-carousel-wrapper tns-controls-outside-xxl tns-nav-outside tns-nav-outside-flush mx-n2">
-        <div class="tns-carousel-inner row gx-4 mx-0 pt-3 pb-4" data-carousel-options="{&quot;items&quot;: 4, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3},&quot;992&quot;:{&quot;items&quot;:4}}}">
-            <!-- Item-->
-            <div class="col">
-                <div class="card shadow-sm card-hover border-0 h-100">
-                    <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
-                        <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                            <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
-                        </div><img src="img/real-estate/catalog/39.jpg" alt="Image">
-                    </div>
-                    <div class="card-body position-relative pb-3">
-                        <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">For Sale</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">Modern House | 90 sq.m</a></h3>
-                        <p class="mb-2 fs-sm text-muted">67-04 Myrtle Ave Glendale, NY 11385</p>
-                        <div class="fw-bold"><i class="fi-cash mt-n1 me-2 lead align-middle opacity-70"></i>$84,000</div>
-                    </div>
-                    <div class="card-footer d-flex align-items-center justify-content-center mx-3 pt-3 text-nowrap"><span class="d-inline-block mx-1 px-2 fs-sm">4<i class="fi-bed ms-1 mt-n1 fs-lg text-muted"></i></span><span class="d-inline-block mx-1 px-2 fs-sm">2<i class="fi-bath ms-1 mt-n1 fs-lg text-muted"></i></span><span class="d-inline-block mx-1 px-2 fs-sm">2<i class="fi-car ms-1 mt-n1 fs-lg text-muted"></i></span></div>
-                </div>
-            </div>
-            <!-- Item-->
-            <div class="col">
-                <div class="card shadow-sm card-hover border-0 h-100">
-                    <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
-                        <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                            <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
-                        </div><img src="img/real-estate/catalog/40.jpg" alt="Image">
-                    </div>
-                    <div class="card-body position-relative pb-3">
-                        <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">For rent</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">Country House | 120 sq.m</a></h3>
-                        <p class="mb-2 fs-sm text-muted">3811 Ditmars Blvd Astoria, NY 11105</p>
-                        <div class="fw-bold"><i class="fi-cash mt-n1 me-2 lead align-middle opacity-70"></i>$1,629 </div>
-                    </div>
-                    <div class="card-footer d-flex align-items-center justify-content-center mx-3 pt-3 text-nowrap"><span class="d-inline-block mx-1 px-2 fs-sm">3<i class="fi-bed ms-1 mt-n1 fs-lg text-muted"></i></span><span class="d-inline-block mx-1 px-2 fs-sm">2<i class="fi-bath ms-1 mt-n1 fs-lg text-muted"></i></span><span class="d-inline-block mx-1 px-2 fs-sm">2<i class="fi-car ms-1 mt-n1 fs-lg text-muted"></i></span></div>
-                </div>
-            </div>
-            <!-- Item-->
-            <div class="col">
-                <div class="card shadow-sm card-hover border-0 h-100">
-                    <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
-                        <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                            <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
-                        </div><img src="img/real-estate/catalog/41.jpg" alt="Image">
-                    </div>
-                    <div class="card-body position-relative pb-3">
-                        <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">For rent</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">Luxury Rental Villa | 180 sq.m</a></h3>
-                        <p class="mb-2 fs-sm text-muted">1510 Castle Hill Ave Bronx, NY 10462</p>
-                        <div class="fw-bold"><i class="fi-cash mt-n1 me-2 lead align-middle opacity-70"></i>$1,330</div>
-                    </div>
-                    <div class="card-footer d-flex align-items-center justify-content-center mx-3 pt-3 text-nowrap"><span class="d-inline-block mx-1 px-2 fs-sm">1<i class="fi-bed ms-1 mt-n1 fs-lg text-muted"></i></span><span class="d-inline-block mx-1 px-2 fs-sm">1<i class="fi-bath ms-1 mt-n1 fs-lg text-muted"></i></span><span class="d-inline-block mx-1 px-2 fs-sm">1<i class="fi-car ms-1 mt-n1 fs-lg text-muted"></i></span></div>
-                </div>
-            </div>
-            <!-- Item-->
-            <div class="col">
-                <div class="card shadow-sm card-hover border-0 h-100">
-                    <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
-                        <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                            <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
-                        </div><img src="img/real-estate/catalog/42.jpg" alt="Image">
-                    </div>
-                    <div class="card-body position-relative pb-3">
-                        <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">For sale</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">Duplex with Garage | 200 sq.m</a></h3>
-                        <p class="mb-2 fs-sm text-muted">140-60 Beech Ave Flushing, NY 11355</p>
-                        <div class="fw-bold"><i class="fi-cash mt-n1 me-2 lead align-middle opacity-70"></i>$65,000</div>
-                    </div>
-                    <div class="card-footer d-flex align-items-center justify-content-center mx-3 pt-3 text-nowrap"><span class="d-inline-block mx-1 px-2 fs-sm">1<i class="fi-bed ms-1 mt-n1 fs-lg text-muted"></i></span><span class="d-inline-block mx-1 px-2 fs-sm">1<i class="fi-bath ms-1 mt-n1 fs-lg text-muted"></i></span><span class="d-inline-block mx-1 px-2 fs-sm">2<i class="fi-car ms-1 mt-n1 fs-lg text-muted"></i></span></div>
-                </div>
-            </div>
-            <!-- Item-->
-            <div class="col">
-                <div class="card shadow-sm card-hover border-0 h-100">
-                    <div class="card-img-top card-img-hover"><a class="img-overlay" href="real-estate-single-v1.html"></a>
-                        <div class="content-overlay end-0 top-0 pt-3 pe-3">
-                            <button class="btn btn-icon btn-light btn-xs text-primary rounded-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist"><i class="fi-heart"></i></button>
-                        </div><img src="img/real-estate/catalog/43.jpg" alt="Image">
-                    </div>
-                    <div class="card-body position-relative pb-3">
-                        <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">For sale</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">Merry House | 98 sq.m</a></h3>
-                        <p class="mb-2 fs-sm text-muted">123-12 Jamaica Ave Queens, NY 11418</p>
-                        <div class="fw-bold"><i class="fi-cash mt-n1 me-2 lead align-middle opacity-70"></i>$351,900</div>
-                    </div>
-                    <div class="card-footer d-flex align-items-center justify-content-center mx-3 pt-3 text-nowrap"><span class="d-inline-block mx-1 px-2 fs-sm">1<i class="fi-bed ms-1 mt-n1 fs-lg text-muted"></i></span><span class="d-inline-block mx-1 px-2 fs-sm">1<i class="fi-bath ms-1 mt-n1 fs-lg text-muted"></i></span><span class="d-inline-block mx-1 px-2 fs-sm">2<i class="fi-car ms-1 mt-n1 fs-lg text-muted"></i></span></div>
-                </div>
-            </div>
-        </div>
     </div>
 </section>

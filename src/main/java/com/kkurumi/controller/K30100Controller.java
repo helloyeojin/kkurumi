@@ -26,7 +26,7 @@ public class K30100Controller {
 
 
         model.addAttribute("center",dir+"K30101");
-        return "K30101";
+        return "index";
     }
 
     @RequestMapping("/K30102")

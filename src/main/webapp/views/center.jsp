@@ -1,6 +1,78 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<script>
+    let makeMap = {
+        map:null,
+        init:function (){
+            var mapContainer = document.querySelector('#map');// 지도를 표시할 div
+            var mapOption = {
+                center: new kakao.maps.LatLng(37.521842, 126.927499), // 지도의 중심좌표
+            level: 4 // 지도의 확대 레벨
+            };
+
+            map = new kakao.maps.Map(mapContainer, mapOption);
+            var mapTypeControl = new kakao.maps.MapTypeControl();
+
+            // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+            // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+            map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+            // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+            var zoomControl = new kakao.maps.ZoomControl();
+            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+            var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667);
+
+            var imageSrc1 = 'img/real-estate/marker_bibi.png', // 마커이미지의 주소입니다
+                imageSize1 = new kakao.maps.Size(45, 53), // 마커이미지의 크기입니다
+                imageOption1 = {offset: new kakao.maps.Point(20, 50)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+            var imageSrc2 = 'img/real-estate/marker_kiki.png', // 마커이미지의 주소입니다
+                imageSize2 = new kakao.maps.Size(45, 53), // 마커이미지의 크기입니다
+                imageOption2 = {offset: new kakao.maps.Point(20, 50)}; // 마커이미지의 옵션입니다.
+
+            var imageSrc3 = 'img/real-estate/marker_coli.png', // 마커이미지의 주소입니다
+                imageSize3 = new kakao.maps.Size(45, 53), // 마커이미지의 크기입니다
+                imageOption3 = {offset: new kakao.maps.Point(20, 50)}; // 마커이미지의 옵션입니다.
+
+            // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+            var markerImage1 = new kakao.maps.MarkerImage(imageSrc1, imageSize1, imageOption1),
+                markerPosition1 = new kakao.maps.LatLng(37.521805, 126.925635); // 마커가 표시될 위치입니다
+
+            var markerImage2 = new kakao.maps.MarkerImage(imageSrc2, imageSize2, imageOption2),
+                markerPosition2 = new kakao.maps.LatLng(37.520863, 126.927878); // 마커가 표시될 위치입니다
+
+            var markerImage3 = new kakao.maps.MarkerImage(imageSrc3, imageSize3, imageOption3),
+                markerPosition3 = new kakao.maps.LatLng(37.521117, 126.930869); // 마커가 표시될 위치입니다
+
+            // 마커를 생성합니다
+            var marker1 = new kakao.maps.Marker({
+                position: markerPosition1,
+                image: markerImage1 // 마커이미지 설정
+            });
+
+            var marker2 = new kakao.maps.Marker({
+                position: markerPosition2,
+                image: markerImage2 // 마커이미지 설정
+            });
+
+            var marker3 = new kakao.maps.Marker({
+                position: markerPosition3,
+                image: markerImage3 // 마커이미지 설정
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker1.setMap(map);
+            marker2.setMap(map);
+            marker3.setMap(map);
+        }
+    };
+
+    $(function (){
+        makeMap.init();
+    })
+</script>
+
 <!-- Page content-->
 <!-- Property cost calculator modal-->
 <div class="modal fade" id="cost-calculator" tabindex="-1">
@@ -76,7 +148,7 @@
         </div>
     </div>
 </section>
-<!-- Property categories-->아
+<!-- Property categories-->
 <section class="container mb-5">
     <div class="row row-cols-lg-6 row-cols-sm-3 row-cols-2 g-3 g-xl-4">
         <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K10100">
@@ -95,7 +167,7 @@
             <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="img/real-estate/lamu.png" style="width:2em"></div>
             <h3 class="icon-box-title fs-base mb-0">사업자대출</h3></a></div>
         <div class="col">
-            <div class="dropdown h-100"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover text-center" href="#" data-bs-toggle="dropdown">
+            <div class="dropdown h-100"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover text-center" href="/K30100" data-bs-toggle="dropdown">
                 <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto pt-2"><img src="img/real-estate/heart.png" style="width:1.4em"></div>
                 <h3 class="icon-box-title fs-base mb-0">KB카드</h3></a>
                 <div class="dropdown-menu dropdown-menu-end my-1"><a class="dropdown-item fw-bold" href="/K30100"><i class="fi-single-bed fs-base opacity-60 me-2"></i>Room</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-computer fs-base opacity-60 me-2"></i>Office</a><a class="dropdown-item fw-bold" href="real-estate-catalog-sale.html"><i class="fi-real-estate-buy fs-base opacity-60 me-2"></i>Land</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-parking fs-base opacity-60 me-2"></i>Parking lot</a></div>
@@ -122,7 +194,7 @@
                     </div>
                     <div class="card-body position-relative pb-3">
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">적금</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="#">KB내맘대로적금</a></h3>
+                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="/K10301">KB내맘대로적금</a></h3>
                         <p class="mb-2 fs-sm text-muted">누구나 쉽게 우대받는 DIY</p>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>내 맘대로 선택하는 우대이율 조건</div>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>내 맘대로 선택하는 무료보험 서비스</div>
@@ -139,7 +211,7 @@
                     </div>
                     <div class="card-body position-relative pb-3">
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">정기예금</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">KB국민UP정기예금</a></h3>
+                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="/K10201">KB국민UP정기예금</a></h3>
                         <p class="mb-2 fs-sm text-muted">월복리로 목돈 굴리는 예금</p>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>매월 복리로 상승하는 이율</div>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>급할 땐 해지하지 않아도 일부출금</div>
@@ -157,7 +229,7 @@
                     </div>
                     <div class="card-body position-relative pb-3">
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">개인대출</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">부동산담보대출</a></h3>
+                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="/K20104">부동산담보대출</a></h3>
                         <p class="mb-2 fs-sm text-muted">담보대출도 쉽고 빠르게</p>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>쉽게 비대면으로 신청하는 담보대출</div>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>혼합금리/변동금리 선택 가능</div>
@@ -174,7 +246,7 @@
                     </div>
                     <div class="card-body position-relative pb-3">
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">사업자대출</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">비대면소상공인대출</a></h3>
+                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="/K20201">비대면소상공인대출</a></h3>
                         <p class="mb-2 fs-sm text-muted">담보없이 최대 1억원</p>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>개인사업자를 위한 간편한 신용대출</div>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>필요할 때 365일 24시간 언제든지</div>
@@ -192,7 +264,7 @@
                     </div>
                     <div class="card-body position-relative pb-3">
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">카드</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">WE:SH All 카드</a></h3>
+                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="/K30101">WE:SH All 카드</a></h3>
                         <p class="mb-2 fs-sm text-muted">쇼핑 필수카드!</p>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>실적, 한도 없이 국내가맹점 1% 할인</div>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>쇼핑멤버십 50% 할인</div>
@@ -257,13 +329,58 @@
         </div>
     </div>
 </section>
-<!-- Property cost calculator-->
-<section class="container mb-5 pb-2 pb-lg-4">
-    <div class="row align-items-center">
-        <div class="col-md-5"><img class="d-block mx-md-0 mx-auto mb-md-0 mb-4" src="img/real-estate/illustrations/calculator.svg" width="416" alt="Illustration"></div>
-        <div class="col-xxl-6 col-md-7 text-md-start text-center">
-            <h2>Сalculate the cost of your property</h2>
-            <p class="pb-3 fs-lg">Real estate appraisal is a procedure that allows you to determine the average market value of real estate (apartment, house, land, etc.). Сalculate the cost of your property with our new Calculation Service.</p><a class="btn btn-lg btn-primary" href="#cost-calculator" data-bs-toggle="modal"><i class="fi-calculator me-2"></i>Calculate</a>
+<!-- Banner + Where to eat-->
+<div class="container mb-5 pb-lg-4">
+    <div class="row">
+        <!-- Banner-->
+        <div class="col-lg-4 text-start mb-lg-0 mb-5">
+            <div class="pe-4">
+                <img src="img/real-estate/illustrations/find_store.png" alt="Illustration">
+            </div>
+        </div>
+        <!-- Where to eat-->
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-sm-6 pe-0">
+                    <!-- Item-->
+                    <div class="d-flex align-items-start position-relative mb-4"><img class="flex-shrink-0 me-3" src="img/real-estate/store_bibi.png" alt="Store Info" style="width:2em">
+                        <div>
+                            <h3 class="mb-2 fs-lg"><a class="nav-link stretched-link">여의도종합금융센터</a></h3>
+                            <ul class="list-unstyled mb-0 fs-xs">
+                                <li><b>02)785-2691</b> | 영업시간 <span class="text-primary">09:00~16:00</span></li>
+                                <li><b>도로명</b> 서울 영등포구 여의나루로 50 (여의도동, 한국교직원공제회관)</li>
+                                <li><b>지번</b> 서울 영등포구 여의도동 25-3번지 한국교직원공제회관</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Item-->
+                    <div class="d-flex align-items-start position-relative mb-4"><img class="flex-shrink-0 me-3" src="img/real-estate/store_coli.png" alt="Store Info" style="width:2em">
+                        <div>
+                            <h3 class="mb-2 fs-lg"><a class="nav-link stretched-link" href="city-guide-single.html">동여의도점</a></h3>
+                            <ul class="list-unstyled mb-0 fs-xs">
+                                <li><b>02)761-1831</b> | 영업시간 <span class="text-primary">09:00~16:00</span></li>
+                                <li><b>도로명</b> 서울 영등포구 국제금융로 72 (여의도동, 호정빌딩)</li>
+                                <li><b>지번</b> 서울 영등포구 여의도동 43-2번지 호정빌딩</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Item-->
+                    <div class="d-flex align-items-start position-relative mb-4"><img class="flex-shrink-0 me-3" src="img/real-estate/store_kiki.png" alt="Store Info" style="width:1.8em">
+                        <div>
+                            <h3 class="mb-2 fs-lg"><a class="nav-link stretched-link" href="city-guide-single.html">여의도영업부</a></h3>
+                            <ul class="list-unstyled mb-0 fs-xs">
+                                <li><b>02)2073-7114</b> | 영업시간 <span class="text-primary">09:00~16:00</span></li>
+                                <li><b>도로명</b> 서울 영등포구 국제금융로8길 26 (여의도동)</li>
+                                <li><b>지번</b> 서울 영등포구 여의도동 36-3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 px-0">
+                    <!-- Item-->
+                    <div id="map" style="width:26.5em;height:21.5em"></div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>
