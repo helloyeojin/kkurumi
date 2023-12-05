@@ -76,7 +76,7 @@
         </div>
     </div>
 </section>
-<!-- Property categories-->아
+<!-- Property categories-->
 <section class="container mb-5">
     <div class="row row-cols-lg-6 row-cols-sm-3 row-cols-2 g-3 g-xl-4">
         <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K10100">
@@ -95,7 +95,7 @@
             <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="img/real-estate/lamu.png" style="width:2em"></div>
             <h3 class="icon-box-title fs-base mb-0">사업자대출</h3></a></div>
         <div class="col">
-            <div class="dropdown h-100"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover text-center" href="#" data-bs-toggle="dropdown">
+            <div class="dropdown h-100"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover text-center" href="/K30100" data-bs-toggle="dropdown">
                 <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto pt-2"><img src="img/real-estate/heart.png" style="width:1.4em"></div>
                 <h3 class="icon-box-title fs-base mb-0">KB카드</h3></a>
                 <div class="dropdown-menu dropdown-menu-end my-1"><a class="dropdown-item fw-bold" href="/K30100"><i class="fi-single-bed fs-base opacity-60 me-2"></i>Room</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-computer fs-base opacity-60 me-2"></i>Office</a><a class="dropdown-item fw-bold" href="real-estate-catalog-sale.html"><i class="fi-real-estate-buy fs-base opacity-60 me-2"></i>Land</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-parking fs-base opacity-60 me-2"></i>Parking lot</a></div>
@@ -122,7 +122,7 @@
                     </div>
                     <div class="card-body position-relative pb-3">
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">적금</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="#">KB내맘대로적금</a></h3>
+                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="/K10301">KB내맘대로적금</a></h3>
                         <p class="mb-2 fs-sm text-muted">누구나 쉽게 우대받는 DIY</p>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>내 맘대로 선택하는 우대이율 조건</div>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>내 맘대로 선택하는 무료보험 서비스</div>
@@ -139,7 +139,7 @@
                     </div>
                     <div class="card-body position-relative pb-3">
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">정기예금</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">KB국민UP정기예금</a></h3>
+                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="/K10201">KB국민UP정기예금</a></h3>
                         <p class="mb-2 fs-sm text-muted">월복리로 목돈 굴리는 예금</p>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>매월 복리로 상승하는 이율</div>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>급할 땐 해지하지 않아도 일부출금</div>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="card-body position-relative pb-3">
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">개인대출</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">부동산담보대출</a></h3>
+                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="/K20104">부동산담보대출</a></h3>
                         <p class="mb-2 fs-sm text-muted">담보대출도 쉽고 빠르게</p>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>쉽게 비대면으로 신청하는 담보대출</div>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>혼합금리/변동금리 선택 가능</div>
@@ -174,7 +174,7 @@
                     </div>
                     <div class="card-body position-relative pb-3">
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">사업자대출</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">비대면소상공인대출</a></h3>
+                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="/K20201">비대면소상공인대출</a></h3>
                         <p class="mb-2 fs-sm text-muted">담보없이 최대 1억원</p>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>개인사업자를 위한 간편한 신용대출</div>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>필요할 때 365일 24시간 언제든지</div>
@@ -192,7 +192,7 @@
                     </div>
                     <div class="card-body position-relative pb-3">
                         <h4 class="mb-1 fs-xs fw-normal text-uppercase text-primary">카드</h4>
-                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="real-estate-single-v1.html">WE:SH All 카드</a></h3>
+                        <h3 class="h6 mb-2 fs-base"><a class="nav-link stretched-link" href="/K30101">WE:SH All 카드</a></h3>
                         <p class="mb-2 fs-sm text-muted">쇼핑 필수카드!</p>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>실적, 한도 없이 국내가맹점 1% 할인</div>
                         <div class="fw-semibold"><i class="fi-check mt-n1 me-2 lead align-middle opacity-50"></i>쇼핑멤버십 50% 할인</div>
