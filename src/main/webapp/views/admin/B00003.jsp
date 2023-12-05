@@ -114,16 +114,6 @@
                 }]
             });
 
-
-
-
-
-
-
-
-
-
-
             Highcharts.chart('container2', {
             chart: {
                 type: 'spline',
@@ -838,36 +828,6 @@
                             <div class="custom-box"><h4>재 가입이 높은 상품</h4>
                                 <!-- Table with contextual rows -->
                                 <div class="table-responsive">
-<%--                                    <table class="table table-striped">--%>
-<%--                                        <thead>--%>
-<%--                                        <tr>--%>
-<%--                                            <th>#</th>--%>
-<%--                                            <th>순위</th>--%>
-<%--                                        </tr>--%>
-<%--                                        </thead>--%>
-<%--                                        <tbody>--%>
-<%--                                        <tr class="table-active">--%>
-<%--                                            <th scope="row">1 <span class="badge bg-primary">hot</span> </th>--%>
-<%--                                            <td>주택청약종합저축</td>--%>
-<%--                                        </tr>--%>
-<%--                                        <tr class="table">--%>
-<%--                                            <th scope="row">2</th>--%>
-<%--                                            <td>직장인우대적금</td>--%>
-<%--                                        </tr>--%>
-<%--                                        <tr class="table">--%>
-<%--                                            <th scope="row">3  <i class=" fi-arrow-up red-arrow "></i> </th>--%>
-<%--                                            <td>마이핏우대적금</td>--%>
-<%--                                        </tr>--%>
-<%--                                        <tr class="table">--%>
-<%--                                            <th scope="row">4 <span class="badge bg-success"> new </span></th>--%>
-<%--                                            <td>소소한여행적금</td>--%>
-<%--                                        </tr>--%>
-<%--                                        <tr class="table">--%>
-<%--                                            <th scope="row">5 <i class=" fi-arrow-down blue-arrow "></i></th>--%>
-<%--                                            <td>행복언제나적금</td>--%>
-<%--                                        </tr>--%>
-<%--                                        </tbody>--%>
-<%--                                    </table>--%>
                                 </div>
                                 <ul id="searchRanking2" class="search-ranking2"></ul>
 
@@ -1099,12 +1059,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <figure class="highcharts-figure" style="margin-top: 5%; background-color: #f0f0f0;">
-                        <div id="container1"></div>
+                        <div id="containerdh1"></div>
                     </figure>
                 </div>
                 <div class="col-md-6">
                     <figure class="highcharts-figure" style="margin-top: 5%; background-color: #f0f0f0;">
-                        <div id="container2"></div>
+                        <div id="containerdh2"></div>
                     </figure>
                 </div>
             </div>
