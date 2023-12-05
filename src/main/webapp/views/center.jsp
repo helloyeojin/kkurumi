@@ -1,6 +1,78 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<script>
+    let makeMap = {
+        map:null,
+        init:function (){
+            var mapContainer = document.querySelector('#map');// 지도를 표시할 div
+            var mapOption = {
+                center: new kakao.maps.LatLng(37.521842, 126.927499), // 지도의 중심좌표
+            level: 4 // 지도의 확대 레벨
+            };
+
+            map = new kakao.maps.Map(mapContainer, mapOption);
+            var mapTypeControl = new kakao.maps.MapTypeControl();
+
+            // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+            // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+            map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+            // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+            var zoomControl = new kakao.maps.ZoomControl();
+            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+            var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667);
+
+            var imageSrc1 = 'img/real-estate/marker_bibi.png', // 마커이미지의 주소입니다
+                imageSize1 = new kakao.maps.Size(45, 53), // 마커이미지의 크기입니다
+                imageOption1 = {offset: new kakao.maps.Point(20, 50)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+            var imageSrc2 = 'img/real-estate/marker_kiki.png', // 마커이미지의 주소입니다
+                imageSize2 = new kakao.maps.Size(45, 53), // 마커이미지의 크기입니다
+                imageOption2 = {offset: new kakao.maps.Point(20, 50)}; // 마커이미지의 옵션입니다.
+
+            var imageSrc3 = 'img/real-estate/marker_coli.png', // 마커이미지의 주소입니다
+                imageSize3 = new kakao.maps.Size(45, 53), // 마커이미지의 크기입니다
+                imageOption3 = {offset: new kakao.maps.Point(20, 50)}; // 마커이미지의 옵션입니다.
+
+            // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+            var markerImage1 = new kakao.maps.MarkerImage(imageSrc1, imageSize1, imageOption1),
+                markerPosition1 = new kakao.maps.LatLng(37.521805, 126.925635); // 마커가 표시될 위치입니다
+
+            var markerImage2 = new kakao.maps.MarkerImage(imageSrc2, imageSize2, imageOption2),
+                markerPosition2 = new kakao.maps.LatLng(37.520863, 126.927878); // 마커가 표시될 위치입니다
+
+            var markerImage3 = new kakao.maps.MarkerImage(imageSrc3, imageSize3, imageOption3),
+                markerPosition3 = new kakao.maps.LatLng(37.521117, 126.930869); // 마커가 표시될 위치입니다
+
+            // 마커를 생성합니다
+            var marker1 = new kakao.maps.Marker({
+                position: markerPosition1,
+                image: markerImage1 // 마커이미지 설정
+            });
+
+            var marker2 = new kakao.maps.Marker({
+                position: markerPosition2,
+                image: markerImage2 // 마커이미지 설정
+            });
+
+            var marker3 = new kakao.maps.Marker({
+                position: markerPosition3,
+                image: markerImage3 // 마커이미지 설정
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker1.setMap(map);
+            marker2.setMap(map);
+            marker3.setMap(map);
+        }
+    };
+
+    $(function (){
+        makeMap.init();
+    })
+</script>
+
 <!-- Page content-->
 <!-- Property cost calculator modal-->
 <div class="modal fade" id="cost-calculator" tabindex="-1">
@@ -257,13 +329,58 @@
         </div>
     </div>
 </section>
-<!-- Property cost calculator-->
-<section class="container mb-5 pb-2 pb-lg-4">
-    <div class="row align-items-center">
-        <div class="col-md-5"><img class="d-block mx-md-0 mx-auto mb-md-0 mb-4" src="img/real-estate/illustrations/calculator.svg" width="416" alt="Illustration"></div>
-        <div class="col-xxl-6 col-md-7 text-md-start text-center">
-            <h2>Сalculate the cost of your property</h2>
-            <p class="pb-3 fs-lg">Real estate appraisal is a procedure that allows you to determine the average market value of real estate (apartment, house, land, etc.). Сalculate the cost of your property with our new Calculation Service.</p><a class="btn btn-lg btn-primary" href="#cost-calculator" data-bs-toggle="modal"><i class="fi-calculator me-2"></i>Calculate</a>
+<!-- Banner + Where to eat-->
+<div class="container mb-5 pb-lg-4">
+    <div class="row">
+        <!-- Banner-->
+        <div class="col-lg-4 text-start mb-lg-0 mb-5">
+            <div class="pe-4">
+                <img src="img/real-estate/illustrations/find_store.png" alt="Illustration">
+            </div>
+        </div>
+        <!-- Where to eat-->
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-sm-6 pe-0">
+                    <!-- Item-->
+                    <div class="d-flex align-items-start position-relative mb-4"><img class="flex-shrink-0 me-3" src="img/real-estate/store_bibi.png" alt="Store Info" style="width:2em">
+                        <div>
+                            <h3 class="mb-2 fs-lg"><a class="nav-link stretched-link">여의도종합금융센터</a></h3>
+                            <ul class="list-unstyled mb-0 fs-xs">
+                                <li><b>02)785-2691</b> | 영업시간 <span class="text-primary">09:00~16:00</span></li>
+                                <li><b>도로명</b> 서울 영등포구 여의나루로 50 (여의도동, 한국교직원공제회관)</li>
+                                <li><b>지번</b> 서울 영등포구 여의도동 25-3번지 한국교직원공제회관</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Item-->
+                    <div class="d-flex align-items-start position-relative mb-4"><img class="flex-shrink-0 me-3" src="img/real-estate/store_coli.png" alt="Store Info" style="width:2em">
+                        <div>
+                            <h3 class="mb-2 fs-lg"><a class="nav-link stretched-link" href="city-guide-single.html">동여의도점</a></h3>
+                            <ul class="list-unstyled mb-0 fs-xs">
+                                <li><b>02)761-1831</b> | 영업시간 <span class="text-primary">09:00~16:00</span></li>
+                                <li><b>도로명</b> 서울 영등포구 국제금융로 72 (여의도동, 호정빌딩)</li>
+                                <li><b>지번</b> 서울 영등포구 여의도동 43-2번지 호정빌딩</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Item-->
+                    <div class="d-flex align-items-start position-relative mb-4"><img class="flex-shrink-0 me-3" src="img/real-estate/store_kiki.png" alt="Store Info" style="width:1.8em">
+                        <div>
+                            <h3 class="mb-2 fs-lg"><a class="nav-link stretched-link" href="city-guide-single.html">여의도영업부</a></h3>
+                            <ul class="list-unstyled mb-0 fs-xs">
+                                <li><b>02)2073-7114</b> | 영업시간 <span class="text-primary">09:00~16:00</span></li>
+                                <li><b>도로명</b> 서울 영등포구 국제금융로8길 26 (여의도동)</li>
+                                <li><b>지번</b> 서울 영등포구 여의도동 36-3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 px-0">
+                    <!-- Item-->
+                    <div id="map" style="width:26.5em;height:21.5em"></div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>
