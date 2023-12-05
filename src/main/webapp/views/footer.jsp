@@ -10,7 +10,7 @@
         <div class="d-flex flex-sm-row flex-column justify-content-between mx-n2">
           <div class="mb-sm-0 mb-4 px-2"><a class="d-inline-block mb-4" href="real-estate-home-v1.html"><img src="/img/logo/logo_bank_long.png" width="116" alt="logo"></a>
             <ul class="nav flex-column mb-sm-4 mb-2">
-              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="mailto:kbkookminbank@email.com"><i class="fi-mail mt-n1 me-2 align-middle opacity-70"></i>챗봇/채팅/이메일상담(24시간)</a></li>
+              <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal" href="/etc/M00001.jsp"><i class="fi-mail mt-n1 me-2 align-middle opacity-70"></i>챗봇/채팅/이메일상담(24시간)</a></li>
               <li class="nav-item"><a class="nav-link p-0 fw-normal" href="tel:1588-9999"><i class="fi-device-mobile mt-n1 me-2 align-middle opacity-70"></i>대표전화 1588-9999</a></li>
             </ul>
             <div class="pt-2">
