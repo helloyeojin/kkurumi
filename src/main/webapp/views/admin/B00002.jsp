@@ -118,6 +118,9 @@
             $('#yogubul').hide();
             $('#termDeposit').hide();
             $('#mainCharts').hide();
+            $('#customerProfile').hide();
+            $('#customerProfile2').hide();
+            $('#customerPIN').hide();
             $('#Charts').show();
 
             upcount('.total', getRandomNum(1000,3000,0));
@@ -364,6 +367,8 @@
             $('#termDeposit').hide();
             $('#mainCharts').hide();
             $('#customerPIN').hide();
+            $('#customerProfile').hide();
+            $('#customerProfile2').hide();
             $('#yogubul').show();
 
             Highcharts.chart('container_yo1', {
@@ -1868,7 +1873,6 @@
             }, 1000);
         };
 
-// Create the initial data
         const data = (function () {
             const data = [];
             const time = new Date().getTime();
@@ -1882,7 +1886,6 @@
             return data;
         }());
 
-// Plugin to add a pulsating marker on add point
         Highcharts.addEvent(Highcharts.Series, 'addPoint', e => {
             const point = e.point,
                 series = e.target;
@@ -1982,18 +1985,34 @@
             ]
         });
 
-
-
     };
 
     function fn_customerPIN() {
         $('#customerPINbtn').click(() => {
-            $('#Charts').hide();
-            $('#termDeposit').hide();
-            $('#mainCharts').hide();
-            $('#yogubul').hide();
-            $('#customerPIN').show();
-            searchAndDisplay();
+            var customerPin = $('#customerPin').val();
+            $('#customerProfile2').hide();
+
+            if (customerPin === '12345') {
+                $('#Charts').hide();
+                $('#termDeposit').hide();
+                $('#mainCharts').hide();
+                $('#yogubul').hide();
+                $('#customerPIN').show();
+                $('#customerProfile').show();
+                $('#customerProfile2').show();
+                $('#hello').css('opacity', 0); // 투명도를 조절하여 요소를 숨김
+                setTimeout(function() {
+                    $('#hello').hide(); // 숨겨진 후에 display를 변경하여 완전히 사라지게 함
+                    $('#customerProfile3').hide();
+                }, 500); // 투명도 변경 애니메이션 시간 (0.5초 = 500밀리초)
+                searchAndDisplay();
+            } else if(customerPin === '') {
+                alert('고객 핀번호를 입력해주세요.');
+            } else {
+                alert('잘못된 핀번호 입니다!');
+            }
+
+
         });
     };
 
@@ -2213,21 +2232,7 @@
     }
     //프로필 onclick 이벤트
     function searchAndDisplay() {
-        var customerPin = $('#customerPin').val();
-        $('#customerProfile2').hide();
 
-
-        if (customerPin === '12345') {
-            $('#customerProfile').show();
-            $('#customerProfile2').show();
-            $('#hello').css('opacity', 0); // 투명도를 조절하여 요소를 숨김
-            setTimeout(function() {
-                $('#hello').hide(); // 숨겨진 후에 display를 변경하여 완전히 사라지게 함
-                $('#customerProfile3').hide();
-            }, 500); // 투명도 변경 애니메이션 시간 (0.5초 = 500밀리초)
-        } else {
-            alert('잘못된 핀번호 입니다!');
-        }
     }
 
 
@@ -2254,8 +2259,8 @@
                     </form>
                 </div>
                 <!--프로필표출-->
-                <div>
-                    <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" style="width: 13em; height: 13em; border-radius: 0.5rem; display: none;" id="customerProfile">
+                <div class="">
+                    <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" id="customerProfile">
                         <button id="closeButton">닫기</button>
                         <img src="img/real-estate/profile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
                         <p style="margin-top: 8px; text-align: center; color: black; font-weight: bold;">김국민</p>
