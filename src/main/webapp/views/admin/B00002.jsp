@@ -1936,8 +1936,6 @@
             ]
         });
 
-
-
     };
 
     //숫자세기 함수
@@ -2392,9 +2390,12 @@
                 <h3 class="h2 mb-2"> KB 꾸러미 통계센터</h3>
                 <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
                     <div class="card-body">
+
+
                         <figure class="highcharts-figure" style="">
                             <div id="mainContainer"></div>
                         </figure>
+
                     </div>
                 </div>
                 <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
