@@ -32,7 +32,11 @@ public class LoginController {
                 session.setAttribute("loginCust", cust);
                 session.setAttribute("user_name", user_name);
                 model.addAttribute("center", "center");
-                return "redirect:/";
+                if("admin".equals(user_name)) {
+                    return "redirect:/B00002";
+                } else {
+                    return "redirect:/";
+                }
             } else {
                 log.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@222"+ cust.getUser_name());
                 model.addAttribute("msg", "아이디를 확인하세요.");
