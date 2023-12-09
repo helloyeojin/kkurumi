@@ -1,22 +1,84 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<!--캘린더 style 정의-->
 <style>
     .datepicker {
         width:auto;
     }
 
 </style>
+
+<!--툴팁style 정의-->
+<style>
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+
+<!--실시간방문자순위 style 정의-->
+<style>
+    #searchRanking {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .ranking-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s, transform 0.5s;
+    }
+    .ranking-item1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .ranking-item img {
+        margin-right: 10px;
+    }
+</style>
+
 <link rel="stylesheet" href="/css/datepick.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <script>
     $(document).ready(function() {
+
         fn_mainCharts();
         fn_chartStart();
         fn_productChartsStart();
         fn_customerPIN();
         checkboxDefault();
+
     });
 
     function fn_chartStart() {
@@ -1812,6 +1874,9 @@
 
     function fn_mainCharts() {
 
+        resetRanking();
+        setInterval(resetRanking, 4000);
+
         function updateSearchRanking() {
             var searchKeywords = [
                 "KB국민ONE통장", "직장인우대통장", "주택청약종합저축", "KB수퍼정기예금", "외화수출입통장", "맑은하늘적금", "맑은바다적금", "마이핏통장"
@@ -1854,7 +1919,7 @@
             }
 
         };
-        setInterval(updateSearchRanking(), 1500);
+        //setInterval(updateSearchRanking(), 1500);
 
         $('.datepicker').datepicker({
             dateFormat: 'yy-mm-dd',
@@ -2254,12 +2319,56 @@
     function searchAndDisplay() {
 
     }
-
+    //체크박스 전체 체크 함수
     function checkboxDefault() {
         $('.form-check-input[type="checkbox"]').prop('checked', true);
     }
+    //실시간 방문자 순위 함수
+    function resetRanking() {
+        function getRandomKeyword(excludedKeywords) {
+            const keywords = ['KB국민ONE통장', 'KB국민UP정기예금', 'KB맑은하늘적금', '직장인든든 신용대출', '직장인우대적금'];
+            const availableKeywords = keywords.filter(keyword => !excludedKeywords.includes(keyword));
 
+            if (availableKeywords.length === 0) {
+                // 모든 키워드가 사용되었으면 초기화
+                return keywords[Math.floor(Math.random() * keywords.length)];
+            }
 
+            const randomIndex = Math.floor(Math.random() * availableKeywords.length);
+            return availableKeywords[randomIndex];
+        }
+        // 1부터 5까지의 순위를 가진 검색어 목록을 생성
+        let excludedKeywords = [];
+        const rankingData = Array.from({ length: 5 }, (_, index) => {
+            const keyword = getRandomKeyword(excludedKeywords);
+            excludedKeywords.push(keyword);
+            return {
+                rank: index + 1,
+                keyword: keyword
+            };
+        });
+
+        // 검색어 목록을 화면에 표시
+        const searchRankingElement = document.getElementById('searchRanking');
+        searchRankingElement.innerHTML = '';
+
+        rankingData.forEach(item => {
+            const li = document.createElement('li');
+            li.className = 'ranking-item';
+            if (item.rank == 1) {
+                li.innerHTML = '<span class="badge bg-faded-primary fw-bold">' + item.rank + '. ' + item.keyword + '</span>';
+            } else{
+                li.innerHTML = '<span class="badge bg-faded-dark">' + item.rank + '. ' + item.keyword + '</span>';
+            }
+            searchRankingElement.appendChild(li);
+
+            // 부드러운 애니메이션 효과
+            setTimeout(function() {
+                li.style.opacity = '1';
+                li.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    }
 </script>
 
 <!-- Page container-->
@@ -2524,34 +2633,55 @@
                     </div>
                 </div>
 
-                <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div style="margin-top: 50px;"> </div>
-                            <div class="col-md-4">
-                                <div class="custom-box"><h4>실시간 많이 본 상품</h4>
-                                    <ul id="searchRanking" class="search-ranking"></ul>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="custom-box"><h4>재 가입이 높은 상품</h4>
-                                    <div class="table-responsive">
+                <div class="row">
+                    <div class="col-md-4 mb-4" style="margin-top: 1%;" >
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="custom-box">
+                                        <h2 class="h3 fw-bold text-center py-1 mb-0 border-bottom">실시간 많이 본 상품</h2>
+                                        <ul id="searchRanking" class="search-ranking" style="margin-top: 6%;"></ul>
                                     </div>
-                                    <ul id="searchRanking2" class="search-ranking2"></ul>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="custom-box">
-                                    <h4>실시간 판매량 순위</h4>
-                                    <ul id="searchRanking3" class="search-ranking"></ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mb-4" style="margin-top: 1%;">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6" style="border-right:1px solid lightgray">
+                                        <div class="custom-box">
+                                            <h2 class="h3 fw-bold text-center py-1 mb-0 border-bottom">재 가입율이 높은 상품</h2>
+                                            <ul id="searchRanking2" class="search-ranking" style="margin-top: 6%;">
+                                                <li class="ranking-item1"><span class="badge bg-faded-dark">1. KB국민UP정기예금</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-faded-dark">2. KB맑은하늘적금</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-faded-dark">3. nori체크카드</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-faded-dark">4. 직장인든든 신용대출</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-faded-dark">5. 직장인우대적금</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="custom-box">
+                                            <h2 class="h3 fw-bold text-center py-1 mb-0 border-bottom">판매량 순위</h2>
+                                            <ul id="searchRanking3" class="search-ranking" style="margin-top: 6%;">
+                                                <li class="ranking-item1"><span class="badge bg-faded-dark">1. KB맑은하늘적금</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-faded-dark">2. 직장인우대적금</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-faded-dark">3. KB국민ONE통장</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-faded-dark">4. KB국민UP정기예금</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-faded-dark">5. 직장인든든 신용대출</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div style="margin-bottom: 20px;"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
+                <!--일자별 클릭수-->
+                <div class="card mb-4 p-2 shadow-sm" style="">
                     <div class="card-body">
                         <div class="d-flex align-items-start mb-3 pb-2 border-bottom">
                             <div class="ps-2 ms-1">
