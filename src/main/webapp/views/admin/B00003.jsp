@@ -622,7 +622,7 @@
                         </div>
 
 
-                    <div class="tab-pane fade show active" id="categories" role="tabpanel">
+                    <div class="tab-pane fade show active" id="categories2" role="tabpanel">
                         <div class="row row-cols-lg-2 row-cols-1 g-3">
                             <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K10100">
                                 <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto pt-1"><img src="/img/real-estate/coli.png" style="width:1.5em"></div>
