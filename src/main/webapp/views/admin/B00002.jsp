@@ -15,7 +15,8 @@
         fn_mainCharts();
         fn_chartStart();
         fn_productChartsStart();
-        fn_customerPIN()
+        fn_customerPIN();
+        checkboxDefault();
     });
 
     function fn_chartStart() {
@@ -113,7 +114,6 @@
 
         //분석시작하기 버튼 클릭시 작동함수
         $('#chartsBtn').click(() => {
-
             tags();
             $('#yogubul').hide();
             $('#termDeposit').hide();
@@ -123,12 +123,32 @@
             $('#customerPIN').hide();
             $('#Charts').show();
 
-            upcount('.total', getRandomNum(1000,3000,0));
-            upcount('.totalInterest', getRandomNum(100,400,0));
-            upcount('.totalNotInterest', getRandomNum(25,200,0));
-            upcount1('.stayMin', getRandomNum(5, 20, 1), 1);
-            upcount1('.stayPrdtMin', getRandomNum(4,7,1), 1);
-            upcount1('.stayLnMin', getRandomNum(18,28,1), 1);
+            //모든체크박스 checked시 값 크게 만들기
+            var checkboxes = $('.form-check-input[type="checkbox"]');
+
+            var anyUnchecked = false;
+            checkboxes.each(function() {
+                if (!$(this).prop('checked')) {
+                    anyUnchecked = true;
+                    return false; // 반복 중지
+                }
+            });
+
+            if (!anyUnchecked) {
+                upcount('.total', getRandomNum(3000,5000,0));
+                upcount('.totalInterest', getRandomNum(500,600,0));
+                upcount('.totalNotInterest', getRandomNum(200,300,0));
+                upcount1('.stayMin', getRandomNum(5, 20, 1), 1);
+                upcount1('.stayPrdtMin', getRandomNum(4,7,1), 1);
+                upcount1('.stayLnMin', getRandomNum(18,28,1), 1);
+            } else {
+                upcount('.total', getRandomNum(1000,3000,0));
+                upcount('.totalInterest', getRandomNum(100,400,0));
+                upcount('.totalNotInterest', getRandomNum(25,200,0));
+                upcount1('.stayMin', getRandomNum(5, 20, 1), 1);
+                upcount1('.stayPrdtMin', getRandomNum(4,7,1), 1);
+                upcount1('.stayLnMin', getRandomNum(18,28,1), 1);
+            }
 
             Highcharts.chart('container1', {
 
@@ -2063,7 +2083,7 @@
     function tags() {
         $("#account-nav ul").empty();
         if($('#ageTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">전체 연령</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 연령</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#age10").is(":checked")) {
@@ -2107,7 +2127,7 @@
         }
 
         if($('#districtTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">전체 지역</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 지역</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#seoul").is(":checked")) {
@@ -2137,7 +2157,7 @@
         }
 
         if($('#payTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">전체 소득범위</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 소득범위</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#2000").is(":checked")) {
@@ -2159,7 +2179,7 @@
         }
 
         if($('#jobTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">전체 직업</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 직업</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#employee").is(":checked")) {
@@ -2185,7 +2205,7 @@
         }
 
         if($('#csoreTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">전체 신용등급</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 신용등급</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#4").is(":checked")) {
@@ -2235,6 +2255,10 @@
 
     }
 
+    function checkboxDefault() {
+        $('.form-check-input[type="checkbox"]').prop('checked', true);
+    }
+
 
 </script>
 
@@ -2260,7 +2284,7 @@
                 </div>
                 <!--프로필표출-->
                 <div class="">
-                    <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" id="customerProfile">
+                    <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" style="width: 13em; height: 13em; border-radius: 0.5rem; display: none;" id="customerProfile">
                         <button id="closeButton">닫기</button>
                         <img src="img/real-estate/profile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
                         <p style="margin-top: 8px; text-align: center; color: black; font-weight: bold;">김국민</p>
@@ -2361,7 +2385,7 @@
                             <div class="pb-4 mb-2">
                                 <h3 class="h6">성별</h3>
                                 <select class="form-select mb-2" id="gender">
-                                    <option id="genderTotal" value="전체성별" selected>전체</option>
+                                    <option id="genderTotal" value="#전체성별" selected>전체</option>
                                     <option id="genderMen" value="#남자" >남</option>
                                     <option id="genderWomen" value="#여자">여</option>
                                 </select>

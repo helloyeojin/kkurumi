@@ -36,10 +36,14 @@
     $('.IDloginbtn').click(()=>{
       $('#IDlogin').show();
       $('#CERTlogin').hide();
+      $('.IDloginbtn').addClass('active');
+      $('.CERTloginbtn').removeClass('active');
     });
     $('.CERTloginbtn').click(()=>{
       $('#CERTlogin').show();
       $('#IDlogin').hide();
+      $('.IDloginbtn').removeClass('active');
+      $('.CERTloginbtn').addClass('active');
     });
   });
 </script>
@@ -97,8 +101,8 @@
 
             <div class="col-md-6 px-2 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5">
               <div class="" style="margin-left: 5.5%;margin-bottom: 8%;">
-                <button type="button" class="btn btn-outline-dark rounded-0 IDloginbtn">아이디 로그인</button>
-                <button type="button" class="btn btn-outline-dark rounded-0 CERTloginbtn" style="margin-left: -1.5%;">인증서 로그인</button>
+                <button type="button" class="btn btn-outline-warning rounded-0 IDloginbtn active">아이디 로그인</button>
+                <button type="button" class="btn btn-outline-warning rounded-0 CERTloginbtn" style="margin-left: -1.5%;">인증서 로그인</button>
               </div>
               <div id="IDlogin" style="">
                 <form class="form-validate" id="loginForm">
