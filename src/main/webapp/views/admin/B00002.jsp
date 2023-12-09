@@ -15,6 +15,8 @@
         fn_mainCharts();
         fn_chartStart();
         fn_productChartsStart();
+        fn_customerPIN();
+        checkboxDefault();
     });
 
     function fn_chartStart() {
@@ -112,19 +114,41 @@
 
         //분석시작하기 버튼 클릭시 작동함수
         $('#chartsBtn').click(() => {
-
             tags();
             $('#yogubul').hide();
             $('#termDeposit').hide();
             $('#mainCharts').hide();
+            $('#customerProfile').hide();
+            $('#customerProfile2').hide();
+            $('#customerPIN').hide();
             $('#Charts').show();
 
-            upcount('.total', getRandomNum(1000,3000,0));
-            upcount('.totalInterest', getRandomNum(100,400,0));
-            upcount('.totalNotInterest', getRandomNum(25,200,0));
-            upcount1('.stayMin', getRandomNum(5, 20, 1), 1);
-            upcount1('.stayPrdtMin', getRandomNum(4,7,1), 1);
-            upcount1('.stayLnMin', getRandomNum(18,28,1), 1);
+            //모든체크박스 checked시 값 크게 만들기
+            var checkboxes = $('.form-check-input[type="checkbox"]');
+
+            var anyUnchecked = false;
+            checkboxes.each(function() {
+                if (!$(this).prop('checked')) {
+                    anyUnchecked = true;
+                    return false; // 반복 중지
+                }
+            });
+
+            if (!anyUnchecked) {
+                upcount('.total', getRandomNum(3000,5000,0));
+                upcount('.totalInterest', getRandomNum(500,600,0));
+                upcount('.totalNotInterest', getRandomNum(200,300,0));
+                upcount1('.stayMin', getRandomNum(5, 20, 1), 1);
+                upcount1('.stayPrdtMin', getRandomNum(4,7,1), 1);
+                upcount1('.stayLnMin', getRandomNum(18,28,1), 1);
+            } else {
+                upcount('.total', getRandomNum(1000,3000,0));
+                upcount('.totalInterest', getRandomNum(100,400,0));
+                upcount('.totalNotInterest', getRandomNum(25,200,0));
+                upcount1('.stayMin', getRandomNum(5, 20, 1), 1);
+                upcount1('.stayPrdtMin', getRandomNum(4,7,1), 1);
+                upcount1('.stayLnMin', getRandomNum(18,28,1), 1);
+            }
 
             Highcharts.chart('container1', {
 
@@ -362,6 +386,9 @@
             $('#Charts').hide();
             $('#termDeposit').hide();
             $('#mainCharts').hide();
+            $('#customerPIN').hide();
+            $('#customerProfile').hide();
+            $('#customerProfile2').hide();
             $('#yogubul').show();
 
             Highcharts.chart('container_yo1', {
@@ -1785,6 +1812,50 @@
 
     function fn_mainCharts() {
 
+        function updateSearchRanking() {
+            var searchKeywords = [
+                "KB국민ONE통장", "직장인우대통장", "주택청약종합저축", "KB수퍼정기예금", "외화수출입통장", "맑은하늘적금", "맑은바다적금", "마이핏통장"
+            ];
+            var searchRanking = document.getElementById('searchRanking');
+            var searchRanking2 = document.getElementById('searchRanking2');
+            var searchRanking3 = document.getElementById('searchRanking3');
+
+            // 랜덤 검색어로 실시간 검색어 순위 갱신
+            searchRanking.innerHTML = ''; // 이전 내용 비우기
+            for (var i = 0; i < 5; i++) {
+                var randomIndex = Math.floor(Math.random() * searchKeywords.length);
+                var newKeyword = searchKeywords[randomIndex];
+
+                var listItem = document.createElement('li');
+                listItem.textContent = (i + 1) + '. ' + newKeyword;
+                searchRanking.appendChild(listItem);
+            }
+
+
+            searchRanking2.innerHTML = ''; // 이전 내용 비우기
+            for (var i = 0; i < 5; i++) {
+                var randomIndex = Math.floor(Math.random() * searchKeywords.length);
+                var newKeyword = searchKeywords[randomIndex];
+
+                var listItem = document.createElement('li');
+                listItem.textContent = (i + 1) + '. ' + newKeyword;
+                searchRanking2.appendChild(listItem);
+            }
+
+
+            searchRanking3.innerHTML = ''; // 이전 내용 비우기
+            for (var i = 0; i < 5; i++) {
+                var randomIndex = Math.floor(Math.random() * searchKeywords.length);
+                var newKeyword = searchKeywords[randomIndex];
+
+                var listItem = document.createElement('li');
+                listItem.textContent = (i + 1) + '. ' + newKeyword;
+                searchRanking3.appendChild(listItem);
+            }
+
+        };
+        setInterval(updateSearchRanking(), 1500);
+
         $('.datepicker').datepicker({
             dateFormat: 'yy-mm-dd',
             prevText: '<',
@@ -1822,7 +1893,6 @@
             }, 1000);
         };
 
-// Create the initial data
         const data = (function () {
             const data = [];
             const time = new Date().getTime();
@@ -1836,7 +1906,6 @@
             return data;
         }());
 
-// Plugin to add a pulsating marker on add point
         Highcharts.addEvent(Highcharts.Series, 'addPoint', e => {
             const point = e.point,
                 series = e.target;
@@ -1938,6 +2007,35 @@
 
     };
 
+    function fn_customerPIN() {
+        $('#customerPINbtn').click(() => {
+            var customerPin = $('#customerPin').val();
+            $('#customerProfile2').hide();
+
+            if (customerPin === '12345') {
+                $('#Charts').hide();
+                $('#termDeposit').hide();
+                $('#mainCharts').hide();
+                $('#yogubul').hide();
+                $('#customerPIN').show();
+                $('#customerProfile').show();
+                $('#customerProfile2').show();
+                $('#hello').css('opacity', 0); // 투명도를 조절하여 요소를 숨김
+                setTimeout(function() {
+                    $('#hello').hide(); // 숨겨진 후에 display를 변경하여 완전히 사라지게 함
+                    $('#customerProfile3').hide();
+                }, 500); // 투명도 변경 애니메이션 시간 (0.5초 = 500밀리초)
+                searchAndDisplay();
+            } else if(customerPin === '') {
+                alert('고객 핀번호를 입력해주세요.');
+            } else {
+                alert('잘못된 핀번호 입니다!');
+            }
+
+
+        });
+    };
+
     //숫자세기 함수
     function upcount(location, max) {
         let $counter1 = document.querySelector(location);
@@ -1985,7 +2083,7 @@
     function tags() {
         $("#account-nav ul").empty();
         if($('#ageTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">전체 연령</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 연령</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#age10").is(":checked")) {
@@ -2029,7 +2127,7 @@
         }
 
         if($('#districtTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">전체 지역</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 지역</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#seoul").is(":checked")) {
@@ -2059,7 +2157,7 @@
         }
 
         if($('#payTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">전체 소득범위</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 소득범위</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#2000").is(":checked")) {
@@ -2081,7 +2179,7 @@
         }
 
         if($('#jobTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">전체 직업</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 직업</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#employee").is(":checked")) {
@@ -2107,7 +2205,7 @@
         }
 
         if($('#csoreTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">전체 신용등급</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 신용등급</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#4").is(":checked")) {
@@ -2152,6 +2250,14 @@
 
         return dateString;
     }
+    //프로필 onclick 이벤트
+    function searchAndDisplay() {
+
+    }
+
+    function checkboxDefault() {
+        $('.form-check-input[type="checkbox"]').prop('checked', true);
+    }
 
 
 </script>
@@ -2170,12 +2276,34 @@
                 <div class="offcanvas-header d-block border-bottom pt-0 pt-lg-4 px-lg-0">
                     <form class="form-group mb-lg-2 rounded-pill">
                         <div class="input-group"><span class="input-group-text text-muted"><i class="fi-search"></i></span>
-                            <input class="form-control" type="text" placeholder="고객PIN 입력">
+                            <input class="form-control" type="text" placeholder="고객PIN 입력" id="customerPin">
                         </div>
-                        <button class="btn btn-primary rounded-pill d-lg-inline-block d-none" type="button">검색</button>
+                        <button class="btn btn-primary rounded-pill d-lg-inline-block d-none" type="button" id="customerPINbtn">검색</button>
                         <button class="btn btn-icon btn-primary rounded-circle flex-shrink-0 d-lg-none d-inline-flex" type="button"><i class="fi-search mt-n2"></i></button>
                     </form>
                 </div>
+                <!--프로필표출-->
+                <div class="">
+                    <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" style="width: 13em; height: 13em; border-radius: 0.5rem; display: none;" id="customerProfile">
+                        <button id="closeButton">닫기</button>
+                        <img src="img/real-estate/profile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                        <p style="margin-top: 8px; text-align: center; color: black; font-weight: bold;">김국민</p>
+                        <div class="collapse d-md-block" id="account-nav1">
+                            <ul class="nav nav-pills flex-column flex-md-row pt-3 pt-md-0 pb-md-4 border-bottom-md">
+                                <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#30대 남자</a></li>
+                                <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#서울</a></li>
+                                <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#증권사근무</a></li>
+                                <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#100백만초과</a></li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-secondary col-6 text-right">전화 걸기</button>
+                            <button onclick="startTyping()" type="button" class="btn btn-outline-secondary col-6 text-right">SMS 보내기</button>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
                 <!-- Nav tabs-->
                 <div class="offcanvas-header d-block border-bottom py-lg-4 py-3 px-lg-0">
                     <ul class="nav nav-pills" role="tablist">
@@ -2257,7 +2385,7 @@
                             <div class="pb-4 mb-2">
                                 <h3 class="h6">성별</h3>
                                 <select class="form-select mb-2" id="gender">
-                                    <option id="genderTotal" value="전체성별" selected>전체</option>
+                                    <option id="genderTotal" value="#전체성별" selected>전체</option>
                                     <option id="genderMen" value="#남자" >남</option>
                                     <option id="genderWomen" value="#여자">여</option>
                                 </select>
@@ -2390,14 +2518,39 @@
                 <h3 class="h2 mb-2"> KB 꾸러미 통계센터</h3>
                 <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
                     <div class="card-body">
-
-
                         <figure class="highcharts-figure" style="">
                             <div id="mainContainer"></div>
                         </figure>
-
                     </div>
                 </div>
+
+                <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div style="margin-top: 50px;"> </div>
+                            <div class="col-md-4">
+                                <div class="custom-box"><h4>실시간 많이 본 상품</h4>
+                                    <ul id="searchRanking" class="search-ranking"></ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="custom-box"><h4>재 가입이 높은 상품</h4>
+                                    <div class="table-responsive">
+                                    </div>
+                                    <ul id="searchRanking2" class="search-ranking2"></ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="custom-box">
+                                    <h4>실시간 판매량 순위</h4>
+                                    <ul id="searchRanking3" class="search-ranking"></ul>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 20px;"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
                     <div class="card-body">
                         <div class="d-flex align-items-start mb-3 pb-2 border-bottom">
@@ -2501,7 +2654,195 @@
             </div>
             <%--고객PIN입력 통계--%>
             <div id="customerPIN" style="display:none;">
+                <!--순위-->
+                <div class="container">
 
+                    <div class="row justify-content-center">
+                        <div style="margin-top: 50px;"> </div>
+                        <div class="col-md-4">
+                            <div class="custom-box"><h4>고객님이 가장 많이 본 상품</h4>
+
+                                <%--                                    <div class>         전월 대비 상승 2.2% <i class=" fi-arrow-up red-arrow "></i>   <div class="triangle" style="border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 8px solid red; position: absolute; top: 50%; right: -10px; transform: translateY(-50%);"></div></div>--%>
+
+
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>순위</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="table-active">
+                                        <th scope="row">1 <span class="badge bg-primary">hot</span> </th>
+                                        <td>직장인든든신용대출</td>
+                                    </tr>
+                                    <tr class="table">
+                                        <th scope="row">2</th>
+                                        <td>국민전세자금대출</td>
+                                    </tr>
+                                    <tr class="table">
+                                        <th scope="row">3  </th>
+                                        <td>새희망홀씨</td>
+                                    </tr>
+                                    <tr class="table">
+                                        <th scope="row">4 <span class="badge bg-success"> new </span></th>
+                                        <td>one신용대출</td>
+                                    </tr>
+                                    <tr class="table">
+                                        <th scope="row">5 </th>
+                                        <td>주택담보대출</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="custom-box"><h4> 과거 가입하신 상품</h4>
+                                <!-- Table with contextual rows -->
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>순위</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="table-active">
+                                            <th scope="row">1  </th>
+                                            <td>주택청약종합저축</td>
+                                        </tr>
+                                        <tr class="table">
+                                            <th scope="row">2 <span class="badge bg-success"> new </span> </th>
+                                            <td>직장인우대적금</td>
+                                        </tr>
+                                        <tr class="table">
+                                            <th scope="row">3  <i class=" fi-arrow-up red-arrow "></i> </th>
+                                            <td>마이핏우대적금</td>
+                                        </tr>
+                                        <tr class="table">
+                                            <th scope="row">4 </th>
+                                            <td>소소한여행적금</td>
+                                        </tr>
+                                        <tr class="table">
+                                            <th scope="row">5 <i class=" fi-arrow-down blue-arrow "></i></th>
+                                            <td>행복언제나적금</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="custom-box"><h4> 가입확률이 높은 상품</h4>                       <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>순위</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="table-active">
+                                    <th scope="row">1 <i class=" fi-arrow-up red-arrow "></i> </th>
+                                    <td>노리체크카드</td>
+                                </tr>
+                                <tr class="table">
+                                    <th scope="row">2 <i class=" fi-arrow-down blue-arrow "></i> </th>
+                                    <td>스카이마일리지카드</td>
+                                </tr>
+                                <tr class="table">
+                                    <th scope="row">3  <i class=" fi-arrow-up red-arrow "></i> </th>
+                                    <td>베브3카드</td>
+                                </tr>
+                                <tr class="table">
+                                    <th scope="row">4 </th>
+                                    <td>이지올카드</td>
+                                </tr>
+                                <tr class="table">
+                                    <th scope="row">5 </th>
+                                    <td>올라운드티타늄카드</td>
+                                </tr>
+                                </tbody>
+                            </table>  </div>
+                        </div>
+                        <div style="margin-bottom: 20px;"></div>
+                    </div>
+                </div>
+                <!--마케팅문자-->
+                <div class="container">
+
+                    <div class="row justify-content-center">
+                        <div style="margin-top: 50px;"> </div>
+                        <div class="col-md-4">
+                            <div class="phone-box">
+
+                                <%--                                    <div class>         전월 대비 상승 2.2% <i class=" fi-arrow-up red-arrow "></i>   <div class="triangle" style="border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 8px solid red; position: absolute; top: 50%; right: -10px; transform: translateY(-50%);"></div></div>--%>
+                                <div class="phone-screen">
+                                    <div class="collapse d-md-block custom-bg" id="typingContainer">
+
+                                        <li>AI 마케팅 문자</li>
+                                        <ul class="nav nav-pills flex-column flex-md-row pt-3 pt-md-0 pb-md-4 border-bottom-md">
+                                            <!-- 텍스트가 나타나는 부분 -->
+
+
+                                            <li class="nav-item mb-md-0 me-md-2 pe-md-1 left">
+
+                                            </li>
+
+                                            <!-- 나머지 항목들도 동일하게 수정 가능 -->
+                                        </ul>
+                                        <span class="typed-text" id="typedText"></span>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <%--                            다시--%>
+                            <%--                            <div class="custom-box">--%>
+                            <%--                                <!-- Table with contextual rows -->--%>
+                            <%--                                <div class="table-responsive">--%>
+
+                            <%--                                </div>--%>
+
+
+                            <%--                            </div>--%>
+
+                        </div>
+                        <%--                        <div class="col-md-4">--%>
+                        <%--                            <div class="custom-box">                         </div>--%>
+                        <%--                        </div>--%>
+                        <div style="margin-bottom: 20px;"></div>
+                    </div>
+                </div>
+                <!--통계차트-->
+                <div class="화면 통계" style="background-color: #f9f9f9; padding: 20px;"> 화면통계
+                    <div class="row">
+                        <div class="col-md-6">
+                            <figure class="highcharts-figure" style="margin-top: 5%; background-color: #f0f0f0;">
+                                <div id="containerdh1"></div>
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                            <figure class="highcharts-figure" style="margin-top: 5%; background-color: #f0f0f0;">
+                                <div id="containerdh2"></div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <%--카테고리별 상품 통계--%>

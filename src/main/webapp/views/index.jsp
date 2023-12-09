@@ -3,8 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%--카카오맵--%>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=da86c8457c75372952796f5bbc52cb25"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=da86c8457c75372952796f5bbc52cb25&libraries=services,clusterer,drawing"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey="></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=&libraries=services,clusterer,drawing"></script>
 
 <!doctype html>
 <html lang="ko">
@@ -16,7 +16,7 @@
   <!-- Favicon and Touch Icons-->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="/image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="/image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="/image/png" sizes="16x16" href="/img/KBicon1.png">
   <link rel="stylesheet" href="/css/theme.css">
   <link rel="stylesheet" href="/vendor/tiny-slider/dist/tiny-slider.css">
   <link rel="stylesheet" href="/vendor/nouislider/dist/nouislider.css">

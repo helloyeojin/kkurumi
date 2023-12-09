@@ -13,13 +13,6 @@
 
 
 <script>
-  $(document).ready(function() {
-    $('#myCarousel').carousel({
-      interval: 300 // 3초마다 슬라이드
-    });
-  });
-</script>
-<script>
   let loginForm = {
     init:function(){
       $("#loginBtn").click(function(){
@@ -35,31 +28,32 @@
     }
   };
   $(function(){
+    $('#myCarousel').carousel({
+      interval: 200 // 3초마다 슬라이드
+    });
     loginForm.init();
-    let msg = "${msg}";
-    if(msg != ""){
-      alert(msg);
-    }
+
+    $('.IDloginbtn').click(()=>{
+      $('#IDlogin').show();
+      $('#CERTlogin').hide();
+      $('.IDloginbtn').addClass('active');
+      $('.CERTloginbtn').removeClass('active');
+    });
+    $('.CERTloginbtn').click(()=>{
+      $('#CERTlogin').show();
+      $('#IDlogin').hide();
+      $('.IDloginbtn').removeClass('active');
+      $('.CERTloginbtn').addClass('active');
+    });
   });
-
-
-  <script>
-    (function () {
-    window.onload = function () {
-      var preloader = document.querySelector('.page-loading');
-      preloader.classList.remove('active');
-      setTimeout(function () {
-        preloader.remove();
-      }, 1000);
-    }
-  })();
-
 </script>
+
+
+
 <!-- Vendor Styles-->
 <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css"/>
 <!-- Main Theme Styles + Bootstrap-->
 <link rel="stylesheet" media="screen" href="css/theme.min.css">
-</script>
 
 
 
@@ -69,19 +63,10 @@
 
   <div class="modal-dialog modal-lg modal-dialog-centered p-2 my-0 mx-auto" style="max-width: 950px;">
     <div class="modal-content">
-
-
-
-
-
       <div class="container-fluid d-flex h-100 align-items-center justify-content-center py-4 py-sm-5">
-
-
         <div class="card card-body" style="max-width: 940px"><a class="position-absolute top-0 end-0 nav-link fs-sm py-1 px-2 mt-3 me-3" href="#" onclick="window.history.go(-1); return false;"><i class="fi-arrow-long-left fs-base me-2"></i>국민은행이 처음이신가요?</a>
-
           <div class="row mx-0 align-items-center">
-
-            <div class="col-md-6 border-end-md p-2 p-sm-5">
+            <div class="col-md-6 border-end-md p-2">
               <div id="myCarousel" class="carousel slide" width="600"  data-ride="carousel">
                 <!-- 슬라이더 인디케이터 추가 (선택 사항) -->
                 <ul class="carousel-indicators">
@@ -92,58 +77,81 @@
                 <!-- 슬라이더 내용 추가 -->
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="img/signin-modal/ssignin.png" alt="Slide 2" class="w-100 h-auto">
+                    <img src="/img/loginimg1.png" alt="Slide 2" width="600" height="400">
                   </div>
                   <div class="carousel-item ">
-                    <img src="img/signin-modal/ssignin2.png" alt="Slide 1" class="w-100 h-auto">
+                    <img src="/img/loginimg2.png" alt="Slide 1" width="600" height="400">
                   </div>
-                  <div class="carousel-item" >
-                    <img src="img/signin-modal/ssignin3.png" alt="Slide 3" class="w-100 h-auto">
+                  <div class="carousel-item">
+                    <img src="/img/loginimg3.png" alt="Slide 3" width="600" height="400">
                   </div>
                 </div>
                 <!-- 이전 및 다음 버튼 추가 (선택 사항) -->
+                <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
+                </a>
               </div>
+
             </div>
 
 
+
             <div class="col-md-6 px-2 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5">
-
-
-              <div class="mb-4 btn-group" role="group" aria-label="Date Range Options">
-                <button type="button" class="btn btn-outline-secondary col-6">인증서 로그인</button>
-                <button type="button" class="btn btn-translucent-warning text-dark" > 아이디 로그인</button>
+              <div class="" style="margin-left: 5.5%;margin-bottom: 8%;">
+                <button type="button" class="btn btn-outline-warning rounded-0 IDloginbtn active">아이디 로그인</button>
+                <button type="button" class="btn btn-outline-warning rounded-0 CERTloginbtn" style="margin-left: -1.5%;">인증서 로그인</button>
               </div>
-
-              </i></a>
-              <img src="img/signin-modal/word1.png"  width="800" height="400">
-              <form class="form-validate" id="loginForm">
-
-
-
-
-                <div class="mb-4">
-                  <label class="form-label mb-2" for="signin-email">이름</label>
-                  <input class="form-control"  id="signin-email" placeholder="이름을 입력해주세요" required>
-                </div>
-                <div class="mb-4">
-                  <div class="d-flex align-items-center justify-content-between mb-2">
-                    <label class="form-label mb-0" for="signin-password">비밀번호</label><a class="fs-sm" href="#">비밀번호를 잊어버리셨나요?</a>
+              <div id="IDlogin" style="">
+                <form class="form-validate" id="loginForm">
+                  <div class="mb-4">
+                    <label class="form-label mb-2" for="signin-email">아이디</label>
+                    <input class="form-control"  id="signin-email" name="user_name" placeholder="아이디를 입력해주세요" required>
                   </div>
-                  <div class="password-toggle">
-                    <input class="form-control" type="password" id="signin-password" placeholder="비밀번호를 입력해주세요" required>
-                    <label class="password-toggle-btn" aria-label="Show/hide password">
-                      <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
-                    </label>
+                  <div class="mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                      <label class="form-label mb-0" for="signin-password">비밀번호</label><a class="fs-sm" href="#">비밀번호를 잊어버리셨나요?</a>
+                    </div>
+                    <div class="password-toggle">
+                      <input class="form-control" type="password" id="signin-password" placeholder="비밀번호를 입력해주세요" required>
+                      <label class="password-toggle-btn" aria-label="Show/hide password">
+                        <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                      </label>
+                    </div>
                   </div>
-
                   <div class="mb-4">
                     <label class="form-label mb-2" for="signin-email">휴대폰번호</label>
                     <input class="form-control"  id="signin-phonenumber" placeholder="휴대폰번호를 입력해주세요" required>
                   </div>
-
-                </div>
-                <button class="btn btn-warning btn-lg w-100" type="submit" style="color: black;">KB모바일인증서 로그인</button>
-              </form>
+                  <button class="btn btn-warning btn-lg w-100" id="loginBtn" type="submit" style="color: black;">아이디 로그인</button>
+                </form>
+              </div>
+              <div id="CERTlogin" style="display:none;">
+                <form class="form-validate" id="">
+                  <div class="mb-4">
+                    <label class="form-label mb-2" for="signin-email2">이름</label>
+                    <input class="form-control"  id="signin-email2" name="user_name" placeholder="이름을 입력해주세요" required>
+                  </div>
+                  <div class="mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                      <label class="form-label mb-0" for="signin-password2">생년월일</label>
+                    </div>
+                    <div class="password-toggle">
+                      <input class="form-control" type="password" id="signin-password2" placeholder="생년월일을 입력해주세요" required>
+                      <label class="password-toggle-btn" aria-label="Show/hide password">
+                        <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label mb-2" for="signin-phonenumber1">휴대폰번호</label>
+                    <input class="form-control"  id="signin-phonenumber1" placeholder="휴대폰번호를 입력해주세요" required>
+                  </div>
+                  <button class="btn btn-warning btn-lg w-100" id="" type="submit" style="color: black;">국민인증서 로그인</button>
+                </form>
+              </div>
 
 
 
@@ -160,12 +168,8 @@
                 <hr class="w-100">
 
               </div>
-              <a class="btn btn-outline-info w-100 mb-3" href="#">   </i>금융인증서 로그인</a>
+              <a class="btn btn-outline-info w-100 mb-3" href="#"></i>금융인증서 로그인</a>
               <a class="btn btn-outline-info w-100 mb-3" href="#"></i>공동인증서 로그인</a>
-              <form class="needs-validation" novalidate>
-              </form>
-
-
             </div>
           </div>
         </div>
@@ -237,7 +241,17 @@
 <!-- Navbar-->
 <header class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-scroll-header>
   <div class="container"><a class="navbar-brand me-3 me-xl-4" href="/"><img class="d-block" src="/img/logo/logo_bank.png" width="170" alt="KB국민은행"></a>
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>로그인</a><a class="btn btn-primary btn-sm ms-2 order-lg-3" href="https://obank.kbstar.com/quics?page=C018872"><i class="fi-lock me-2"></i>인증<span class='d-none d-sm-inline'>센터</span></a>
+    <c:choose>
+      <c:when test="${loginCust == null}">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>로그인</a>
+      </c:when>
+      <c:otherwise>
+        <a id="logoutLink" class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="/logoutImpl">
+          <i class="fi-user me-2"></i>로그아웃
+        </a>
+      </c:otherwise>
+    </c:choose>
+    <a class="btn btn-primary btn-sm ms-2 order-lg-3" href="https://obank.kbstar.com/quics?page=C018872"><i class="fi-lock me-2"></i>인증<span class='d-none d-sm-inline'>센터</span></a>
     <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
       <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
         <!-- Menu items-->
@@ -255,8 +269,11 @@
         </li>
         <li class="nav-item dropdown"><a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">고객정보</a>
         </li>
+        <c:if test="${loginCust.user_name == 'admin'}">
+          <li class="nav-item dropdown"><a class="nav-link" href="/B00002" role="button">통계센터</a>
+          </li>
+        </c:if>
 
-              <li class="nav-item d-lg-none"><a class="nav-link" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>로그인</a></li>
       </ul>
     </div>
   </div>

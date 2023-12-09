@@ -27,7 +27,7 @@
                     </ul>
                 </div>
                 <div class="card-footer py-2 border-0">
-                    <div class="border-top text-center pt-4 pb-3"><a class="btn btn-outline-primary" href="/K20101">상품 보기</a></div>
+                    <div class="border-top text-center pt-4 pb-3"><a class="btn btn-outline-primary" href="/K20201">상품 보기</a></div>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                     </ul>
                 </div>
                 <div class="card-footer py-2 border-0">
-                    <div class="border-top text-center pt-4 pb-3"><a class="btn btn-outline-primary" href="/K20102">상품 보기</a></div>
+                    <div class="border-top text-center pt-4 pb-3"><a class="btn btn-outline-primary" href="/K20202">상품 보기</a></div>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                     </ul>
                 </div>
                 <div class="card-footer py-2 border-0">
-                    <div class="border-top text-center pt-4 pb-3"><a class="btn btn-outline-primary" href="/20103">상품 보기</a></div>
+                    <div class="border-top text-center pt-4 pb-3"><a class="btn btn-outline-primary" href="/K20203">상품 보기</a></div>
                 </div>
             </div>
         </div>
