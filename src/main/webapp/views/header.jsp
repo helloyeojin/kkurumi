@@ -121,10 +121,7 @@
                       </label>
                     </div>
                   </div>
-                  <%--<div class="mb-4">
-                    <label class="form-label mb-2" for="signin-email">휴대폰번호</label>
-                    <input class="form-control"  id="signin-phonenumber" placeholder="휴대폰번호를 입력해주세요" required>
-                  </div>--%>
+                  증
                   <button class="btn btn-warning btn-lg w-100" id="loginBtn" type="submit" style="color: black;">아이디 로그인</button>
                 </form>
               </div>
@@ -251,7 +248,9 @@
         </a>
       </c:otherwise>
     </c:choose>
-    <a class="btn btn-primary btn-sm ms-2 order-lg-3" href="https://obank.kbstar.com/quics?page=C018872"><i class="fi-lock me-2"></i>인증<span class='d-none d-sm-inline'>센터</span></a>
+    <c:if test="${loginCust.user_name != 'admin'}">
+      <a class="btn btn-primary btn-sm ms-2 order-lg-3" href="https://obank.kbstar.com/quics?page=C018872"><i class="fi-lock me-2"></i>인증<span class='d-none d-sm-inline'>센터</span></a>
+    </c:if>
     <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
       <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
         <!-- Menu items-->
