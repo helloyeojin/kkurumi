@@ -786,23 +786,19 @@
 
         <div class="col-lg-8 col-xl-9 position-relative overflow-hidden pb-5 pt-4 px-3 px-xl-4 px-xxl-5">
             <div class="collapse d-md-block" id="account-nav">
-                <ul class="nav nav-pills flex-column flex-md-row pt-3 pt-md-0 pb-md-4 border-bottom-md">
-                    <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전연령대</a></li>
-                    <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#지역전체</a></li>
-                    <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#직업전체</a></li>
-                    <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#소득전체</a></li>
+                <ul class="nav nav-pills flex-column flex-md-row pt-3 pt-md-0 pb-md-4">
+                    <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link bg-faded-primary text-primary">#전연령대</a></li>
+                    <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link bg-faded-primary text-primary">#직업전체</a></li>
+                    <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link bg-faded-primary text-primary">#소득전체</a></li>
                 </ul>
             </div>
 
 
-            <div class="form-group">
-                <div class="btn-group" role="group" aria-label="Date Range Options">
-                    <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Today">오늘 </button>
-                    <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Last 30 Days">최근 일주일</button>
-                    <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Last 1 Year">최근 한달</button>
-                </div>
+            <div class="btn-group" role="group" aria-label="Date Range Options">
+                <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Today">오늘 </button>
+                <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Last 30 Days">최근 일주일</button>
+                <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Last 1 Year">최근 한달</button>
             </div>
-
 
             <div class="수치" id="customerProfile3" style="background-color: #f9f9f9; margin-top: 50px;" >
 

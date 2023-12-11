@@ -2624,7 +2624,8 @@
         <div id="mainArticle" class="col-lg-8 col-xl-9 position-relative overflow-hidden pb-5 pt-4 px-3 px-xl-4 px-xxl-5">
             <%--분석 메인화면--%>
             <div id="mainCharts">
-                <h3 class="h2 mb-2"> KB 꾸러미 통계센터</h3>
+                <img src="img/real-estate/kkurumi_title.png"/>
+                <%--<h3 class="h2 mb-2"> KB 꾸러미 통계센터</h3>--%>
                 <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
                     <div class="card-body">
                         <figure class="highcharts-figure" style="">
