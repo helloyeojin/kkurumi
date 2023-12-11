@@ -2697,14 +2697,14 @@
                 <div class="card mb-4 p-2 shadow-sm">
                     <div class="card-body">
                         <div class="d-flex mb-3 pb-3 d-inline-flex align-items-center justify-content-between" style="width: 100%">
-                            <div class="h4 px-1 mb-0">일자별 클릭수</div>
+                            <div class="h4 mb-0" style="padding-left: 0.6em">일자별 클릭수</div>
                             <div class="col-md-4 d-flex align-items-center">
                                 <form class="form-group mb-0">
                                     <label for="datepicker" class="mx-1 align-items-center">
                                         <i class="fi-calendar text-warning align-middle opacity-70" style="font-size:1.5em;"></i>
                                     </label>
                                     <input class="datepicker form-control pb-1 pt-1" autocomplete='off' id="datepicker" type="text" name="date1">
-                                    <button type="button" class="btn btn-sm btn-translucent-primary" id="inquryBtn">조회</button>
+                                    <button type="button" class="btn btn-sm btn-translucent-dark" id="inquryBtn">조회</button>
                                 </form>
                             </div>
                         </div>
