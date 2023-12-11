@@ -41,25 +41,34 @@
 
 <!--실시간방문자순위 style 정의-->
 <style>
+    .highcharts-title {
+        font-size: 1.5em !important;
+    }
+
+    .highcharts-credits {
+        display: none;
+    }
+
     #searchRanking {
         list-style: none;
         padding: 0;
         margin: 0;
-        font-family: Arial, sans-serif;
     }
 
     .ranking-item {
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.5s, transform 0.5s;
+        margin-bottom: 0;
+        margin-left: 0.5em;
     }
     .ranking-item1 {
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 0;
+        margin-left: 0.5em;
     }
 
     .ranking-item img {
@@ -2012,7 +2021,8 @@
             },
 
             title: {
-                text: '실시간 방문자 통계'
+                text: '실시간 방문자 통계',
+                margin: 40
             },
 
             accessibility: {
@@ -2064,7 +2074,7 @@
                 {
                     name: '방문자수',
                     lineWidth: 2,
-                    color: Highcharts.getOptions().colors[2],
+                    color: '#499A78',
                     data
                 }
             ]
@@ -2356,9 +2366,11 @@
             const li = document.createElement('li');
             li.className = 'ranking-item';
             if (item.rank == 1) {
-                li.innerHTML = '<span class="badge bg-faded-primary fw-bold">' + item.rank + '. ' + item.keyword + '</span>';
-            } else{
-                li.innerHTML = '<span class="badge bg-faded-dark">' + item.rank + '. ' + item.keyword + '</span>';
+                li.innerHTML = '<span class="badge bg-faded-primary fw-bold mb-lg-2" style="font-size: medium">' + item.rank + '. ' + item.keyword + '</span>';
+            } else if (item.rank == 5) {
+                li.innerHTML = '<span class="badge bg-light" style="font-size: medium">' + item.rank + '. ' + item.keyword + '</span>';
+            } else {
+                li.innerHTML = '<span class="badge bg-light mb-lg-2" style="font-size: medium">' + item.rank + '. ' + item.keyword + '</span>';
             }
             searchRankingElement.appendChild(li);
 
@@ -2627,7 +2639,7 @@
                 <img src="img/real-estate/kkurumi_title.png"/>
                 <%--<h3 class="h2 mb-2"> KB 꾸러미 통계센터</h3>--%>
                 <div class="card mb-4 p-2 shadow-sm" style="margin-top: 2%;">
-                    <div class="card-body">
+                    <div class="card-body pb-1">
                         <figure class="highcharts-figure" style="">
                             <div id="mainContainer"></div>
                         </figure>
@@ -2640,8 +2652,8 @@
                             <div class="card-body">
                                 <div class="row justify-content-center">
                                     <div class="custom-box">
-                                        <h2 class="h3 fw-bold text-center py-1 mb-0 border-bottom">실시간 많이 본 상품</h2>
-                                        <ul id="searchRanking" class="search-ranking" style="margin-top: 6%;"></ul>
+                                        <h4 class="h4 fw-bold text-center pt-1 pb-2 mb-0 border-bottom">실시간 많이 본 상품</h4>
+                                        <ul id="searchRanking" class="search-ranking list-group list-group-flush" style="margin-top: 6%;"></ul>
                                     </div>
                                 </div>
                             </div>
@@ -2653,25 +2665,25 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-6" style="border-right:1px solid lightgray">
                                         <div class="custom-box">
-                                            <h2 class="h3 fw-bold text-center py-1 mb-0 border-bottom">재 가입율이 높은 상품</h2>
-                                            <ul id="searchRanking2" class="search-ranking" style="margin-top: 6%;">
-                                                <li class="ranking-item1"><span class="badge bg-faded-dark">1. KB국민UP정기예금</span></li>
-                                                <li class="ranking-item1"><span class="badge bg-faded-dark">2. KB맑은하늘적금</span></li>
-                                                <li class="ranking-item1"><span class="badge bg-faded-dark">3. nori체크카드</span></li>
-                                                <li class="ranking-item1"><span class="badge bg-faded-dark">4. 직장인든든 신용대출</span></li>
-                                                <li class="ranking-item1"><span class="badge bg-faded-dark">5. 직장인우대적금</span></li>
+                                            <h2 class="h4 fw-bold text-center pt-1 pb-2 mb-0 border-bottom">재 가입율이 높은 상품</h2>
+                                            <ul id="searchRanking2" class="search-ranking list-group list-group-flush" style="margin-top: 6%;">
+                                                <li class="ranking-item1"><span class="badge bg-faded-primary fw-bold mb-lg-2" style="font-size: medium">1. KB국민UP정기예금</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-light mb-lg-2" style="font-size: medium">2. KB맑은하늘적금</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-light mb-lg-2" style="font-size: medium">3. nori체크카드</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-light mb-lg-2" style="font-size: medium">4. 직장인든든 신용대출</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-light" style="font-size: medium">5. 직장인우대적금</span></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="custom-box">
-                                            <h2 class="h3 fw-bold text-center py-1 mb-0 border-bottom">판매량 순위</h2>
-                                            <ul id="searchRanking3" class="search-ranking" style="margin-top: 6%;">
-                                                <li class="ranking-item1"><span class="badge bg-faded-dark">1. KB맑은하늘적금</span></li>
-                                                <li class="ranking-item1"><span class="badge bg-faded-dark">2. 직장인우대적금</span></li>
-                                                <li class="ranking-item1"><span class="badge bg-faded-dark">3. KB국민ONE통장</span></li>
-                                                <li class="ranking-item1"><span class="badge bg-faded-dark">4. KB국민UP정기예금</span></li>
-                                                <li class="ranking-item1"><span class="badge bg-faded-dark">5. 직장인든든 신용대출</span></li>
+                                            <h2 class="h4 fw-bold text-center pt-1 pb-2 mb-0 border-bottom">판매량 순위</h2>
+                                            <ul id="searchRanking3" class="search-ranking list-group list-group-flush" style="margin-top: 6%;">
+                                                <li class="ranking-item1"><span class="badge bg-faded-primary fw-bold mb-lg-2" style="font-size: medium">1. KB맑은하늘적금</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-light mb-lg-2" style="font-size: medium">2. 직장인우대적금</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-light mb-lg-2" style="font-size: medium">3. KB국민ONE통장</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-light mb-lg-2" style="font-size: medium">4. KB국민UP정기예금</span></li>
+                                                <li class="ranking-item1"><span class="badge bg-light" style="font-size: medium">5. 직장인든든 신용대출</span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -2682,30 +2694,28 @@
                 </div>
 
                 <!--일자별 클릭수-->
-                <div class="card mb-4 p-2 shadow-sm" style="">
+                <div class="card mb-4 p-2 shadow-sm">
                     <div class="card-body">
-                        <div class="d-flex align-items-start mb-3 pb-2 border-bottom">
-                            <div class="ps-2 ms-1">
-                                <h3 class="h4 mb-2">일자별 클릭수</h3>
-                                <div class="col-md-4 d-flex align-items-center">
-                                    <form class="form-group" style="margin-bottom:1%;">
-                                        <label for="datepicker" class="me-1">
-                                            <i class="fi-calendar mt-n1 text-warning align-middle opacity-70" style="font-size:2em;"></i>
-                                        </label>
-                                        <input class="datepicker form-control" autocomplete='off' id="datepicker" type="text" name="date1">
-                                        <button type="button" class="btn btn-translucent-primary" id="inquryBtn">조회</button>
-                                    </form>
-                                </div>
+                        <div class="d-flex mb-3 pb-3 d-inline-flex align-items-center justify-content-between" style="width: 100%">
+                            <div class="h4 px-1 mb-0">일자별 클릭수</div>
+                            <div class="col-md-4 d-flex align-items-center">
+                                <form class="form-group mb-0">
+                                    <label for="datepicker" class="mx-1 align-items-center">
+                                        <i class="fi-calendar text-warning align-middle opacity-70" style="font-size:1.5em;"></i>
+                                    </label>
+                                    <input class="datepicker form-control pb-1 pt-1" autocomplete='off' id="datepicker" type="text" name="date1">
+                                    <button type="button" class="btn btn-sm btn-translucent-primary" id="inquryBtn">조회</button>
+                                </form>
                             </div>
                         </div>
                         <!--사이트맵 표출-->
                         <div class="col-sm-6 col-md-4 offset-md-4">
-                            <div class="card shadow-sm" style="background-color: #EFF8FB">
+                            <div class="card shadow-sm" style="background-color: #b1dafe63">
                                 <div class="card-body">
-                                    <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>메인화면</strong></h2>
-                                    <div class="pb-1 ps-1 text-center border-bottom">(K00000)</div>
+                                    <h6 class="fw-normal text-center pt-1 mb-0"><strong>메인화면</strong></h6>
+                                    <div class="pb-1 text-center">(K00000)</div>
                                     <div class="d-flex align-items-end justify-content-center">
-                                        <div class="h1 mb-0 totalClk">0</div>
+                                        <div class="h2 mb-0 totalClk">0</div>
                                     </div>
                                 </div>
                             </div>
@@ -2713,67 +2723,67 @@
                         <br/>
                         <div class="row">
                             <div class="col-sm-2">
-                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                <div class="card shadow-sm" style="background-color: #ffeaa063">
                                     <div class="card-body">
-                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>요구불</strong></h2>
-                                        <div class="pb-1 ps-1 text-center border-bottom">(K10100)</div>
+                                        <h6 class="fw-normal text-center pt-1 mb-0"><strong>요구불</strong></h6>
+                                        <div class="pb-1 text-center">(K10100)</div>
                                         <div class="d-flex align-items-end justify-content-center">
-                                            <div class="h1 mb-0 Clk101">0</div>
+                                            <div class="h2 mb-0 Clk101">0</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-2">
-                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                <div class="card shadow-sm" style="background-color: #ffeaa063">
                                     <div class="card-body">
-                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>정기예금</strong></h2>
-                                        <div class="pb-1 ps-1 text-center border-bottom">(K10200)</div>
+                                        <h6 class="fw-normal text-center pt-1 mb-0"><strong>정기예금</strong></h6>
+                                        <div class="pb-1 text-center">(K10200)</div>
                                         <div class="d-flex align-items-end justify-content-center">
-                                            <div class="h1 mb-0 Clk102">0</div>
+                                            <div class="h2 mb-0 Clk102">0</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-2">
-                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                <div class="card shadow-sm" style="background-color: #ffeaa063">
                                     <div class="card-body">
-                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>적금</strong></h2>
-                                        <div class="pb-1 ps-1 text-center border-bottom">(K10300)</div>
+                                        <h6 class="fw-normal text-center pt-1 mb-0"><strong>적금</strong></h6>
+                                        <div class="pb-1 text-center">(K10300)</div>
                                         <div class="d-flex align-items-end justify-content-center">
-                                            <div class="h1 mb-0 Clk103">0</div>
+                                            <div class="h2 mb-0 Clk103">0</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-2">
-                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                <div class="card shadow-sm" style="background-color: #ffeaa063">
                                     <div class="card-body">
-                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>개인대출</strong></h2>
-                                        <div class="pb-1 ps-1 text-center border-bottom">(K20100)</div>
+                                        <h6 class="h6 fw-normal text-center pt-1 mb-0"><strong>개인대출</strong></h6>
+                                        <div class="pb-1 text-center">(K20100)</div>
                                         <div class="d-flex align-items-end justify-content-center">
-                                            <div class="h1 mb-0 Clk201">0</div>
+                                            <div class="h2 mb-0 Clk201">0</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-2">
-                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                <div class="card shadow-sm" style="background-color: #ffeaa063">
                                     <div class="card-body">
-                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>사업자대출</strong></h2>
-                                        <div class="pb-1 ps-1 text-center border-bottom">(K20200)</div>
+                                        <h6 class="fw-normal text-center pt-1 mb-0"><strong>사업자대출</strong></h6>
+                                        <div class="pb-1 text-center">(K20200)</div>
                                         <div class="d-flex align-items-end justify-content-center">
-                                            <div class="h1 mb-0 Clk202">0</div>
+                                            <div class="h2 mb-0 Clk202">0</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-2" >
-                                <div class="card shadow-sm" style="background-color: #FBF8EF">
+                                <div class="card shadow-sm" style="background-color: #ffeaa063">
                                     <div class="card-body">
-                                        <h2 class="h5 fw-normal text-center py-1 mb-0"><strong>KB카드</strong></h2>
-                                        <div class="pb-1 ps-1 text-center border-bottom">(K30100)</div>
+                                        <h6 class="fw-normal text-center pt-1 mb-0"><strong>KB카드</strong></h6>
+                                        <div class="pb-1 text-center">(K30100)</div>
                                         <div class="d-flex align-items-end justify-content-center">
-                                            <div class="h1 mb-0 Clk301">0</div>
+                                            <div class="h2 mb-0 Clk301">0</div>
                                         </div>
                                     </div>
                                 </div>

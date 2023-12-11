@@ -811,13 +811,6 @@
 
 <%--                                    <div class>         전월 대비 상승 2.2% <i class=" fi-arrow-up red-arrow "></i>   <div class="triangle" style="border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 8px solid red; position: absolute; top: 50%; right: -10px; transform: translateY(-50%);"></div></div>--%>
                                     <ul id="searchRanking" class="search-ranking"></ul>
-
-
-
-
-
-
-
                             </div>
                         </div>
                         <div class="col-md-4">
