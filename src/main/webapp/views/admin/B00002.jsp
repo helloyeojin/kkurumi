@@ -74,6 +74,10 @@
     .ranking-item img {
         margin-right: 10px;
     }
+
+    .badge1 {
+        font-size: 110%;
+    }
 </style>
 
 <link rel="stylesheet" href="/css/datepick.css" />
@@ -2093,8 +2097,6 @@
                 $('#mainCharts').hide();
                 $('#yogubul').hide();
                 $('#customerPIN').show();
-                $('#customerProfile').show();
-                $('#customerProfile2').show();
                 $('#hello').css('opacity', 0); // 투명도를 조절하여 요소를 숨김
                 setTimeout(function() {
                     $('#hello').hide(); // 숨겨진 후에 display를 변경하여 완전히 사라지게 함
@@ -2404,10 +2406,10 @@
                     </form>
                 </div>
                 <!--프로필표출-->
-                <div class="">
-                    <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" style="width: 13em; height: 13em; border-radius: 0.5rem; display: none;" id="customerProfile">
-                        <button id="closeButton">닫기</button>
-                        <img src="img/real-estate/profile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                    <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" style="height: 13em; border-radius: 0.5rem; display: none;" id="customerProfile">
+                        <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
+                            <img src="img/real-estate/profile.png" style="height: 13em; border-radius: 0.5rem; object-fit: cover; border-radius: inherit;">
+                        </div>
                         <p style="margin-top: 8px; text-align: center; color: black; font-weight: bold;">김국민</p>
                         <div class="collapse d-md-block" id="account-nav1">
                             <ul class="nav nav-pills flex-column flex-md-row pt-3 pt-md-0 pb-md-4 border-bottom-md">
@@ -2419,13 +2421,10 @@
                             <button type="button" class="btn btn-outline-secondary col-6 text-right">전화 걸기</button>
                             <button onclick="startTyping()" type="button" class="btn btn-outline-secondary col-6 text-right">SMS 보내기</button>
                         </div>
-
-
                     </div>
-                </div>
 
 
-                <!-- Nav tabs-->
+                <!-- left 네비게이션-->
                 <div class="offcanvas-header d-block border-bottom py-lg-4 py-3 px-lg-0">
                     <ul class="nav nav-pills" role="tablist">
                         <li class="nav-item"><a class="nav-link d-flex align-items-center active" href="#categories" data-bs-toggle="tab" role="tab"><i class="fi-list me-2"></i>상품카테고리</a></li>
@@ -2795,195 +2794,185 @@
             </div>
             <%--고객PIN입력 통계--%>
             <div id="customerPIN" style="display:none;">
-                <!--순위-->
-                <div class="container">
-
-                    <div class="row justify-content-center">
-                        <div style="margin-top: 50px;"> </div>
-                        <div class="col-md-4">
-                            <div class="custom-box"><h4>고객님이 가장 많이 본 상품</h4>
-
-                                <%--                                    <div class>         전월 대비 상승 2.2% <i class=" fi-arrow-up red-arrow "></i>   <div class="triangle" style="border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 8px solid red; position: absolute; top: 50%; right: -10px; transform: translateY(-50%);"></div></div>--%>
-
-
-                                <table class="table table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>순위</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr class="table-active">
-                                        <th scope="row">1 <span class="badge bg-primary">hot</span> </th>
-                                        <td>직장인든든신용대출</td>
-                                    </tr>
-                                    <tr class="table">
-                                        <th scope="row">2</th>
-                                        <td>국민전세자금대출</td>
-                                    </tr>
-                                    <tr class="table">
-                                        <th scope="row">3  </th>
-                                        <td>새희망홀씨</td>
-                                    </tr>
-                                    <tr class="table">
-                                        <th scope="row">4 <span class="badge bg-success"> new </span></th>
-                                        <td>one신용대출</td>
-                                    </tr>
-                                    <tr class="table">
-                                        <th scope="row">5 </th>
-                                        <td>주택담보대출</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-
-
-
-
-
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="custom-box"><h4> 과거 가입하신 상품</h4>
-                                <!-- Table with contextual rows -->
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>순위</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="table-active">
-                                            <th scope="row">1  </th>
-                                            <td>주택청약종합저축</td>
-                                        </tr>
-                                        <tr class="table">
-                                            <th scope="row">2 <span class="badge bg-success"> new </span> </th>
-                                            <td>직장인우대적금</td>
-                                        </tr>
-                                        <tr class="table">
-                                            <th scope="row">3  <i class=" fi-arrow-up red-arrow "></i> </th>
-                                            <td>마이핏우대적금</td>
-                                        </tr>
-                                        <tr class="table">
-                                            <th scope="row">4 </th>
-                                            <td>소소한여행적금</td>
-                                        </tr>
-                                        <tr class="table">
-                                            <th scope="row">5 <i class=" fi-arrow-down blue-arrow "></i></th>
-                                            <td>행복언제나적금</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                        <div class="col-md-4">
-                            <div class="custom-box"><h4> 가입확률이 높은 상품</h4>                       <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>순위</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr class="table-active">
-                                    <th scope="row">1 <i class=" fi-arrow-up red-arrow "></i> </th>
-                                    <td>노리체크카드</td>
-                                </tr>
-                                <tr class="table">
-                                    <th scope="row">2 <i class=" fi-arrow-down blue-arrow "></i> </th>
-                                    <td>스카이마일리지카드</td>
-                                </tr>
-                                <tr class="table">
-                                    <th scope="row">3  <i class=" fi-arrow-up red-arrow "></i> </th>
-                                    <td>베브3카드</td>
-                                </tr>
-                                <tr class="table">
-                                    <th scope="row">4 </th>
-                                    <td>이지올카드</td>
-                                </tr>
-                                <tr class="table">
-                                    <th scope="row">5 </th>
-                                    <td>올라운드티타늄카드</td>
-                                </tr>
-                                </tbody>
-                            </table>  </div>
-                        </div>
-                        <div style="margin-bottom: 20px;"></div>
-                    </div>
-                </div>
-                <!--마케팅문자-->
-                <div class="container">
-
-                    <div class="row justify-content-center">
-                        <div style="margin-top: 50px;"> </div>
-                        <div class="col-md-4">
-                            <div class="phone-box">
-
-                                <%--                                    <div class>         전월 대비 상승 2.2% <i class=" fi-arrow-up red-arrow "></i>   <div class="triangle" style="border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 8px solid red; position: absolute; top: 50%; right: -10px; transform: translateY(-50%);"></div></div>--%>
-                                <div class="phone-screen">
-                                    <div class="collapse d-md-block custom-bg" id="typingContainer">
-
-                                        <li>AI 마케팅 문자</li>
-                                        <ul class="nav nav-pills flex-column flex-md-row pt-3 pt-md-0 pb-md-4 border-bottom-md">
-                                            <!-- 텍스트가 나타나는 부분 -->
-
-
-                                            <li class="nav-item mb-md-0 me-md-2 pe-md-1 left">
-
-                                            </li>
-
-                                            <!-- 나머지 항목들도 동일하게 수정 가능 -->
-                                        </ul>
-                                        <span class="typed-text" id="typedText"></span>
+                <div id="custProfile">
+                    <!--one 종합통장-->
+                    <div class="card mb-4 p-2 shadow-sm">
+                        <div class="card-body">
+                            <!-- Place info-->
+                            <div class="row">
+                                <div id="custPic" class="border-end d-flex" style="width: 32%;">
+                                    <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100%;">
+                                        <h4 class="h2 mt-2">김국민</h4>
+                                        <img src="img/real-estate/profile.png" style="height: 13em; border-radius: 0.5rem; object-fit: cover; border-radius: inherit;">
                                     </div>
                                 </div>
-
-
-
-
-
+                                <div id="custInfo" class="border-end" style="width: 32%;">
+                                    <h4>'김국민'님은...</h4>
+                                    <ul class="nav nav-pills flex-column">
+                                        <li class="nav-item"><a class="nav-link">#남자</a></li>
+                                        <li class="nav-item"><a class="nav-link">#30대</a></li>
+                                        <li class="nav-item"><a class="nav-link">#서울</a></li>
+                                        <li class="nav-item"><a class="nav-link">#직장인</a></li>
+                                        <li class="nav-item"><a class="nav-link">#100백만초과</a></li>
+                                        <li class="nav-item"><a class="nav-link">#1~4등급</a></li>
+                                    </ul>
+                                </div>
+                                <div id="pastRegister" style="width: 32%;">
+                                    <h4> 최근 가입하신 상품</h4>
+                                    <!-- Table with contextual rows -->
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>일자</th>
+                                                <th>상품명</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="table-active">
+                                                <th scope="row">23.12.01</th>
+                                                <td>주택청약종합저축</td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">22.06.23</th>
+                                                <td>직장인우대적금</td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">20.11.16</th>
+                                                <td>직장인든든 신용대출 <span class="badge bg-primary">hot</span></td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">20.11.16</th>
+                                                <td>주택담보대출</td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">20.01.03</th>
+                                                <td>KB맑은하늘적금</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <%--                            다시--%>
-                            <%--                            <div class="custom-box">--%>
-                            <%--                                <!-- Table with contextual rows -->--%>
-                            <%--                                <div class="table-responsive">--%>
-
-                            <%--                                </div>--%>
-
-
-                            <%--                            </div>--%>
-
-                        </div>
-                        <%--                        <div class="col-md-4">--%>
-                        <%--                            <div class="custom-box">                         </div>--%>
-                        <%--                        </div>--%>
-                        <div style="margin-bottom: 20px;"></div>
                     </div>
                 </div>
+
+                <!--순위-->
+                <div class="card mb-4 p-2 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="btn-group" role="group" aria-label="Date Range Options">
+                                <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Today">오늘</button>
+                                <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Last 30 Days">최근 일주일</button>
+                                <button type="button" class="btn btn-outline-secondary date-range-options" data-date-range="Last 1 Year">최근 한달</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-outline-secondary col-6 text-right">전화 걸기</button>
+                                <button onclick="startTyping()" type="button" class="btn btn-outline-secondary col-6 text-right">SMS 보내기</button>
+                            </div>
+                        </div>
+                        <div class="row"  style="margin-top:2%;">
+                            <div class="card col-md-4 p-2 shadow-sm" style="width:30%;">
+                                <div class="card-body">
+                                    <div class="custom-box"><h4>가장 많이 본 상품</h4>
+
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>상품명</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="table-active">
+                                                <th scope="row">1 <span class="badge bg-primary">hot</span> </th>
+                                                <td>직장인든든신용대출</td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">2</th>
+                                                <td>국민전세자금대출</td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">3  </th>
+                                                <td>새희망홀씨</td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">4 <span class="badge bg-success"> new </span></th>
+                                                <td>one신용대출</td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">5 </th>
+                                                <td>주택담보대출</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card col-md-4 p-2 shadow-sm" style="width:32%; margin-left:1%;">
+                                <div class="card-body">
+                                    <div class="custom-box"><h4>가입 확률이 높은 상품</h4>
+
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>상품명</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="table">
+                                                <th scope="row">1</th>
+                                                <td>국민nori카드</td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">2</th>
+                                                <td>국민전세자금대출</td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">3 <span class="badge bg-success"> new </span></th>
+                                                <td>one신용대출</td>
+                                            </tr>
+                                            <tr class="table-active">
+                                                <th scope="row">4 <span class="badge bg-primary">hot</span> </th>
+                                                <td>직장인든든신용대출</td>
+                                            </tr>
+                                            <tr class="table">
+                                                <th scope="row">5</th>
+                                                <td>kb맑은하늘적금</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--마케팅문자-->
+                    <div class="card col-md-4 p-2 shadow-sm" style="margin-left:1%;width:32%;">
+                        <div class="card-body">
+                            <div class="col-md-4" style="position: relative;">
+                                <img src="img/real-estate/phone.png" class="img-fluid" style="border-radius: 0.5rem; object-fit: cover;">
+
+                                <div class="phone-screen" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); overflow: hidden;">
+                                    <div class="collapse d-md-block custom-bg" id="typingContainer">
+                                        <li style="overflow: hidden;">AI 마케팅 문자</li>
+                                        <ul class="nav nav-pills flex-column flex-md-row pt-3 pt-md-0 pb-md-4 border-bottom-md">
+                                            <!-- 텍스트가 나타나는 부분 -->
+                                            <li class="nav-item mb-md-0 me-md-2 pe-md-1 left" style="overflow: hidden;"></li>
+                                            <!-- 나머지 항목들도 동일하게 수정 가능 -->
+                                        </ul>
+                                        <span class="typed-text" id="typedText" style="overflow: hidden;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!--통계차트-->
-                <div class="화면 통계" style="background-color: #f9f9f9; padding: 20px;"> 화면통계
-                    <div class="row">
-                        <div class="col-md-6">
-                            <figure class="highcharts-figure" style="margin-top: 5%; background-color: #f0f0f0;">
-                                <div id="containerdh1"></div>
-                            </figure>
-                        </div>
-                        <div class="col-md-6">
-                            <figure class="highcharts-figure" style="margin-top: 5%; background-color: #f0f0f0;">
-                                <div id="containerdh2"></div>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             <%--카테고리별 상품 통계--%>
