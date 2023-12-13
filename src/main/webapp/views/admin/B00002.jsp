@@ -2078,6 +2078,7 @@
             $('#customerProfile2').hide();
 
             if (customerPin === '12345') {
+                $('#lemon').hide();
                 $('#Charts').hide();
                 $('#termDeposit').hide();
                 $('#mainCharts').hide();
@@ -2377,10 +2378,12 @@
         <!-- Filters sidebar (Offcanvas on mobile)-->
         <aside class="col-lg-4 col-xl-3 border-top-lg border-end-lg shadow-sm px-3 px-xl-4 px-xxl-5 pt-lg-2">
             <div class="offcanvas-lg offcanvas-start" id="filters-sidebar">
+
                 <div class="offcanvas-header d-flex d-lg-none align-items-center">
                     <h2 class="h5 mb-0">Filters</h2>
                     <button class="btn-close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#filters-sidebar"></button>
                 </div>
+
                 <!-- Search form-->
                 <div class="offcanvas-header d-block border-bottom pt-0 pt-lg-4 px-lg-0">
                     <form class="form-group mb-lg-2 rounded-pill">
@@ -2390,12 +2393,15 @@
                         <button class="btn btn-primary rounded-pill d-lg-inline-block d-none" type="button" id="customerPINbtn">검색</button>
                         <button class="btn btn-icon btn-primary rounded-circle flex-shrink-0 d-lg-none d-inline-flex" type="button"><i class="fi-search mt-n2"></i></button>
                     </form>
-                </div>
-                <!--프로필표출-->
-                <div class="">
-                    <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" style="width: 13em; height: 13em; border-radius: 0.5rem; display: none;" id="customerProfile">
-                        <button id="closeButton">닫기</button>
-                        <img src="img/real-estate/profile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+
+
+                    <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" style=" height: 13em; border-radius: 0.5rem; display: none;" id="customerProfile">
+
+                        <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
+                            <img src="img/real-estate/profile.png" style="height: 13em; border-radius: 0.5rem; object-fit: cover; border-radius: inherit;">
+                        </div>
+
+
                         <p style="margin-top: 8px; text-align: center; color: black; font-weight: bold;">김국민</p>
                         <div class="collapse d-md-block" id="account-nav1">
                             <ul class="nav nav-pills flex-column flex-md-row pt-3 pt-md-0 pb-md-4 border-bottom-md">
@@ -2404,23 +2410,61 @@
                                 <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#증권사근무</a></li>
                                 <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#100백만초과</a></li>
                             </ul>
-                            <button type="button" class="btn btn-outline-secondary col-6 text-right">전화 걸기</button>
-                            <button onclick="startTyping()" type="button" class="btn btn-outline-secondary col-6 text-right">SMS 보내기</button>
+
+
+                            <button type="button" class="btn btn-outline-secondary col-6 text-right">전화 걸기</button><button onclick="startTyping()" type="button" class="btn btn-outline-secondary col-6 text-right">SMS 보내기</button>
                         </div>
 
 
+
+                        <div class="row">
+                            <!-- 상품 카테고리 -->
+                            <div class="offcanvas-header d-block border-bottom py-lg-4 py-3 px-lg-0"  style= "margin-top:30px; ">
+                                <ul class="nav nav-pills" role="tablist">
+                                    <li class="nav-item"><a class="nav-link d-flex align-items-center active" href="#categories" data-bs-toggle="tab" role="tab"><i class="fi-list me-2"></i>상품카테고리</a></li>
+                                    <li class="nav-item"><a class="nav-link d-flex align-items-center" href="#filters" data-bs-toggle="tab" role="tab"><i class="fi-filter-alt-horizontal me-2"></i>필터</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="tab-pane fade show active" id="categories2" role="tabpanel">
+                            <div class="row row-cols-lg-2 row-cols-1 g-3">
+                                <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K10100">
+                                    <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto pt-1"><img src="/img/real-estate/coli.png" style="width:1.5em"></div>
+                                    <h3 class="icon-box-title fs-base mb-0">요구불</h3></a></div>
+                                <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K10200">
+                                    <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="/img/real-estate/bibi.png" style="width:1.4em"></div>
+                                    <h3 class="icon-box-title fs-base mb-0">정기예금</h3></a></div>
+                                <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K10300">
+                                    <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="/img/real-estate/ageo.png" style="width:1.8em"></div>
+                                    <h3 class="icon-box-title fs-base mb-0">적금</h3></a></div>
+                                <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K20100">
+                                    <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="/img/real-estate/kiki.png" style="width:1.9em"></div>
+                                    <h3 class="icon-box-title fs-base mb-0">개인대출</h3></a></div>
+                                <div class="col"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover h-100 text-center" href="/K20200">
+                                    <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto"><img src="/img/real-estate/lamu.png" style="width:2em"></div>
+                                    <h3 class="icon-box-title fs-base mb-0">사업자대출</h3></a></div>
+                                <div class="col"><div class="dropdown h-100"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover text-center" href="#" data-bs-toggle="dropdown">
+                                    <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto pt-2"><img src="/img/real-estate/heart.png" style="width:1.4em"></div>
+                                    <h3 class="icon-box-title fs-base mb-0">KB카드</h3></a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
 
+                <div id="lemon">
                 <!-- Nav tabs-->
-                <div class="offcanvas-header d-block border-bottom py-lg-4 py-3 px-lg-0">
+                  <div class="offcanvas-header d-block border-bottom py-lg-4 py-3 px-lg-0">
                     <ul class="nav nav-pills" role="tablist">
                         <li class="nav-item"><a class="nav-link d-flex align-items-center active" href="#categories" data-bs-toggle="tab" role="tab"><i class="fi-list me-2"></i>상품카테고리</a></li>
                         <li class="nav-item"><a class="nav-link d-flex align-items-center" href="#filters" data-bs-toggle="tab" role="tab"><i class="fi-filter-alt-horizontal me-2"></i>필터</a></li>
                     </ul>
-                </div>
-                <div class="offcanvas-body py-lg-4">
+                  </div>
+                  <div class="offcanvas-body py-lg-4">
                     <!-- Tabs content-->
                     <div class="tab-content">
                         <!-- Categories-->
@@ -2445,6 +2489,8 @@
                                     <div class="dropdown h-100"><a class="icon-box card card-body h-100 border-0 shadow-sm card-hover text-center" data-bs-toggle="dropdown">
                                         <div class="icon-box-media bg-faded-warning text-warning rounded-circle mb-3 mx-auto pt-2"><img src="/img/real-estate/heart.png" style="width:1.4em"></div>
                                         <h3 class="icon-box-title fs-base mb-0">KB카드</h3></a>
+
+
                                         <div class="dropdown-menu dropdown-menu-end my-1"><a class="dropdown-item fw-bold" href="/K30100"><i class="fi-single-bed fs-base opacity-60 me-2"></i>Room</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-computer fs-base opacity-60 me-2"></i>Office</a><a class="dropdown-item fw-bold" href="real-estate-catalog-sale.html"><i class="fi-real-estate-buy fs-base opacity-60 me-2"></i>Land</a><a class="dropdown-item fw-bold" href="real-estate-catalog-rent.html"><i class="fi-parking fs-base opacity-60 me-2"></i>Parking lot</a></div>
                                     </div>
                                 </div>
@@ -2617,9 +2663,12 @@
                             </div>
                         </div>
                     </div>
+                  </div>
                 </div>
             </div>
+
         </aside>
+
 
         <div id="mainArticle" class="col-lg-8 col-xl-9 position-relative overflow-hidden pb-5 pt-4 px-3 px-xl-4 px-xxl-5">
             <%--분석 메인화면--%>
