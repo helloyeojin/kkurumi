@@ -83,7 +83,7 @@
 <!-- AI 마케팅 문자 style 정의-->
 <style>
     .phone-box {
-        width: 300px;
+        width: 100%;
         height: 500px;
         background-image: url('img/real-estate/phone.png');
         background-size: 260px 500px;
@@ -3028,16 +3028,15 @@
                         <div class="card-body">
                             <!-- Place info-->
                             <div class="row">
-                                <div id="custPic" class="border-end d-flex" style="width: 32%;">
+                                <div id="custPic" class="border-end d-flex px-0" style="width: 30%;">
                                     <div class="d-flex flex-column justify-content-center align-items-center"
                                          style="width: 100%;">
-                                        <h4 class="h2 mt-2">김국민</h4>
                                         <img src="img/real-estate/profile.png"
                                              style="height: 13em; border-radius: 0.5rem; object-fit: cover; border-radius: inherit;">
                                     </div>
                                 </div>
-                                <div id="custInfo" class="border-end" style="width: 32%;">
-                                    <h4>'김국민'님은...</h4>
+                                <div id="custInfo" class="border-end px-4" style="width: 30%;">
+                                    <h4 class="mx-1">#해시태그 '김국민'</h4>
                                     <ul class="nav nav-pills flex-column">
                                         <li class="nav-item"><a class="nav-link">#남자</a></li>
                                         <li class="nav-item"><a class="nav-link">#30대</a></li>
@@ -3047,8 +3046,8 @@
                                         <li class="nav-item"><a class="nav-link">#1~4등급</a></li>
                                     </ul>
                                 </div>
-                                <div id="pastRegister" style="width: 32%;">
-                                    <h4> 최근 가입하신 상품</h4>
+                                <div id="pastRegister" class="px-4" style="width: 40%;">
+                                    <h4 class="mx-1"> 최근 가입하신 상품</h4>
                                     <!-- Table with contextual rows -->
                                     <div class="table-responsive">
                                         <table class="table table-striped">
@@ -3105,16 +3104,17 @@
                                 </button>
                             </div>
                             <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-outline-secondary col-6 text-right">전화 걸기</button>
+                                <button type="button" class="btn btn-outline-primary col-6 text-right">전화 걸기</button>
                                 <button onclick="startTyping()" type="button"
-                                        class="btn btn-outline-secondary col-6 text-right">SMS 발송
+                                        class="btn btn-outline-primary col-6 text-right">SMS 발송
                                 </button>
                             </div>
                         </div>
-                        <div class="row" style="margin-top:2%;">
-                            <div class="card col-md-4 p-2 shadow-sm" style="width:30%;">
-                                <div class="card-body">
-                                    <div class="custom-box"><h4>가장 많이 본 상품</h4>
+                        <div class="row justify-content-between" style="margin-top:2%;">
+                            <div class="card col-md-4 px-0 py-2 shadow-sm text-center" style="width:calc(98% /3);">
+                                <div class="card-body px-4">
+                                    <div class="custom-box">
+                                        <h4 class="mx-1 mb-4">가장 많이 본 상품</h4>
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
@@ -3150,9 +3150,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card col-md-4 p-2 shadow-sm" style="width:32%; margin-left:1%;">
-                                <div class="card-body">
-                                    <div class="custom-box"><h4>가입 확률이 높은 상품</h4>
+                            <div class="card col-md-4 px-0 py-2 shadow-sm text-center" style="width:calc(98% /3); margin-left: 1%;">
+                                <div class="card-body px-4">
+                                    <div class="custom-box">
+                                        <h4 class="mx-1 mb-4">가입 확률이 높은 상품</h4>
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
@@ -3174,7 +3175,7 @@
                                                 <td>국민ONE신용대출 <span class="badge bg-success" style="margin-left: 1em">new</span>
                                                 </td>
                                             </tr>
-                                            <tr class="table-active">
+                                            <tr class="table">
                                                 <th scope="row">4</th>
                                                 <td>직장인든든신용대출<span class="badge bg-primary"
                                                                    style="margin-left: 1em">hot</span></td>
@@ -3189,9 +3190,10 @@
                                 </div>
                             </div>
                             <!--마케팅문자-->
-                            <div class="card col-md-4 p-2 shadow-sm" style="margin-left:1%;width:32%;">
-                                <div class="card-body">
-                                    <div class="custom-box"><h4>AI 마케팅문자</h4>
+                            <div class="card col-md-4 px-0 py-2 shadow-sm text-center" style="width:calc(98% /3); margin-left: 1%;">
+                                <div class="card-body px-4">
+                                    <div class="custom-box">
+                                        <h4 class="mx-1">AI 마케팅문자</h4>
                                         <%--<img src="img/real-estate/phone.png" class="img-fluid" style="border-radius: 0.5rem; object-fit: cover;">--%>
                                         <div class="phone-box">
                                             <div class="phone-screen">
@@ -3213,8 +3215,8 @@
             <%--요구불 상품 통계--%>
             <div id="yogubul" style="display:none;">
                 <%--one 종합통장--%>
-                <div class="card mb-4 p-2 shadow-sm">
-                    <div class="card-body">
+                <div class="card mb-4 px-0 py-5 shadow-sm">
+                    <div class="card-body px-sm-3">
                         <!-- Place info-->
                         <div class="d-flex align-items-start mb-3 pb-2 border-bottom">
                             <div class="ps-2 ms-1">
