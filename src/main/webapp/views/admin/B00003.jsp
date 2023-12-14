@@ -505,12 +505,6 @@
                     </form>
 
 
-
-
-
-
-
-
                     <div class="box-media bg-faded-warning text-warning mb-3 mx-auto" style=" height: 13em; border-radius: 0.5rem; display: none;" id="customerProfile">
 
                         <div style="height: 100%; display: flex; justify-content: center; align-items: center;">
