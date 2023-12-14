@@ -41,7 +41,11 @@
 <!--실시간방문자순위 style 정의-->
 <style>
     .highcharts-title {
-        font-size: 1.5em !important;
+        font-size: 1.0em !important;
+    }
+
+    .highlight-label-text {
+        font-size: 0.8em !important;
     }
 
     .highcharts-credits {
@@ -111,8 +115,15 @@
         letter-spacing: .15em;
         animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
     }
-
 </style>
+
+
+<%--<style>
+    Highcharts.chart .container_yo1 title text{
+        font-size: 1.5em !important;
+    }
+</style>--%>
+
 
 <link rel="stylesheet" href="/css/datepick.css"/>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -512,9 +523,11 @@
 
                 title: {
                     text: 'KB ONE 종합통장 월별 가입자 수 추이',
-                    align: 'left'
-                },
-
+                    align: 'left',
+                    style: {
+                        fontSize: '1.5em'
+                    }
+        },
                 subtitle: {
                     text: '',
                     align: 'left'
@@ -691,7 +704,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -760,7 +773,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -911,7 +924,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -990,7 +1003,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1059,7 +1072,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1210,7 +1223,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1289,7 +1302,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1358,7 +1371,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1518,7 +1531,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1597,7 +1610,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1666,7 +1679,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1817,7 +1830,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1896,7 +1909,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1965,7 +1978,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
