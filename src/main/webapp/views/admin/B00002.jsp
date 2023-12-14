@@ -392,8 +392,8 @@
                 }, {
                     name: '여성',
                     data: [
-                        1.3, 4.2, 15.6, 33.7, 28.8,
-                        13.7, 2.1
+                        3.0, 3.2, 8.6, 26.7, 31.8,
+                        27.7, 1.1
                     ],
                     color: 'rgba(255, 234, 160, 1)'
                 }]
@@ -612,7 +612,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '1.0em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -853,7 +853,7 @@
                     color: 'rgba(177, 218, 254, 1)'
                 }, {
                     name: '여성',
-                    data: [34, 45, 29, 30, 32, 30,
+                    data: [24, 15, 29, 30, 42, 30,
                         38, 68, 66, 65, 59],
                     color: 'rgba(255, 234, 160, 1)'
                 }, {
@@ -2307,145 +2307,145 @@
     function tags() {
         $("#account-nav ul").empty();
         if ($('#ageTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 연령</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">#전체 연령</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#age10").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#age10").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#age10").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#age20").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#age20").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#age20").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#age30").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#age30").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#age30").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#age40").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#age40").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#age40").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#age50").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#age50").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#age50").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#age60").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#age60").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#age60").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
         }
 
         if ($("#genderTotal").prop("selected")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#genderTotal").val() + '</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#genderTotal").val() + '</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#genderMen").prop("selected")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#genderMen").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#genderMen").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#genderWomen").prop("selected")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#genderWomen").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#genderWomen").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
         }
 
         if ($('#districtTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 지역</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">#전체 지역</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#seoul").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#seoul").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#seoul").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#kangwon").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#kangwon").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#kangwon").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#kyungsang").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#kyungsang").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#kyungsang").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#jeonra").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#jeonra").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#jeonra").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#choongchung").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#choongchung").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#choongchung").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#jeju").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#jeju").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#jeju").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
         }
 
         if ($('#payTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 소득범위</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">#전체 소득범위</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#2000").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#2000").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#2000").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#5500").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#5500").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#5500").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#10000").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#10000").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#10000").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#100000").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#100000").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#100000").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
         }
 
         if ($('#jobTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 직업</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">#전체 직업</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#employee").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#employee").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#employee").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#soho").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#soho").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#soho").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#unemployed").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#unemployed").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#unemployed").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#student").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#student").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#student").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#householder").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#householder").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#householder").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
         }
 
         if ($('#csoreTotal').is(":checked")) {
-            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#전체 신용등급</a></li>';
+            var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">#전체 신용등급</a></li>';
             $("#account-nav ul").append(newLi);
         } else {
             if ($("#4").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#4").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#4").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#6").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#6").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#6").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#10").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#8").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#8").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
             if ($("#12").is(":checked")) {
-                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">' + $("#10").val() + '</a></li>';
+                var newLi = '<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="btn btn-translucent-primary rounded-pill">' + $("#10").val() + '</a></li>';
                 $("#account-nav ul").append(newLi);
             }
         }
