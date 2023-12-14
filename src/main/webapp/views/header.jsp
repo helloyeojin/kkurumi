@@ -108,23 +108,20 @@
                 <form class="form-validate" id="loginForm">
                   <div class="mb-4">
                     <label class="form-label mb-2" for="signin-email">아이디</label>
-                    <input class="form-control"  id="signin-email" name="user_name" placeholder="아이디를 입력해주세요" required>
+                    <input class="form-control"  id="signin-email" name="user_name" placeholder="아이디를 입력해주세요" value="admin" required>
                   </div>
                   <div class="mb-4">
                     <div class="d-flex align-items-center justify-content-between mb-2">
                       <label class="form-label mb-0" for="signin-password">비밀번호</label><a class="fs-sm" href="#">비밀번호를 잊어버리셨나요?</a>
                     </div>
                     <div class="password-toggle">
-                      <input class="form-control" type="password" id="signin-password" placeholder="비밀번호를 입력해주세요" required>
+                      <input class="form-control" type="password" id="signin-password" placeholder="비밀번호를 입력해주세요" value="admin" required>
                       <label class="password-toggle-btn" aria-label="Show/hide password">
                         <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
                       </label>
                     </div>
                   </div>
-                  <div class="mb-4">
-                    <label class="form-label mb-2" for="signin-email">휴대폰번호</label>
-                    <input class="form-control"  id="signin-phonenumber" placeholder="휴대폰번호를 입력해주세요" required>
-                  </div>
+                  증
                   <button class="btn btn-warning btn-lg w-100" id="loginBtn" type="submit" style="color: black;">아이디 로그인</button>
                 </form>
               </div>
@@ -251,29 +248,46 @@
         </a>
       </c:otherwise>
     </c:choose>
-    <a class="btn btn-primary btn-sm ms-2 order-lg-3" href="https://obank.kbstar.com/quics?page=C018872"><i class="fi-lock me-2"></i>인증<span class='d-none d-sm-inline'>센터</span></a>
+    <c:if test="${loginCust.user_name != 'admin'}">
+      <a class="btn btn-primary btn-sm ms-2 order-lg-3" href="https://obank.kbstar.com/quics?page=C018872"><i class="fi-lock me-2"></i>인증<span class='d-none d-sm-inline'>센터</span></a>
+    </c:if>
     <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
       <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
         <!-- Menu items-->
-        <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">금융상품</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/K10100">요구불</a></li>
-            <li><a class="dropdown-item" href="/K10200">정기예금</a></li>
-            <li><a class="dropdown-item" href="/K10300">적금</a></li>
-            <li><a class="dropdown-item" href="/K20100">개인대출</a></li>
-            <li><a class="dropdown-item" href="/K20200">사업자대출</a></li>
-            <li><a class="dropdown-item" href="/K30100">KB카드</a></li>
-          </ul>
-        </li>
+        <c:choose>
+          <c:when test="${loginCust.user_name == 'admin'}">
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">금융상품</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/K10100">요구불</a></li>
+                <li><a class="dropdown-item" href="/K10200">정기예금</a></li>
+                <li><a class="dropdown-item" href="/K10300">적금</a></li>
+                <li><a class="dropdown-item" href="/K20100">개인대출</a></li>
+                <li><a class="dropdown-item" href="/K20200">사업자대출</a></li>
+                <li><a class="dropdown-item" href="/K30100">KB카드</a></li>
+              </ul>
+            </li>
+          </c:when>
+          <c:otherwise>
+            <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">금융상품</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/K10100">요구불</a></li>
+                <li><a class="dropdown-item" href="/K10200">정기예금</a></li>
+                <li><a class="dropdown-item" href="/K10300">적금</a></li>
+                <li><a class="dropdown-item" href="/K20100">개인대출</a></li>
+                <li><a class="dropdown-item" href="/K20200">사업자대출</a></li>
+                <li><a class="dropdown-item" href="/K30100">KB카드</a></li>
+              </ul>
+            </li>
+          </c:otherwise>
+        </c:choose>
         <li class="nav-item dropdown"><a class="nav-link" href="/E00001" role="button" data-bs-toggle="dropdown" aria-expanded="false">이벤트</a>
         </li>
         <li class="nav-item dropdown"><a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">고객정보</a>
         </li>
         <c:if test="${loginCust.user_name == 'admin'}">
-          <li class="nav-item dropdown"><a class="nav-link" href="/B00002" role="button">통계센터</a>
+          <li class="nav-item dropdown active"><a class="nav-link" href="/B00002" role="button">통계센터</a>
           </li>
         </c:if>
-
       </ul>
     </div>
   </div>
