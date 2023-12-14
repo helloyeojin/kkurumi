@@ -2028,7 +2028,7 @@
     };
 
     function startTyping() {
-        const text = "(광고)[KB국민은행] 김*민님, 직장인 고객님을 위한 특화 상품! 자세한 내용이 궁금하다면, 지금 바로 확인해보세요."; // 타이핑될 텍스트
+        const text = "(광고)[KB국민은행] 급여이체를 당행으로 받고 계신 김*민님, 직장인 고객님을 위한 특별한 혜택 직장인 신용대출을 추천드립니다! 자세한 내용이 궁금하다면, 지금 바로 확인해보세요."; // 타이핑될 텍스트
 
         // 타이핑 효과
         const typedText = document.getElementById('typedText');
@@ -2045,6 +2045,24 @@
         }, 100); // 100ms 간격으로 글자가 타이핑됨
     }
 
+
+    function startTyping2() {
+        const text = "(광고)[KB국민은행] 김*민님, 소득공제엔 신용카드 뿐만 아니라 체크카드도 중요하다는 사실 아셨나요? 당신의 맞춤형 nori 체크카드  지금 바로 확인해보세요."; // 타이핑될 텍스트
+
+        // 타이핑 효과
+        const typedText = document.getElementById('typedText');
+        typedText.textContent = ''; // 기존 텍스트 초기화
+
+        let index = 0;
+        const typingInterval = setInterval(() => {
+            typedText.textContent += text[index];
+            index++;
+
+            if (index === text.length) {
+                clearInterval(typingInterval);
+            }
+        }, 100); // 100ms 간격으로 글자가 타이핑됨
+    }
     function fn_mainCharts() {
 
         resetRanking();
@@ -3118,9 +3136,7 @@
                             </div>
                             <div class="btn-group" role="group">
                                 <button type="button" class="btn btn-outline-primary col-6 text-right">전화 걸기</button>
-                                <button onclick="startTyping()" type="button"
-                                        class="btn btn-outline-primary col-6 text-right">SMS 발송
-                                </button>
+
                             </div>
                         </div>
                         <div class="row justify-content-between" style="margin-top:2%;">
@@ -3128,6 +3144,9 @@
                                 <div class="card-body px-4">
                                     <div class="custom-box">
                                         <h4 class="mx-1 mb-4">가장 많이 본 상품</h4>
+                                        <button onclick="startTyping()" type="button"
+                                                class="btn btn-outline-primary col-6 text-right">SMS 발송
+                                        </button>
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
@@ -3167,6 +3186,9 @@
                                 <div class="card-body px-4">
                                     <div class="custom-box">
                                         <h4 class="mx-1 mb-4">가입 확률이 높은 상품</h4>
+                                        <button onclick="startTyping2()" type="button"
+                                                class="btn btn-outline-primary col-6 text-right">SMS 발송
+                                        </button>
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
