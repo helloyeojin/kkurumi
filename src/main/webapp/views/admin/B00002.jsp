@@ -41,7 +41,11 @@
 <!--실시간방문자순위 style 정의-->
 <style>
     .highcharts-title {
-        font-size: 1.5em !important;
+        font-size: 1.0em !important;
+    }
+
+    .highlight-label-text {
+        font-size: 0.8em !important;
     }
 
     .highcharts-credits {
@@ -83,7 +87,7 @@
 <!-- AI 마케팅 문자 style 정의-->
 <style>
     .phone-box {
-        width: 300px;
+        width: 100%;
         height: 500px;
         background-image: url('img/real-estate/phone.png');
         background-size: 260px 500px;
@@ -111,8 +115,15 @@
         letter-spacing: .15em;
         animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
     }
-
 </style>
+
+
+<%--<style>
+    Highcharts.chart .container_yo1 title text{
+        font-size: 1.5em !important;
+    }
+</style>--%>
+
 
 <link rel="stylesheet" href="/css/datepick.css"/>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -512,9 +523,11 @@
 
                 title: {
                     text: 'KB ONE 종합통장 월별 가입자 수 추이',
-                    align: 'left'
-                },
-
+                    align: 'left',
+                    style: {
+                        fontSize: '1.5em'
+                    }
+        },
                 subtitle: {
                     text: '',
                     align: 'left'
@@ -612,7 +625,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '0.6em',
+                                fontSize: '1.0em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -691,7 +704,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.0em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -760,7 +773,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -911,7 +924,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -990,7 +1003,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1059,7 +1072,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1210,7 +1223,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1289,7 +1302,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1358,7 +1371,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1518,7 +1531,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1597,7 +1610,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1666,7 +1679,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1817,7 +1830,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1896,7 +1909,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -1965,7 +1978,7 @@
                             distance: -40,
                             format: '{point.percentage:.1f}%',
                             style: {
-                                fontSize: '1.2em',
+                                fontSize: '0.9em',
                                 textOutline: 'none',
                                 opacity: 0.7
                             },
@@ -2015,26 +2028,7 @@
     };
 
     function startTyping() {
-        const text = "(광고)[KB국민은행] 당행으로 급여이체를 받으시는 김*민님께 특별한 우대금리를 드리는 직장인 신용대출을 추천드립니다!."; // 타이핑될 텍스트
-
-        // 타이핑 효과
-        const typedText = document.getElementById('typedText');
-        typedText.textContent = ''; // 기존 텍스트 초기화
-
-        let index = 0;
-        const typingInterval = setInterval(() => {
-            typedText.textContent += text[index];
-            index++;
-
-            if (index === text.length) {
-                clearInterval(typingInterval);
-            }
-        }, 100); // 100ms 간격으로 글자가 타이핑됨
-    }
-
-
-    function startTyping2() {
-        const text = "(광고)[KB국민은행] 김*민님, 소득공제에는 신용카드뿐만 아니라 체크카드도 중요하다는 사실 아셨나요? 고객님께 딱인 nori 체크카드 추천드려요. 지금 바로 확인해보세요."; // 타이핑될 텍스트
+        const text = "(광고)[KB국민은행] 김*민님, 직장인 고객님을 위한 특화 상품! 자세한 내용이 궁금하다면, 지금 바로 확인해보세요."; // 타이핑될 텍스트
 
         // 타이핑 효과
         const typedText = document.getElementById('typedText');
@@ -2599,7 +2593,9 @@
                             <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link">#100백만초과</a></li>
                         </ul>
                         <button type="button" class="btn btn-outline-secondary col-6 text-right">전화 걸기</button>
-
+                        <button onclick="startTyping()" type="button"
+                                class="btn btn-outline-secondary col-6 text-right">SMS 발송
+                        </button>
                     </div>
                 </div>
 
@@ -3045,16 +3041,15 @@
                         <div class="card-body">
                             <!-- Place info-->
                             <div class="row">
-                                <div id="custPic" class="border-end d-flex" style="width: 32%;">
+                                <div id="custPic" class="border-end d-flex px-0" style="width: 30%;">
                                     <div class="d-flex flex-column justify-content-center align-items-center"
                                          style="width: 100%;">
-                                        <h4 class="h2 mt-2">김국민</h4>
                                         <img src="img/real-estate/profile.png"
                                              style="height: 13em; border-radius: 0.5rem; object-fit: cover; border-radius: inherit;">
                                     </div>
                                 </div>
-                                <div id="custInfo" class="border-end" style="width: 32%;">
-                                    <h4>'김국민'님은...</h4>
+                                <div id="custInfo" class="border-end px-4" style="width: 30%;">
+                                    <h4 class="mx-1">#해시태그 '김국민'</h4>
                                     <ul class="nav nav-pills flex-column">
                                         <li class="nav-item"><a class="nav-link">#남자</a></li>
                                         <li class="nav-item"><a class="nav-link">#30대</a></li>
@@ -3064,8 +3059,8 @@
                                         <li class="nav-item"><a class="nav-link">#1~4등급</a></li>
                                     </ul>
                                 </div>
-                                <div id="pastRegister" style="width: 32%;">
-                                    <h4> 최근 가입하신 상품</h4>
+                                <div id="pastRegister" class="px-4" style="width: 40%;">
+                                    <h4 class="mx-1"> 최근 가입하신 상품</h4>
                                     <!-- Table with contextual rows -->
                                     <div class="table-responsive">
                                         <table class="table table-striped">
@@ -3122,19 +3117,17 @@
                                 </button>
                             </div>
                             <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-outline-secondary col-6 text-right">전화 걸기</button>
-<%--                                <button onclick="startTyping()" type="button"--%>
-<%--                                        class="btn btn-outline-secondary col-6 text-right">SMS 발송--%>
-<%--                                </button>--%>
+                                <button type="button" class="btn btn-outline-primary col-6 text-right">전화 걸기</button>
+                                <button onclick="startTyping()" type="button"
+                                        class="btn btn-outline-primary col-6 text-right">SMS 발송
+                                </button>
                             </div>
                         </div>
-                        <div class="row" style="margin-top:2%;">
-                            <div class="card col-md-4 p-2 shadow-sm" style="width:30%;">
-                                <div class="card-body">
-                                    <div class="custom-box"><h4>가장 많이 본 상품</h4>
-                                        <button onclick="startTyping()" type="button"
-                                                class="btn btn-outline-secondary col-4 text-right">SMS 발송
-                                        </button>
+                        <div class="row justify-content-between" style="margin-top:2%;">
+                            <div class="card col-md-4 px-0 py-2 shadow-sm text-center" style="width:calc(98% /3);">
+                                <div class="card-body px-4">
+                                    <div class="custom-box">
+                                        <h4 class="mx-1 mb-4">가장 많이 본 상품</h4>
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
@@ -3170,12 +3163,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card col-md-4 p-2 shadow-sm" style="width:32%; margin-left:1%;">
-                                <div class="card-body">
-                                    <div class="custom-box"><h4>가입 확률이 높은 상품</h4> <button onclick="startTyping2()" type="button"
-                                                                                          class="btn btn-outline-secondary col-4 text-right">SMS 발송
-                                    </button>
-
+                            <div class="card col-md-4 px-0 py-2 shadow-sm text-center" style="width:calc(98% /3); margin-left: 1%;">
+                                <div class="card-body px-4">
+                                    <div class="custom-box">
+                                        <h4 class="mx-1 mb-4">가입 확률이 높은 상품</h4>
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
@@ -3197,7 +3188,7 @@
                                                 <td>국민ONE신용대출 <span class="badge bg-success" style="margin-left: 1em">new</span>
                                                 </td>
                                             </tr>
-                                            <tr class="table-active">
+                                            <tr class="table">
                                                 <th scope="row">4</th>
                                                 <td>직장인든든신용대출<span class="badge bg-primary"
                                                                    style="margin-left: 1em">hot</span></td>
@@ -3212,9 +3203,10 @@
                                 </div>
                             </div>
                             <!--마케팅문자-->
-                            <div class="card col-md-4 p-2 shadow-sm" style="margin-left:1%;width:32%;">
-                                <div class="card-body">
-                                    <div class="custom-box"><h4>AI 마케팅문자</h4>
+                            <div class="card col-md-4 px-0 py-2 shadow-sm text-center" style="width:calc(98% /3); margin-left: 1%;">
+                                <div class="card-body px-4">
+                                    <div class="custom-box">
+                                        <h4 class="mx-1">AI 마케팅문자</h4>
                                         <%--<img src="img/real-estate/phone.png" class="img-fluid" style="border-radius: 0.5rem; object-fit: cover;">--%>
                                         <div class="phone-box">
                                             <div class="phone-screen">
@@ -3236,8 +3228,8 @@
             <%--요구불 상품 통계--%>
             <div id="yogubul" style="display:none;">
                 <%--one 종합통장--%>
-                <div class="card mb-4 p-2 shadow-sm">
-                    <div class="card-body">
+                <div class="card mb-4 px-0 py-5 shadow-sm">
+                    <div class="card-body px-sm-3">
                         <!-- Place info-->
                         <div class="d-flex align-items-start mb-3 pb-2 border-bottom">
                             <div class="ps-2 ms-1">
