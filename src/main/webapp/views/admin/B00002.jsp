@@ -2653,7 +2653,7 @@
                         <div class="tab-pane fade" id="filters" role="tabpanel">
                             <div class="py-4" style="margin-top: -5%;">
                                 <button class="btn btn-outline-primary rounded-pill" type="button" id="chartsBtn"><i
-                                        class="fi-rotate-right me-2"></i>분석 시작하기
+                                        class="fi-rotate-right me-2"></i>분석 시작
                                 </button>
                                 <button class="btn btn-outline-success rounded-pill" type="button" id="resetBtn"
                                         style="margin-left: 2%;"><i class="fi-refresh me-2"></i>리셋

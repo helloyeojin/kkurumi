@@ -615,7 +615,7 @@
                             <div class="tab-pane fade" id="filters" role="tabpanel">
                                 <div class="py-4" style="margin-left: 25%; margin-top: -5%;">
                                     <button class="btn btn-outline-primary rounded-pill" type="button"><i
-                                            class="fi-rotate-right me-2"></i>분석 시작하기
+                                            class="fi-rotate-right me-2"></i>분석 시작
                                     </button>
                                 </div>
                                 <div class="pb-4 mb-2">
