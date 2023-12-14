@@ -121,7 +121,6 @@
                       </label>
                     </div>
                   </div>
-                  증
                   <button class="btn btn-warning btn-lg w-100" id="loginBtn" type="submit" style="color: black;">아이디 로그인</button>
                 </form>
               </div>

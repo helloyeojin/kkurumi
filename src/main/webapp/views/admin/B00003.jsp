@@ -366,7 +366,7 @@
     .phone-box {
         width: 300px;
         height: 500px;
-        background-image: url('img/real-estate/phone.png');
+        background-image: url('img\real-estate\phong.png');
         background-size: 260px 500px;
         background-repeat: no-repeat;
         background-position: center;
